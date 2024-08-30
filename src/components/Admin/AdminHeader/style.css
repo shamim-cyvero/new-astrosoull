@@ -1,0 +1,17 @@
+.scrollBar{
+    scrollbar-width: thin;
+    scrollbar-color: pink;
+}
+
+.scrollBar::-webkit-scrollbar{
+    width: 1px;
+}
+.scrollBar::-webkit-scrollbar-track{
+    background: red !important;
+}
+
+.scrollBar::-webkit-scrollbar-thumb{
+    background: blue;
+    border-radius: 10px;
+    border: 1px solid white;
+}

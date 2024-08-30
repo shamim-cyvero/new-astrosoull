@@ -1,0 +1,17 @@
+.card:hover .btn{
+    background: #1f3b64;
+}
+.card{
+    transition: .3s ease-in-out;
+}
+.card:hover{
+    transform:translateY(-10px);
+}
+.para{
+    display: -webkit-box;
+    width: 100%;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-height:1.3;
+}

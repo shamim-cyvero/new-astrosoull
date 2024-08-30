@@ -1,0 +1,70 @@
+
+.dashboardBoxWRapper {
+    width: 100%;
+    gap: 20px;
+    /* flex-wrap: wrap; */
+}
+
+.dashboardBoxWRapper .dashboardBox {
+    width: 48%;
+    height: 170px;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 15px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: left !important;
+    position: relative;
+    color: #fff;
+}
+
+.dashboardBoxWRapperRow .box {
+    width: 100%;
+    height: 100%;
+}
+
+.dashboardBoxWRapperRow .col1 h4 {
+    font-size: 15px;
+    font-weight: 600;
+    color: white;
+    opacity: .7;
+}
+
+.dashboardBoxWRapperRow .col1 span {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.bottomIcon .icon2 svg {
+    font-size: 45px !important;
+    opacity: 0.2;
+    color: #000 !important;
+}
+
+.dashboardBoxWRapper .dashboardBox .CardtoggleIcon {
+    font-size: 20px !important;
+    color: rgb(0, 0, 0, 0.5) !important;
+    cursor: pointer;
+    border-radius: 100% !important;
+    width: 40px;
+    min-width: 40px;
+    height: 40px;
+}
+
+.dashboardBoxWRapper .dashboardBox .chart {
+    opacity: .1;
+    position: absolute;
+    bottom: 20px;
+    left: -15px;
+}
+
+.dashboardBoxWRapper .dashboardBox .chart svg {
+    font-size: 8rem !important;
+    color: #000;
+}
+
+.dashboardBoxWRapper .dashboardBox .BottmEle {
+    position: relative;
+    top: 25px;
+}

@@ -23,8 +23,9 @@ import axios from 'axios';
 
 const SingleCourse = () => {
 const { loading, course } = useSelector((state) => state.courseContainer);
+const {  user,isAuthenticated } = useSelector( (state) => state.userContainer);
 const navigate=useNavigate() 
-
+ 
 const payHandler = async (price) => {
     const { data: { key } } = await axios.get(`${server}/payment/key`,
         {
@@ -34,6 +35,7 @@ const payHandler = async (price) => {
             withCredentials: true,
         }
     )
+    console.log(`key ${key}`)
    
     const { data } = await axios.post(`${server}/payment/process`, 
         { price  },
@@ -44,6 +46,7 @@ const payHandler = async (price) => {
             withCredentials: true,
         }
     )
+    console.log(`order ${data.order}`)
 
     const option = {
         key: key,
@@ -56,8 +59,8 @@ const payHandler = async (price) => {
         callback_url: `${server}/payment/verfication/${course._id}`,
         
         prefill: {               //user details who is logined
-            name: 'me',
-            email: 'me@gmail.com',
+            name: user.name,
+            email: user.email,
             contact: '909090909'
         },
         notes: {
@@ -150,7 +153,7 @@ useEffect(()=>{
                         <VStack w={'100%'} spacing={3} > 
                             {/* <del style={{ fontSize: '1.2rem', fontWeight: '400' }}>₹20,000</del> */}
                             <Heading children={course?.price} color={'#22c35e'} />
-                            <Button onClick={()=>payHandler(course?.price)} w={'100%'} size={'lg'} colorScheme='blue' > Buy now!</Button>
+                            <Button onClick={isAuthenticated?()=>payHandler(course?.price):()=>alert('login First')} w={'100%'} size={'lg'} colorScheme='blue' > Buy now!</Button>
                             {/* <Button w={'100%'} size={'lg'} colorScheme='whatsapp' variant='outline'> Pay in Installments</Button> */}
                             {/* <Button w={'100%'} size={'lg'} colorScheme='whatsapp' > Add to Cart</Button> */}
                         </VStack>

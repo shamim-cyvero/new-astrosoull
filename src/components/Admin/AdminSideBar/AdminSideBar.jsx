@@ -8,6 +8,7 @@ import { IoIosPeople } from 'react-icons/io'
 import { RiDashboardFill, RiShoppingBag3Fill } from 'react-icons/ri'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { IoSettings, IoNotifications } from "react-icons/io5";
+import { GrTransaction } from "react-icons/gr";
 import { IoMdHome } from "react-icons/io";
 import { FaBlogger } from "react-icons/fa";
 import { IoLogOut } from "react-icons/io5";
@@ -43,6 +44,7 @@ const AdminSideBar = () => {
             <SideBarItem url={'/admin/user'} Icon={FaUser} location={location} text={'User'} />
             <SideBarItem url={'/astrologerprofile'} Icon={FaRegUserCircle} location={location} text={'Admin Profile'} />
             <SideBarItem url={'/admin/blog'} Icon={FaBlogger} location={location} text={'Admin Blog'} />
+            <SideBarItem url={'/admin/transaction'} Icon={GrTransaction } location={location} text={'All Transaction'} />
             {/* <SideBarItem url={'/admin/notification'} Icon={IoNotifications} location={location} text={'Notification'} /> */}
 
           </VStack>

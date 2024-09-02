@@ -19,6 +19,7 @@ import './Dashboard.css'
 import { BarChart, DoughnutChart } from "../Charts/Chart";
 import { BiMaleFemale } from "react-icons/bi";
 import { useSelector } from "react-redux";
+import { GrTransaction } from "react-icons/gr";
 // import DashboardTableTransaction from "../DashboardTable/DashboardTableTransaction";
 // import data from '../../../assets/data.json'
 
@@ -117,7 +118,7 @@ const {  courses } = useSelector((state) => state.courseContainer);
 
           <Heading children={'Dashboard'} size={'lg'} m={5} textAlign={'center'} textTransform={'uppercase'} />
           <HStack w={'100%'} alignItems={'center'} justifyContent={'center'} spacing={8} flexWrap={'wrap'}>
-            <Card boxShadow={'lg'} maxW='300px' w={'100%'} bg={'#3ac475'} >
+            <Card boxShadow={'lg'} maxW='400px' w={'100%'} bg={'#3ac475'} >
               <CardBody w={'100%'}>
                 <HStack w={'100%'} alignItems={'center'} justifyContent={'space-between'}>
                   <Heading children={'total users'} fontSize={'1.5rem'} color={'white'} opacity={'.5'} textTransform={'capitalize'} />
@@ -126,7 +127,7 @@ const {  courses } = useSelector((state) => state.courseContainer);
                 <Text children={allUser?allUser.length:'250'} fontSize={'2rem'} fontWeight={'700'} color={'white'} />
               </CardBody>
             </Card>
-            <Card boxShadow={'lg'} maxW='300px' w={'100%'} bg={'#4896ee'} >
+            <Card boxShadow={'lg'} maxW='400px' w={'100%'} bg={'#4896ee'} >
               <CardBody w={'100%'}>
                 <HStack w={'100%'} alignItems={'center'} justifyContent={'space-between'}>
                   <Heading children={'Astrologer'} fontSize={'1.5rem'} color={'white'} opacity={'.5'} textTransform={'capitalize'} />
@@ -135,11 +136,20 @@ const {  courses } = useSelector((state) => state.courseContainer);
                 <Text children={allastrologer?allastrologer.length:'250'} fontSize={'2rem'} fontWeight={'700'} color={'white'} />
               </CardBody>
             </Card>
-            <Card boxShadow={'lg'} maxW='300px' w={'100%'} bg={'#e7a717'} >
+            <Card boxShadow={'lg'} maxW='400px' w={'100%'} bg={'#e7a717'} >
               <CardBody w={'100%'}>
                 <HStack w={'100%'} alignItems={'center'} justifyContent={'space-between'}>
                   <Heading children={'Course'} fontSize={'1.5rem'} color={'white'} opacity={'.5'} textTransform={'capitalize'} />
                   <RiShoppingBag3Fill fontSize={'3rem'} color={'white'} opacity={'.3'} />
+                </HStack>
+                <Text children={courses?courses.length:'250'} fontSize={'2rem'} fontWeight={'700'} color={'white'} />
+              </CardBody>
+            </Card>
+            <Card boxShadow={'lg'} maxW='400px' w={'100%'} bg={'#bf2938'} >
+              <CardBody w={'100%'}>
+                <HStack w={'100%'} alignItems={'center'} justifyContent={'space-between'}>
+                  <Heading children={'Total Amount'} fontSize={'1.5rem'} color={'white'} opacity={'.5'} textTransform={'capitalize'} />
+                  <GrTransaction fontSize={'3rem'} color={'white'} opacity={'.3'} />
                 </HStack>
                 <Text children={courses?courses.length:'250'} fontSize={'2rem'} fontWeight={'700'} color={'white'} />
               </CardBody>

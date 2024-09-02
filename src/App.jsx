@@ -108,13 +108,18 @@ const AllCourses = lazy(() => import('./pages/Course/Category/AllCourses'));
 const AdminAstrologerProfile = lazy(() => import('./components/Admin/AdminAstrologer/AdminAstrologerProfile'));
 // import AdminAstrologerProfile from "./components/Admin/AdminAstrologer/AdminAstrologerProfile";
 
+const PaymentSuccess = lazy(() => import('./components/Payment/PaymentSuccess/PaymentSuccess'));
+// import PaymentSuccess from "./components/Payment/PaymentSuccess/PaymentSuccess";
+
+const AdminTransaction = lazy(() => import('./components/Admin/AdminTransaction/AdminTransaction'));
+// import AdminTransaction from "./components/Admin/AdminTransaction/AdminTransaction";
+
 import { useDispatch, useSelector } from "react-redux";
 import { AdminLoadAllUser, LoadUser } from "./redux/action/UserActions";
 import { CircularProgress, Stack, Text } from "@chakra-ui/react";
 import { Toaster } from 'react-hot-toast';
 import { AdminLoadAllAstrologer, LoadAstrologer } from "./redux/action/AstrologerActions";
 import { GetAllCourseDetails } from "./redux/action/CourseActions";
-import PaymentSuccess from "./components/Payment/PaymentSuccess/PaymentSuccess";
 
 
 function App() {
@@ -128,7 +133,7 @@ function App() {
     state => state.astrologerContainer
   );
 
-
+ 
 	const dispatch=useDispatch()
 
   useEffect(()=>{
@@ -208,6 +213,7 @@ function App() {
           <Route path="/admin/blog/addblog" element={<AddBlog />} />
           <Route path="/admin/blog/addblog/newblog" element={<NewBlog />} />
 
+          <Route path="/admin/transaction" element={<AdminTransaction />} />
           <Route path="/admin/notification" element={<AdminNotification />} />
           <Route path="/admin/setting" element={<AdminSetting />} />
         </Routes>      

@@ -13,7 +13,7 @@ import Rating from 'react-rating';
 import { useNavigate } from 'react-router-dom'; 
 import { useDispatch } from 'react-redux';
 import { GetSignleCourseDetails } from '../../redux/action/CourseActions';
-const CourseCard = ({ courseId, image, name, category, rating, totalRating, price,  url }) => {
+const CourseCard = ({ courseId, image, name, category, rating, totalRating, price,  url, }) => {
 
     // const courseDetails=
     //     {
@@ -43,7 +43,7 @@ const CourseCard = ({ courseId, image, name, category, rating, totalRating, pric
 
     return (
         <>
-            <HStack onClick={()=>ShowSingleCourseDetails(courseId)} cursor={'pointer'} w={'100%'} alignItems={'center'} justifyContent={'center'}>
+            <HStack  onClick={()=>ShowSingleCourseDetails(courseId)} cursor={'pointer'} w={'100%'} alignItems={'center'} justifyContent={'center'}>
 
                 <Box w={'100%'} alignItems={'center'} justifyContent={'center'} p={'6px'} mt={'20px'} borderRadius={'10px'}>
 

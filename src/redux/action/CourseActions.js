@@ -55,7 +55,7 @@ export const AdminCreateCourse = (name, description, price, banner, category) =>
       dispatch(createCourseSuccess(data));
       toast.success(data.message);
     } catch (error) {
-      dispatch(createCourseFail(error));
+      dispatch(createCourseFail(error.message));
       toast.error(error.message);
     }
   };
@@ -78,7 +78,7 @@ export const AdminAddCourseLecture = (name, description, courseId) => async (dis
       dispatch(addCourseLectureSuccess(data));
       toast.success(data.message);
     } catch (error) {
-      dispatch(addCourseLectureFail(error));
+      dispatch(addCourseLectureFail(error.message));
       toast.error(error.message);
     }
   };
@@ -99,11 +99,9 @@ export const AdminAddCourseLectureVideo = (title, video, courseId, lectureId) =>
       );
 
       dispatch(addCourseLectureVideoSuccess(data));
-      console.log(data);
       toast.success(data.message);
     } catch (error) {
-      dispatch(addCourseLectureVideoFail(error));
-      console.log(error);
+      dispatch(addCourseLectureVideoFail(error.message));
       toast.error(error.message);
     }
   };
@@ -122,7 +120,7 @@ export const AdminDeleteCourse = (id) => async (dispatch) => {
     dispatch(AdminDeleteCourseSuccess(data));
     toast.success(data.message);
   } catch (error) {
-    dispatch(AdminDeleteCourseFail(error));
+    dispatch(AdminDeleteCourseFail(error.message));
     toast.error(error.message);
   }
 };
@@ -145,11 +143,9 @@ export const AdminDeleteCourseLecture = (lectureId, courseId) => async (dispatch
       );
 
       dispatch(AdminDeleteCourseLectureSuccess(data));
-      console.log(data);
       toast.success(data.message);
     } catch (error) {
-      dispatch(AdminDeleteCourseLectureFail(error));
-      console.log(error);
+      dispatch(AdminDeleteCourseLectureFail(error.message));
       // toast.error(error.message);
     }
   };
@@ -171,11 +167,9 @@ export const AdminDeleteCourseLectureVideo = (lectureId, courseId,videoId) => as
       );
 
       dispatch(AdminDeleteCourseLectureVideoSuccess(data));
-      console.log(data);
       toast.success(data.message);
     } catch (error) {
-      dispatch(AdminDeleteCourseLectureVideoFail(error));
-      console.log(error);
+      dispatch(AdminDeleteCourseLectureVideoFail(error.message));
       // toast.error(error.message);
     }
   };
@@ -199,8 +193,7 @@ export const AdminDeleteCourseReview = (reviewId, courseId) => async (dispatch) 
       dispatch(AdminDeleteCourseReviewSuccess(data));
       toast.success(data.message);
     } catch (error) {
-      dispatch(AdminDeleteCourseReviewFail(error));
-      console.log(error);
+      dispatch(AdminDeleteCourseReviewFail(error.message));
       // toast.error(error.message);
     }
 };
@@ -219,7 +212,7 @@ export const GetAllCourseDetails = () => async (dispatch) => {
     dispatch(LoadAllCourseSuccess(data));
     // toast.success(data.message);
   } catch (error) {
-    dispatch(LoadAllCourseFail());
+    dispatch(LoadAllCourseFail(error.message));
     // toast.error(error.message);
   }
 };
@@ -238,7 +231,7 @@ export const GetSignleCourseDetails = (courseId) => async (dispatch) => {
     dispatch(SingleCourseSuccess(data));
     // toast.success(data.message);
   } catch (error) {
-    dispatch(SingleCourseFail(error));
+    dispatch(SingleCourseFail(error.message));
     // toast.error(error.message);
   }
 };
@@ -257,7 +250,7 @@ export const GetAllCourseDetailsByCategory = (key) => async (dispatch) => {
     dispatch(LoadAllCourseByCategorySuccess(data));
     // toast.success(data.message);
   } catch (error) {
-    dispatch(LoadAllCourseByCategoryFail());
+    dispatch(LoadAllCourseByCategoryFail(error.message));
     // toast.error(error.message);
   }
 };
@@ -281,7 +274,7 @@ export const UserCreateCourseReview = (rating, comment,courseId ) => async (disp
       console.log(data)
       toast.success(data.message);
     } catch (error) {
-      dispatch(CreateCourseReviewFail(error.response.data.message));
+      dispatch(CreateCourseReviewFail(error.message));
       // console.log(error.response.data.message)
 
       toast.error(error.response.data.message);

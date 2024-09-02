@@ -120,7 +120,7 @@ export const LoadUser = () => async (dispatch) => {
     dispatch(loadUserSuccess(data));
     // toast.success(data.message);
   } catch (error) {
-    dispatch(loadUserFail(error));
+    dispatch(loadUserFail(error.message));
     // toast.error(error.response.data.message);
   }
 };
@@ -143,7 +143,7 @@ export const ChangeAvatarUser = (avatar) => async (dispatch) => {
     dispatch(changeUserAvatarSuccess(data));
     toast.success(data.message);
   } catch (error) {
-    dispatch(changeUserAvatarFail(error));
+    dispatch(changeUserAvatarFail(error.message));
     toast.error(error.response.data.message);
   }
 };
@@ -166,7 +166,7 @@ export const UpdateUserDetails = (name, phone, email, address) => async (dispatc
       dispatch(updateUserDetailsSuccess(data));
       toast.success(data.message);
     } catch (error) {
-      dispatch(updateUserDetailsFail(error));
+      dispatch(updateUserDetailsFail(error.message));
       toast.error(error.response.data.message);
     }
 };
@@ -189,7 +189,7 @@ export const AdminLoadAllUser = () => async (dispatch) => {
     // toast.success(data.message);
 
   } catch (error) {
-    dispatch(AdminLoadUserFail(error));
+    dispatch(AdminLoadUserFail(error.message));
     // toast.error(error.response.data.message);
 
   }
@@ -210,7 +210,7 @@ export const AdminLoadSingleUser = (userId) => async (dispatch) => {
     // toast.success(data.message);
 
   } catch (error) {
-    dispatch(AdminLoadSingleUserFail(error));
+    dispatch(AdminLoadSingleUserFail(error.message));
     // toast.error(error.response.data.message);
 
   }
@@ -231,7 +231,7 @@ export const AdminDeleteUser = (userId) => async (dispatch) => {
     toast.success(data.message);
 
   } catch (error) {
-    dispatch(AdminDeleteUserFail(error));
+    dispatch(AdminDeleteUserFail(error.message));
     toast.error(error.response.data.message);
 
   }
@@ -257,7 +257,7 @@ export const UserContact = (name, email, phone,message,subject) => async (dispat
     dispatch(UserContactSuccess(data));
     toast.success(data.message);
   } catch (error) {
-    dispatch(UserContactFail(error));
+    dispatch(UserContactFail(error.message));
     toast.error(error.response.data.message);
 
     // console.log(error?.response?.data?.message);
@@ -283,7 +283,7 @@ export const UserContactByEmail = ( email) => async (dispatch) => {
     dispatch(UserContactByEmailSuccess(data));
     toast.success(data.message);
   } catch (error) {
-    dispatch(UserContactByEmailFail(error));
+    dispatch(UserContactByEmailFail(error.message));
     toast.error(error.response.data.message);
 
     // console.log(error?.response?.data?.message);

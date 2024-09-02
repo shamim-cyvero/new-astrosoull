@@ -65,7 +65,7 @@ export const signupAstrologer = (name, phone, email, password) => async (dispatc
     dispatch(signupSuccess(data));
     toast.success(data.message);
   } catch (error) {
-    dispatch(signupFail(error));
+    dispatch(signupFail(error.message));
     toast.error(error.response.data.message);
 
     // console.log(error?.response?.data?.message);
@@ -92,7 +92,7 @@ export const LoginAstrologer = (email, password) => async (dispatch) => {
 
     toast.success(data.message);
   } catch (error) {
-    dispatch(loginFail(error));
+    dispatch(loginFail(error.message));
     toast.error(error.response.data.message);
   }
 };
@@ -111,7 +111,7 @@ export const LogoutAstrologer = () => async (dispatch) => {
     dispatch(logoutSuccess(data));
     toast.success(data.message);
   } catch (error) {
-    dispatch(logoutFail(error));
+    dispatch(logoutFail(error.message));
     toast.error(error.response.data.message);
   }
 };
@@ -130,7 +130,7 @@ export const LoadAstrologer = () => async (dispatch) => {
     dispatch(loadAstrologerSuccess(data));
     // toast.success(data.message);
   } catch (error) {
-    dispatch(loadAstrologerFail(error));
+    dispatch(loadAstrologerFail(error.message));
     // toast.error(error.response.data.message);
   }
 };
@@ -176,7 +176,7 @@ export const UpdateAstrologerDetails = (name, phone, email, address,about) => as
       dispatch(updateAstrologerDetailsSuccess(data));
       toast.success(data.message);
     } catch (error) {
-      dispatch(updateAstrologerDetailsFail(error));
+      dispatch(updateAstrologerDetailsFail(error.message));
       toast.error(error.response.data.message);
     }
 };
@@ -202,7 +202,7 @@ export const AstrologerAddNewExpAndEdu= (education, experience ) => async (dispa
     dispatch(addNewExpAndEduAstrologerSuccess(data));
     toast.success(data.message);
   } catch (error) {
-    dispatch(addNewExpAndEduAstrologerFail(error));
+    dispatch(addNewExpAndEduAstrologerFail(error.message));
     toast.error(error.response.data.message);
   }
 };
@@ -225,7 +225,7 @@ export const AstrologerDeleteExp= (expId) => async (dispatch) => {
     dispatch(DeleteAstrologerExpSuccess(data));
     toast.success(data.message);
   } catch (error) {
-    dispatch(DeleteAstrologerExpFail(error));
+    dispatch(DeleteAstrologerExpFail(error.message));
     toast.error(error.response.data.message);
   }
 };
@@ -248,8 +248,7 @@ export const AstrologerDeleteEdu= (eduId) => async (dispatch) => {
     dispatch(DeleteAstrologerEduSuccess(data));
     toast.success(data.message);
   } catch (error) {
-    dispatch(DeleteAstrologerEduFail(error));
-    console.log(error)
+    dispatch(DeleteAstrologerEduFail(error.message));
     toast.error(error.response.data.message);
   }
 };
@@ -271,7 +270,7 @@ export const AdminLoadAllAstrologer = () => async (dispatch) => {
     // toast.success(data.message);
 
   } catch (error) {
-    dispatch(AdminLoadAstrologerFail(error));
+    dispatch(AdminLoadAstrologerFail(error.message));
     // toast.error(error.response.data.message);
 
   }
@@ -292,7 +291,7 @@ export const LoadSingleAstrologerDetails = (id) => async (dispatch) => {
     // toast.success(data.message);
 
   } catch (error) {
-    dispatch(LoadSingleAstrologerFail(error));
+    dispatch(LoadSingleAstrologerFail(error.message));
     toast.error(error.response.data.message);
 
   }
@@ -316,7 +315,7 @@ export const UserCreateAstrologerReview = (rating, comment,astrologerId ) => asy
     dispatch(CreateAstrologerReviewSuccess(data));
     toast.success(data.message);
   } catch (error) {
-    dispatch(CreateAstrologerReviewFail(error));
+    dispatch(CreateAstrologerReviewFail(error.message));
     toast.error(error.message);
   }
 };
@@ -340,7 +339,7 @@ export const AdminDeleteAstrologerReview = (reviewId, astrologerId) => async (di
     dispatch(AdminDeleteAstrologerReviewSuccess(data));
     toast.success(data.message);
   } catch (error) {
-    dispatch(AdminDeleteAstrologerReviewFail(error));
+    dispatch(AdminDeleteAstrologerReviewFail(error.message));
     console.log(error);
     // toast.error(error.message);
   }
@@ -363,7 +362,7 @@ export const AdminDeleteAstrologer = (astrologerId) => async (dispatch) => {
     toast.success(data.message);
 
   } catch (error) {
-    dispatch(AdminDeleteAstrologerFail(error));
+    dispatch(AdminDeleteAstrologerFail(error.message));
     toast.error(error.response.data.message);
 
   }

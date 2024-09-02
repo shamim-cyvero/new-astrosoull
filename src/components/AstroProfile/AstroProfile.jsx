@@ -21,11 +21,11 @@ import { LoadSingleAstrologerDetails } from '../../redux/action/AstrologerAction
 import { useNavigate } from 'react-router-dom';
 
 const AstroProfile = () => {
-    const {  isAstrologerAuthenticated ,allastrologer } = useSelector(
+    const { isAstrologerAuthenticated, allastrologer } = useSelector(
         state => state.astrologerContainer
-      );
-    const dispatch=useDispatch()
-    const navigate=useNavigate()
+    );
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
 
 
 
@@ -171,11 +171,11 @@ const AstroProfile = () => {
         },
     ]
 
-    const ShowSingleAstrologerDetails=async (astrologerId)=>{
-        await dispatch(LoadSingleAstrologerDetails(astrologerId))  
-        navigate('/user/astrologers/profile')  
+    const ShowSingleAstrologerDetails = async (astrologerId) => {
+        await dispatch(LoadSingleAstrologerDetails(astrologerId))
+        navigate('/user/astrologers/profile')
         // navigate('/admin/course/single/course') 
-     } 
+    }
 
     return (
         <>
@@ -183,43 +183,43 @@ const AstroProfile = () => {
                 <Stack w={'100%'} alignItems={'center'} justifyContent={'space-between'} direction={{ base: 'column', md: 'row' }} spacing={2}>
                     <HStack w={'100%'} alignItems={'center'} justifyContent={'space-between'} direction={{ base: 'column', md: 'row' }} flexWrap={'wrap'} spacing={2}>
                         <VStack alignItems={'flex-start'}>
-                            <Heading children={'Astrologers'} color={'#1f3b64'} fontSize={{ base: '1.8rem', md: '1.7rem', lg: '1.5rem' }} />
-                            <HStack>
-                                <Text children={'#Discover your path with top astrologers -'} fontSize={{ base: '1.1rem', md: '1rem', lg: '.9rem' }} fontWeight={'350'} />
-                                <span style={{ fontSize: "1rem", fontWeight: "600" }}> Book an astrology consultation</span>
-                            </HStack>
+                            <Heading children={'Astrologers'} color={'#1f3b64'} fontSize={['2.1rem', '2rem', '1.9rem', '1.8rem']} />
+                            <Stack w={'100%'} direction={{ base: 'column', md: 'row' }}>
+                                <Text children={'#Discover your path with top astrologers -'} fontSize={['1.3rem', '1.2rem', '1.1rem', '1rem']} fontWeight={'350'} />
+                                <Text style={{ fontSize: "1rem", fontWeight: "600" }}> Book an astrology consultation</Text>
+                            </Stack>
 
                         </VStack>
-                        <Button onClick={()=>navigate('/consult')} colorScheme='black' variant='outline' size={{ base: 'sm', md: 'md' }}>View All</Button>
+                        <Button onClick={() => navigate('/consult')} colorScheme='black' variant='outline' size={{ base: 'sm', md: 'md' }}>View All</Button>
                     </HStack>
                 </Stack>
 
                 <Slider {...settings}>
-{
-  allastrologer && allastrologer.map((item) => (
-      <Box cursor={'pointer'} onClick={()=>ShowSingleAstrologerDetails(item._id)}  key={item._id} w={'300px'} m={'20px auto'} p={'10px'} mt={'20px'} borderRadius={'10px'} >
-          <VStack w={'98%'} h={'250px'} alignItems={'center'} justifyContent={'center'} spacing={2} p={'6px 0px'} boxShadow='lg' rounded='md' bg='white'>
-              <Avatar name={item.name} src={item.avatar?.url} size={'lg'} />
-              <Heading children={item.name} color={'#1f3b64'} fontSize={'1.1rem'} mb={'10px'} textAlign={'center'} />
-              <Text children={'Vedic, Numerology Exp: 3+ Year'} fontSize={'.9rem'} color={'grey'} fontWeight={'400'}textAlign={'center'}  />
-              <HStack spacing={2} textAlign={'center'}>
-                  {/* <Text children={item.rating} /> */}
-                  <Rating
-                      emptySymbol={<FaStar color='gray' />}
-                      fullSymbol={<FaStar color='tomato' />}
-                      initialRating={item.rating}
-                      readonly
-                    />
-                  <Button colorScheme='whatsapp' variant='solid' size={'xs'} fontSize={'.8rem'}>
-                      {item.rating}
-                  </Button>
-                  {/* <Text children={'₹50 / Min'} /> */}
-              </HStack>
-              <Button colorScheme='whatsapp' size={'sm'}>{'Book a Consultation'}</Button>
-          </VStack>
-      </Box>
-  ))
-}
+                    {
+                        allastrologer && allastrologer.map((item) => (
+                            <Box cursor={'pointer'} onClick={() => ShowSingleAstrologerDetails(item._id)} key={item._id} w={'300px'} m={'20px auto'} p={'10px'} mt={'20px'} borderRadius={'10px'} >
+                                <VStack w={'98%'} h={'250px'} alignItems={'center'} justifyContent={'center'} spacing={2} p={'6px 0px'} boxShadow='lg' rounded='md' bg='white'>
+                                    <Avatar name={item.name} src={item.avatar?.url} size={'lg'} />
+                                    <Heading children={item.name} color={'#1f3b64'} fontSize={'1.4rem'} textTransform={'capitalize'}mb={'10px'} textAlign={'center'} />
+                                    <Text children={'Vedic, Numerology Exp: 3+ Year'} fontSize={'1rem'} color={'grey'} fontWeight={'400'} textAlign={'center'} />
+                                    <HStack spacing={2} textAlign={'center'}>
+                                        {/* <Text children={item.rating} /> */}
+                                        <Rating
+                                            emptySymbol={<FaStar color='gray' />}
+                                            fullSymbol={<FaStar color='tomato' />}
+                                            initialRating={item.rating}
+                                            readonly
+                                        />
+                                        <Button colorScheme='whatsapp' variant='solid' size={'xs'} fontSize={'.8rem'}>
+                                            {item.rating}
+                                        </Button>
+                                        {/* <Text children={'₹50 / Min'} /> */}
+                                    </HStack>
+                                    <Button colorScheme='whatsapp' size={'sm'}>{'Book a Consultation'}</Button>
+                                </VStack>
+                            </Box>
+                        ))
+                    }
 
                 </Slider >
             </Box >

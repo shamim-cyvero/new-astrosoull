@@ -1,6 +1,6 @@
 import { lazy, Suspense, useEffect, useState } from "react";
 import "./App.css";
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation, useNavigate, Navigate } from "react-router-dom";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 const Home = lazy(() => import('./pages/Home/Home'));
@@ -128,6 +128,7 @@ function App() {
     state => state.astrologerContainer
   );
 
+  // const navigate=useNavigate()
 
 	const dispatch=useDispatch()
 
@@ -162,10 +163,12 @@ function App() {
           <Route path={"login"} element={<Login />} />
           <Route path={"signup"} element={<SignUp />} />
           <Route path={"userprofile"} element={<UserProfile />} />
+          {/* <Route path={"userprofile"} element={isAuthenticated?<UserProfile />:<Navigate to={'/login'} />} /> */}
 
           <Route path={"astrologerlogin"} element={<AstrologerLogin />} />
           <Route path={"astrologersignup"} element={<AstrologerSignup />} />
           <Route path={"astrologerprofile"} element={<AstrologerProfile />} />
+          {/* <Route path={"astrologerprofile"} element={isAstrologerAuthenticated?<AstrologerProfile />:<Navigate to={'/astrologerlogin'} /> } /> */}
 
           <Route path='/paymentsuccess' element={<PaymentSuccess />} />
 

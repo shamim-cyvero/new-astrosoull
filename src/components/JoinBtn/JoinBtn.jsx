@@ -21,7 +21,7 @@ const JoinBtn = () => {
 
   return (
     <>
-      <Stack w={'90%'} m={'auto'} direction={{ base: 'column', md: 'row' }} alignItems={'center'} justifyContent={'space-around'}>
+      <Stack w={'90%'} m={'auto'} mt={'50px'} direction={{ base: 'column', md: 'row' }} alignItems={'center'} justifyContent={'space-around'}>
         <Stack w={'100%'} bg={'#22c35e'} color={'white'} p={'20px 0'} rounded='xl' alignItems={'center'} justifyContent={'space-around'} direction={{ base: 'column', md: 'row' }}>
           <VStack w={['90%', '90%', '45%']} alignItems={'flex-start'}>
             <Heading children={"Join us today"} fontSize={'2.5rem'} />

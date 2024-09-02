@@ -1,5 +1,5 @@
 import React from 'react'
-import b from './Numerology.jpg'
+import b from './Numerology.png'
 import { Box, HStack, Image } from '@chakra-ui/react'
 import slide1 from '../../../assets/HindiCourseImg/slide1.jpg'
 import slide2 from '../../../assets/HindiCourseImg/slide2.jpg'
@@ -18,7 +18,7 @@ const { loading, courses } = useSelector((state) => state.courseContainer);
   return (
     <>
         <Box  w={"100%"}  >
-            <Image src={b} alt={'img'} w={'100%'}  objectFit={'contain'} />
+            <Image src={b} alt={'img'} w={'100%'}  objectFit={'cover'} />
         </Box>
         <HStack  justifyContent={'center'} alignItems={'center'} flexWrap={'wrap'}   >
         {

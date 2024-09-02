@@ -78,6 +78,11 @@ const Header = ({isAuthenticated}) => {
     await dispatch(GetAllCourseDetailsByCategory(key))
     navigate(`/${key}`)
    }
+    const closeMenuOnClick = (url) =>{
+      navigate(url)
+      onClose()
+      
+    }
 
   return (
     <>
@@ -88,7 +93,7 @@ const Header = ({isAuthenticated}) => {
     <>
 
       {/* nav one */}
-      <HStack boxShadow={'lg'} p={'2'} w={{base:'100%',md:'80%',lg:'80%'}} m={'0 auto'}  justifyContent={'space-between'} >
+      <HStack boxShadow={'lg'} p={'2'} w={{base:'100%',md:'95%',lg:'80%'}} m={'0 auto'}  justifyContent={'space-between'} >
         <HStack  w={{base:'60%',md:'40%',lg:'30%'}} justifyContent={'space-between'} >
             <HStack display={{base:'none',md:'none',lg:'flex'}} justifyContent={'space-between'}  >
               <Menu  w={'50%'}>
@@ -119,7 +124,7 @@ const Header = ({isAuthenticated}) => {
               fontSize={{base:'4.5vmax',md:'3.5vmax',lg:'1.5vmax'}}
             />
             <Box  display={{base:'block',md:'block',lg:'none'}} >
-                <Image w={{base:'70%',md:'30%',lg:'10%'}} src={logo} alt="logo" />
+                <Image w={{base:'70%',md:'60%',lg:'10%'}} src={logo} alt="logo" />
             </Box>
         </HStack>
 
@@ -176,8 +181,8 @@ const Header = ({isAuthenticated}) => {
       </HStack>
 
       {/* nav two */}
-      <Box boxShadow={'lg'} bgColor={'#edf8f4'} w={'100%'} pos={'sticky'} top={'0'} zIndex={'10'} p={'1vmax'} >  
-        <HStack display={{base:'none',md:'none',lg:'flex'}} bgColor={'#edf8f4'} p={'2'} w={'90%'} m={'0 auto'}  justifyContent={'space-between'} >
+      <Box display={{base:'none',md:'none',lg:'flex'}} boxShadow={'lg'} bgColor={'#edf8f4'} w={'100%'} pos={'sticky'} top={'0'} zIndex={'10'} p={'1vmax'} >  
+        <HStack  bgColor={'#edf8f4'} p={'2'} w={'90%'} m={'0 auto'}  justifyContent={'space-between'} >
         <Box   w={'20%'}  >
             <Image w={'100%'} src={logo} alt="logo" />
         </Box>
@@ -266,58 +271,58 @@ const Header = ({isAuthenticated}) => {
           <DrawerBody>
        
             <VStack w={'100%'} spacing={3} justifyContent={'space-evenly'} alignItems={'flex-start'}  >
-              <Text  w={'100%'} p={1} cursor={'pointer'} onClick={()=>closeMenuOnClick('/')} fontSize={'2.5vmax'} fontWeight={'600'}  children={'Home'} />
-              <Text  w={'100%'} p={1} cursor={'pointer'} onClick={()=>closeMenuOnClick('/consult')} fontSize={'2.5vmax'} fontWeight={'600'}  children={`Consult with Astrologer's`} />
+              <Text  w={'100%'} p={1} cursor={'pointer'} onClick={()=>closeMenuOnClick('/')} fontSize={'2vmax'} fontWeight={'600'}  children={'Home'} />
+              <Text  w={'100%'} p={1} cursor={'pointer'} onClick={()=>closeMenuOnClick('/consult')} fontSize={'2vmax'} fontWeight={'600'}  children={`Consult with Astrologer's`} />
          
 
               <Accordion  w={'100%'} allowToggle>
                 <AccordionItem>
                   <AccordionButton borderTop={'none'}  m={'1vmax 0'}   > 
                       <HStack justifyContent={'space-evenly'} alignItems={'center'} >
-                        <Text fontSize={'2.5vmax'} fontWeight={'500'}  children={'Select Course'} />                     
-                          <AccordionIcon fontSize={'3.5vmax'} />
+                        <Text fontSize={'2vmax'} fontWeight={'500'}  children={'Select Course'} />                     
+                          <AccordionIcon fontSize={'3vmax'} />
                       </HStack>
                   </AccordionButton>
 
                   <AccordionPanel >
                     <VStack w={'100%'}  alignItems={'flex-start'} >
-                      <HStack onClick={()=>navigate('/astrology')}  justifyContent={'space-evenly'} alignItems={'center'} >
+                      <HStack onClick={()=>closeMenuOnClick('/astrology')}  justifyContent={'space-evenly'} alignItems={'center'} >
                         <Box  >
-                            <Image w={'50%'} src={c1} alt="c1" />
+                            <Image w={'35%'} src={c1} alt="c1" />
                         </Box>
-                        <Text  children={'Astrology'} />
+                        <Text  children={'Astrology'} fontSize={'1rem'} />
                       </HStack>
-                      <HStack onClick={()=>navigate('/ayurveda')}  justifyContent={'space-evenly'} alignItems={'center'}>
+                      <HStack onClick={()=>closeMenuOnClick('/ayurveda')}  justifyContent={'space-evenly'} alignItems={'center'}>
                         <Box >
-                            <Image w={'50%'} src={c2} alt="c2" />
+                            <Image w={'35%'} src={c2} alt="c2" />
                         </Box>
-                        <Text children={'Ayurveda'} />
+                        <Text children={'Ayurveda'} fontSize={'1rem'} />
                       </HStack>
-                      <HStack onClick={()=>navigate('/numerology')}  justifyContent={'space-evenly'} alignItems={'center'}>
+                      <HStack onClick={()=>closeMenuOnClick('/numerology')}  justifyContent={'space-evenly'} alignItems={'center'}>
                         <Box >
-                            <Image w={'50%'} src={c3} alt="c3" />
+                            <Image w={'35%'} src={c3} alt="c3" />
                         </Box>
-                        <Text children={'Numerology'} />
+                        <Text children={'Numerology'} fontSize={'1rem'} />
                       </HStack>
-                      <HStack onClick={()=>navigate('/palmistry')}  justifyContent={'space-evenly'} alignItems={'center'}>
+                      <HStack onClick={()=>closeMenuOnClick('/palmistry')}  justifyContent={'space-evenly'} alignItems={'center'}>
                         <Box >
-                            <Image w={'50%'} src={c4} alt="c4" />
+                            <Image w={'35%'} src={c4} alt="c4" />
                         </Box>
-                        <Text children={'Palmistry'} />
+                        <Text children={'Palmistry'} fontSize={'1rem'} />
                       </HStack>
-                      <HStack onClick={()=>navigate('/vastu')}  justifyContent={'space-evenly'} alignItems={'center'}>
+                      <HStack onClick={()=>closeMenuOnClick('/vastu')}  justifyContent={'space-evenly'} alignItems={'center'}>
                         <Box >
-                            <Image w={'50%'} src={c5} alt="c5" />
+                            <Image w={'35%'} src={c5} alt="c5" />
                         </Box>
-                        <Text children={'Vastu'} />
+                        <Text children={'Vastu'} fontSize={'1rem'} />
                       </HStack>
                     </VStack>
                   </AccordionPanel>
                 </AccordionItem>
               </Accordion>
 
-              <Text  w={'100%'} p={1} cursor={'pointer'} onClick={()=>closeMenuOnClick('/blog')} fontSize={'2.5vmax'} fontWeight={'600'}  children={'Blog'} />
-              <Text  w={'100%'} p={1} cursor={'pointer'} onClick={()=>closeMenuOnClick('/contactus')} fontSize={'2.5vmax'} fontWeight={'600'}  children={'Contact Us'} />
+              <Text  w={'100%'} p={1} cursor={'pointer'} onClick={()=>closeMenuOnClick('/blog')} fontSize={'2vmax'} fontWeight={'600'}  children={'Blog'} />
+              <Text  w={'100%'} p={1} cursor={'pointer'} onClick={()=>closeMenuOnClick('/contactus')} fontSize={'2vmax'} fontWeight={'600'}  children={'Contact Us'} />
             </VStack>
             
           </DrawerBody>
@@ -329,18 +334,18 @@ const Header = ({isAuthenticated}) => {
                 {
                   isAuthenticated ? (
                     <>
-                      <Button onClick={() => navigate('/userprofile')} display={{ base: 'none', md: 'none', lg: 'block' }} textDecorationStyle={'none'} color={'black'} textDecorationLine={'none'} variant={"link"} children={"Profile"} />
-                      <Button onClick={() => LogoutHandler()} display={{ base: 'none', md: 'none', lg: 'block' }} textDecorationStyle={'none'} color={'black'} textDecorationLine={'none'} variant={"link"} children={"Logout"} />
+                      <Button onClick={() => closeMenuOnClick('/userprofile')}  textDecorationStyle={'none'} color={'white'} textDecorationLine={'none'} colorScheme="whatsapp"children={"Profile"} />
+                      <Button onClick={() => LogoutHandler()}  textDecorationStyle={'none'}  textDecorationLine={'none'}  colorScheme='orange' variant={'outline'} children={"Logout"} />
                     </>
                   ) : isAstrologerAuthenticated ? (
                     <>
-                      <Button onClick={() => navigate('/astrologerprofile')} display={{ base: 'none', md: 'none', lg: 'block' }} textDecorationStyle={'none'} color={'black'} textDecorationLine={'none'} variant={"link"} children={"Profile"} />
-                      <Button onClick={() => LogoutAstrologerHandler()} display={{ base: 'none', md: 'none', lg: 'block' }} textDecorationStyle={'none'} color={'black'} textDecorationLine={'none'} variant={"link"} children={"Logout"} />
+                      <Button onClick={() => closeMenuOnClick('/astrologerprofile')}  textDecorationStyle={'white'} color={'white'} textDecorationLine={'none'} colorScheme="whatsapp" children={"Profile"} />
+                      <Button onClick={() => LogoutAstrologerHandler()}  textDecorationStyle={'white'}  textDecorationLine={'none'}  colorScheme='whatsapp' variant={'outline'} children={"Logout"} />
                     </>
                   ) : (
                     <>
-                      <Button onClick={() => navigate('/login')} display={{ base: 'none', md: 'none', lg: 'block' }} textDecorationStyle={'none'} color={'black'} textDecorationLine={'none'} variant={"link"} children={"Login"} />
-                      <Button onClick={() => navigate('/signup')} display={{ base: 'none', md: 'none', lg: 'block' }} textDecorationStyle={'none'} color={'black'} textDecorationLine={'none'} variant={"link"} children={"Register"} />
+                      <Button onClick={()=>closeMenuOnClick('/login')}  textDecorationStyle={'none'} color={'white'} textDecorationLine={'none'} colorScheme="whatsapp" children={"Login"} />
+                      <Button onClick={()=>closeMenuOnClick('/signup')} textDecorationStyle={'none'}  textDecorationLine={'none'} colorScheme='whatsapp' variant={'outline'} children={"Register"} />
                     </>
                   )
                 }
@@ -353,18 +358,18 @@ const Header = ({isAuthenticated}) => {
 };
 
 
-const renderButtons = (isAuthenticated) => {
-  return isAuthenticated ? (
-    <>
-      <Button onClick={() => navigate('/userprofile')} display={{ base: 'none', md: 'none', lg: 'block' }} textDecorationStyle={'none'} color={'black'} textDecorationLine={'none'} variant={"link"} children={"Profile"} />
-      <Button onClick={() => LogoutHandler()} display={{ base: 'none', md: 'none', lg: 'block' }} textDecorationStyle={'none'} color={'black'} textDecorationLine={'none'} variant={"link"} children={"Logout"} />
-    </>
-  ) : (
-    <>
-      <Button onClick={() => navigate('/login')} display={{ base: 'none', md: 'none', lg: 'block' }} textDecorationStyle={'none'} color={'black'} textDecorationLine={'none'} variant={"link"} children={"Login"} />
-      <Button onClick={() => navigate('/signup')} display={{ base: 'none', md: 'none', lg: 'block' }} textDecorationStyle={'none'} color={'black'} textDecorationLine={'none'} variant={"link"} children={"Register"} />
-    </>
-  );
-}
+// const renderButtons = (isAuthenticated) => {
+//   return isAuthenticated ? (
+//     <>
+//       <Button onClick={() => navigate('/userprofile')} display={{ base: 'none', md: 'none', lg: 'block' }} textDecorationStyle={'none'} color={'black'} textDecorationLine={'none'} variant={"link"} children={"Profile"} />
+//       <Button onClick={() => LogoutHandler()} display={{ base: 'none', md: 'none', lg: 'block' }} textDecorationStyle={'none'} color={'black'} textDecorationLine={'none'} variant={"link"} children={"Logout"} />
+//     </>
+//   ) : (
+//     <>
+//       <Button onClick={() => navigate('/login')} display={{ base: 'none', md: 'none', lg: 'block' }} textDecorationStyle={'none'} color={'black'} textDecorationLine={'none'} variant={"link"} children={"Login"} />
+//       <Button onClick={() => navigate('/signup')} display={{ base: 'none', md: 'none', lg: 'block' }} textDecorationStyle={'none'} color={'black'} textDecorationLine={'none'} variant={"link"} children={"Register"} />
+//     </>
+//   );
+// }
 
 export default Header;

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import pic from '../../../assets/signUpImg.png'
+import pic from '../../../assets/signup-img.png'
 import { Box, Button, Checkbox, FormControl, FormLabel, Heading, HStack, Image, Input, Select, Stack, Text, VStack } from '@chakra-ui/react'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
@@ -29,23 +29,23 @@ const SignUp = () => {
             <Stack w={'90%'} m={'40px auto'} alignItems={'center'} justifyContent={'center'} direction={{ base: 'column', md: 'column', lg: 'row' }}>
                 <Stack w={'100%'} alignItems={'center'} justifyContent={'center'} direction={{ base: 'column', md: 'column', lg: 'row' }}>
                     <Box w={{ base: '100%', md: '100%', lg: '50%' }} >
-                        <Image src={pic} alt='pic' w={'100%'} />
+                        <Image src={pic} alt='pic' w={'90%'} />
                     </Box>
 
-                    <VStack w={{ base: '100%', md: '100%', lg: '50%' }} spacing={3}>
+                    <VStack w={{ base: '100%', md: '100%', lg: '50%' }} spacing={5}>
                         <Heading children={'SignUp'} fontSize={'2rem'} />
 
                         <form style={{ width: '90%' }} onSubmit={formSubmit} >
                             <FormControl id="name" >
-                                <FormLabel children={'Full Name:'} fontSize={['1.2rem','1.1rem','.9rem']} fontWeight={'400'} />
+                                <FormLabel children={'Full Name:'} fontSize={['1.4rem','1.3rem','1.2rem','1rem']} fontWeight={'500'} />
                                 <Input type="text" required onChange={(e) => setName(e.target.value)} />
                             </FormControl>
 
-                            <HStack w={'100%'} mt={'5px'}>
+                            <HStack w={'100%'} mt={'10px'}>
                                 <Box w={'50%'}>
                                     <FormControl id="country"  >
-                                        <FormLabel fontSize={['1.2rem','1.1rem','.9rem']} fontWeight={'400'}>Country:</FormLabel>
-                                        <Select fontSize={['1.2rem','1.1rem','.9rem']} fontWeight={'400'}>
+                                        <FormLabel fontSize={['1.4rem','1.3rem','1.2rem','1rem']} fontWeight={'500'}>Country:</FormLabel>
+                                        <Select fontSize={['1.4rem','1.3rem','1.2rem','1rem']} fontWeight={'500'}>
                                             <option value='option1'>India (+91)</option>
                                             {/* <option value='option2'>USA</option> */}
                                         </Select>
@@ -53,36 +53,36 @@ const SignUp = () => {
                                 </Box>
                                 <Box w={'50%'}>
                                     <FormControl id="phone" >
-                                        <FormLabel fontSize={['1.2rem','1.1rem','.9rem']} fontWeight={'400'}>Phone:</FormLabel>
-                                        <Input type="number" fontSize={['1.2rem','1.1rem','.9rem']} fontWeight={'400'} required onChange={(e) => setPhone(e.target.value)}/>
+                                        <FormLabel fontSize={['1.4rem','1.3rem','1.2rem','1rem']} fontWeight={'500'}>Phone:</FormLabel>
+                                        <Input type="number" fontSize={['1.4rem','1.3rem','1.2rem','1rem']} fontWeight={'500'} required onChange={(e) => setPhone(e.target.value)}/>
                                     </FormControl>
                                 </Box>
                             </HStack>
 
-                            <FormControl id="email" mt={'5px'}>
-                                <FormLabel children={'Email:'} fontSize={['1.2rem','1.1rem','.9rem']} fontWeight={'400'} />
-                                <Input type="email" fontSize={['1.2rem','1.1rem','.9rem']} fontWeight={'400'} required onChange={(e) => setEmail(e.target.value)} />
+                            <FormControl id="email" mt={'10px'}>
+                                <FormLabel children={'Email:'} fontSize={['1.4rem','1.3rem','1.2rem','1rem']} fontWeight={'500'} />
+                                <Input type="email" fontSize={['1.4rem','1.3rem','1.2rem','1rem']} fontWeight={'500'} required onChange={(e) => setEmail(e.target.value)} />
                             </FormControl>
 
-                            <FormControl id="password" mt={'5px'}>
-                                <FormLabel children={'Password:'} fontSize={['1.2rem','1.1rem','.9rem']} fontWeight={'400'} />
-                                <Input type="password" fontSize={['1.2rem','1.1rem','.9rem']} fontWeight={'400'} required onChange={(e) => setPassword(e.target.value)}/>
+                            <FormControl id="password" mt={'10px'}>
+                                <FormLabel children={'Password:'} fontSize={['1.4rem','1.3rem','1.2rem','1rem']} fontWeight={'500'} />
+                                <Input type="password" fontSize={['1.4rem','1.3rem','1.2rem','1rem']} fontWeight={'500'} required onChange={(e) => setPassword(e.target.value)}/>
                             </FormControl>
 
                             {/* <FormControl id="retype " mt={'5px'}>
-                                <FormLabel children={'Retype Password:'} fontSize={['1.2rem','1.1rem','.9rem']} fontWeight={'400'} />
-                                <Input type="password" fontSize={['1.2rem','1.1rem','.9rem']} fontWeight={'400'} required onChange={(e) => setConfirmPassword(e.target.value)}/>
+                                <FormLabel children={'Retype Password:'} fontSize={['1.4rem','1.3rem','1.2rem','1rem']} fontWeight={'500'} />
+                                <Input type="password" fontSize={['1.4rem','1.3rem','1.2rem','1rem']} fontWeight={'500'} required onChange={(e) => setConfirmPassword(e.target.value)}/>
                             </FormControl> */}
 
-                            <Checkbox defaultChecked mt={'5px'}  size={{base:'md',md:'sm'}} fontSize={['1.2rem','1.1rem','.9rem']}>I agree with <span style={{ fontWeight: "700", color: "#1f3b64" }}>terms & conditions</span></Checkbox>
+                            <Checkbox defaultChecked mt={'10px'}  size={{base:'md',md:'sm'}} fontSize={['1.4rem','1.3rem','1.2rem','1.1rem']}>I agree with <span style={{ fontWeight: "700", color: "#1f3b64" }}>terms & conditions</span></Checkbox>
 
                             <VStack w={'100%'}>
-                                <Button colorScheme='whatsapp' type='submit' size={{base:'md',md:'sm'}} w={'100%'} mt={'20px'} p={'22px 0px'}>SignUp</Button>
+                                <Button colorScheme='whatsapp' type='submit' size={'md'} w={'100%'} mt={'20px'} p={'22px 0px'} fontSize={'1.2rem'}>SignUp</Button>
                             </VStack>
 
-                            <Text textAlign={'center'} mt={'15px'} fontWeight={'400'} fontSize={['1.2rem','1.1rem','.9rem']}>Already have an account? <NavLink to={'/login'} color={'green'} fontWeight={'900'} fontSize={['1.2rem','1.1rem','.9rem']}>Login</NavLink></Text>
+                            <Text textAlign={'center'} mt={'15px'} fontWeight={'500'} fontSize={['1.4rem','1.3rem','1.2rem','1rem']}>Already have an account? <NavLink to={'/login'} color={'green'} fontWeight={'900'} fontSize={['1.4rem','1.3rem','1.2rem','1rem']}>Login</NavLink></Text>
                             <HStack m={'1vmax 0'} w={'100%'} justifyContent={'center'} alignItems={'center'}>
-                                <Button onClick={()=>navigate('/astrologersignup')} alignSelf={'center'} children={'Astrologer SignUp'} colorScheme={'blue'}  />
+                                <Button onClick={()=>navigate('/astrologersignup')} alignSelf={'center'} children={'Astrologer SignUp'} _hover={{ bg: "#1f3b64", cursor: "pointer",color:'white' }} />
                             </HStack>
                         </form>
                     </VStack>

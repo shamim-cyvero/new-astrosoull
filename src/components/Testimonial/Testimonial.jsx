@@ -86,8 +86,8 @@ const Testimonial = () => {
             <Box style={{ width: "90%", margin: "auto", marginTop: "40px", marginBottom: "50px" }} >
 
                 <VStack>
-                    <Heading children={'Testimonials'} color={'#1f3b64'} fontSize={{ base: '1.8rem', md: '1.7rem', lg: '1.5rem' }} />
-                    <Text children={'#What our customers say about us'} fontSize={{ base: '1.1rem', md: '1rem', lg: '.9rem' }} fontWeight={'350'} />
+                    <Heading children={'Testimonials'} color={'#1f3b64'} fontSize={['2.1rem','2rem','1.9rem','1.8rem']} />
+                    <Text children={'#What our customers say about us'} fontSize={['1.3rem',  '1.2rem', '1.1rem','1rem' ]} fontWeight={'350'} />
                 </VStack>
 
                 <Slider {...settings}>
@@ -97,10 +97,10 @@ const Testimonial = () => {
                                 <Box  w={'97%'} h={'300px'}  alignItems={'center'} justifyContent={'center'} boxShadow='lg' p='4' rounded='md' bg='white' borderBottom={'8px solid #32ba7c'}>
                                     <VStack w={'100%'} textAlign={'center'}>
                                         <Avatar name='Dan Abrahmov' src={item.img} size={'lg'}/>
-                                        <Heading children={item.userName} fontSize={'1rem'} fontWeight={'700'} color={'#1f3b64 '}/>
+                                        <Heading children={item.userName} fontSize={'1.3rem'} fontWeight={'700'} color={'#1f3b64 '}/>
                                         <Text children={item.profession} fontSize={'.9rem'} fontWeight={'400'} />
                                         <Text children={item.rating}fontSize={'.9rem'} />
-                                        <Text  children={item.des} className='scrollBar' fontSize={'.8rem'} color={'grey'} mt={'5px'} w={'100%'} textOverflow={'ellipsis'} overflowY={'auto'} whiteSpace={'normal'} h={'100px'}/>
+                                        <Text  children={item.des} className='scrollBar' fontSize={'.9rem'} color={'grey'} mt={'5px'} w={'100%'} textOverflow={'ellipsis'} overflowY={'auto'} whiteSpace={'normal'} h={'100px'}/>
                                     </VStack>
                                 </Box>
                             </HStack>

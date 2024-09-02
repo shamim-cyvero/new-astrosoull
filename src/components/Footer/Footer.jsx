@@ -76,7 +76,7 @@ const Footer = () => {
           >
             <Image src={logo} alt="logo" w={["70%", "210px"]} />
             <Text
-              fontSize={["1.3rem", "1rem", ".9rem"]}
+              fontSize={["1.3rem", "1.2rem", "1rem"]}
               mt={"20px"}
               children={`Welcome to astrosoull,
                 recognized among india's top 3 astrology institutes,offering courses in astrology,numerlogy,plamistry,vastu & ayurveda
@@ -121,19 +121,19 @@ const Footer = () => {
               fontSize={["1.8rem", "1.6rem", "1.5rem"]}
             />
             <UnorderedList mt={"20px"}>
-              <ListItem cursor={'pointer'}  fontSize={["1.3rem", "1rem", ".9rem"]}>
+              <ListItem cursor={'pointer'}  fontSize={["1.3rem", "1.2rem", "1rem"]}>
                 Career & Placement
               </ListItem>
-              <ListItem cursor={'pointer'}  fontSize={["1.3rem", "1rem", ".9rem"]}>
+              <ListItem cursor={'pointer'}  fontSize={["1.3rem", "1.2rem", "1rem"]}>
                 Kundli Reports
               </ListItem>
-              <ListItem cursor={'pointer'} onClick={()=>navigate('/consult')} fontSize={["1.3rem", "1rem", ".9rem"]}>
+              <ListItem cursor={'pointer'} onClick={()=>navigate('/consult')} fontSize={["1.3rem", "1.2rem", "1rem"]}>
                 Astrologers
               </ListItem>
-              <ListItem cursor={'pointer'} onClick={()=>navigate('/all/courses')} fontSize={["1.3rem", "1rem", ".9rem"]}>
+              <ListItem cursor={'pointer'} onClick={()=>navigate('/all/courses')} fontSize={["1.3rem", "1.2rem", "1rem"]}>
                 Courses 
               </ListItem>
-              <ListItem cursor={'pointer'} onClick={()=>navigate('/blog')} fontSize={["1.3rem", "1rem", ".9rem"]}>Blog</ListItem>
+              <ListItem cursor={'pointer'} onClick={()=>navigate('/blog')} fontSize={["1.3rem", "1.2rem", "1rem"]}>Blog</ListItem>
             </UnorderedList>
           </VStack>
 
@@ -150,7 +150,7 @@ const Footer = () => {
               <Image src={call} alt="call" w={"20px"} />
               <Text
                 children={"9910444896"}
-                fontSize={["1.3rem", "1rem", ".9rem"]}
+                fontSize={["1.3rem", "1.2rem", "1rem"]}
               />
             </HStack>
 
@@ -158,14 +158,14 @@ const Footer = () => {
               <Image src={mail} alt="mail" w={"20px"} />
               <Text
                 children={"soullastro@gmail.com"}
-                fontSize={["1.3rem", "1rem", ".9rem"]}
+                fontSize={["1.3rem", "1.2rem", "1rem"]}
               />
             </HStack>
 
             <HStack>
               <Image src={locationimg} alt="location" w={"20px"} />
               <Text
-                fontSize={["1.3rem", "1rem", ".9rem"]}
+                fontSize={["1.3rem", "1.2rem", "1rem"]}
                 children={
                   "35, 1st floor Bharat Nagar Ashok Vihar Ph. 4 Delhi – 110052"     }
               />
@@ -182,7 +182,7 @@ const Footer = () => {
               fontSize={["1.8rem", "1.6rem", "1.5rem"]}
             />
             <Text
-              fontSize={["1.3rem", "1rem", ".9rem"]}
+              fontSize={["1.3rem", "1.2rem", "1rem"]}
               mt={"20px"}
               children={
                 "Join a global astrology network with 100K diverse memebers."
@@ -195,7 +195,7 @@ const Footer = () => {
 
         <Box w={"90%"}>
           <Text borderTop={"1px solid #718096"} />
-          <Text
+          <Text p={'20px 0px'}
             fontSize={["1.2rem", "1rem"]}
             fontWeight={"600"}
             children="© All copyrights reserved 2023 astrosoull.com | Privacy Policy | Terms & Conditions | Cancellation & Refund Policy"

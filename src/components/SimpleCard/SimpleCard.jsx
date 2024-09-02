@@ -36,7 +36,7 @@ const SimpleCard = ({ cousreCardData }) => {
       >
         {cousreCardData &&
           cousreCardData.map((item, i) => (
-            <Box
+            <Box  mt={'40px'}
               key={i}
               w={{ base: "700px", md: "350px" }}
               h={{ base: "200px", md: "200px" }}

@@ -1,5 +1,5 @@
 import { Avatar, Box, Button, Card, CardBody, Grid, HStack, Heading, Image, Input, InputGroup, InputLeftElement, Progress, Stack, Table, TableCaption, TableContainer, Tbody, Td, Text, Tfoot, Th, Thead, Tr, VStack } from "@chakra-ui/react";
-import React from "react";
+import React, { useEffect } from "react";
 import SideBar from "../AdminSideBar/AdminSideBar";
 import Header from "../AdminHeader/AdminHeader";
 import { IoIosTrendingUp } from "react-icons/io";
@@ -20,6 +20,7 @@ import { BarChart, DoughnutChart } from "../Charts/Chart";
 import { BiMaleFemale } from "react-icons/bi";
 import { useSelector } from "react-redux";
 import { GrTransaction } from "react-icons/gr";
+import { AdminLoadAllPayment } from "../../../redux/action/PaymentActions";
 // import DashboardTableTransaction from "../DashboardTable/DashboardTableTransaction";
 // import data from '../../../assets/data.json'
 
@@ -31,6 +32,7 @@ const Dashboard = () => {
   const {   isAuthenticated ,user,allUser} = useSelector(
 		state => state.userContainer
 	);
+  const {  totalEarnings } = useSelector( state => state.paymentContainer);
   
   const {  isAstrologerAuthenticated ,allastrologer } = useSelector(
     state => state.astrologerContainer
@@ -108,7 +110,9 @@ const {  courses } = useSelector((state) => state.courseContainer);
 // },
 
 // ]
-
+// useEffect(()=>{
+//   dispatch(AdminLoadAllPayment())
+// },[])
   return (
     <>
       <Header />
@@ -148,10 +152,10 @@ const {  courses } = useSelector((state) => state.courseContainer);
             <Card boxShadow={'lg'} maxW='400px' w={'100%'} bg={'#bf2938'} >
               <CardBody w={'100%'}>
                 <HStack w={'100%'} alignItems={'center'} justifyContent={'space-between'}>
-                  <Heading children={'Total Amount'} fontSize={'1.5rem'} color={'white'} opacity={'.5'} textTransform={'capitalize'} />
+                  <Heading children={'Total Money'} fontSize={'1.5rem'} color={'white'} opacity={'.5'} textTransform={'capitalize'} />
                   <GrTransaction fontSize={'3rem'} color={'white'} opacity={'.3'} />
                 </HStack>
-                <Text children={courses?courses.length:'250'} fontSize={'2rem'} fontWeight={'700'} color={'white'} />
+                <Text children={totalEarnings?totalEarnings:'000'} fontSize={'2rem'} fontWeight={'700'} color={'white'} />
               </CardBody>
             </Card>
 
@@ -226,8 +230,8 @@ const {  courses } = useSelector((state) => state.courseContainer);
                         </Tr>
                     </Thead>
                     <Tbody>
-                        {courses && courses.slice(-10).reverse().map((item) => (
-                            <Tr>
+                        {courses && courses.slice(-10).reverse().map((item,i) => (
+                            <Tr key={i} >
                                 <Td>{item?.name}</Td>
                                 <Td>{item?.category}</Td>
                                 <Td>{item?.lectures.length}</Td>

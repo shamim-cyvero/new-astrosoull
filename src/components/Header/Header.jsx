@@ -67,16 +67,22 @@ const Header = ({isAuthenticated}) => {
     );
 
    const LogoutHandler=async()=>{
+     onClose()
+     navigate('/')
     await dispatch(LogoutUser())
-    navigate('/')
+
    }
    const LogoutAstrologerHandler=async ()=>{
+     onClose()
+     navigate('/')
     await dispatch(LogoutAstrologer())
-    navigate('/')
+
    }
    const GetCoureByCategoryHandler=async (key)=>{
-    await dispatch(GetAllCourseDetailsByCategory(key))
-    navigate(`/${key}`)
+     onClose()
+     await dispatch(GetAllCourseDetailsByCategory(key))
+     navigate(`/${key}`)
+
    }
     const closeMenuOnClick = (url) =>{
       navigate(url)
@@ -124,7 +130,7 @@ const Header = ({isAuthenticated}) => {
               fontSize={{base:'4.5vmax',md:'3.5vmax',lg:'1.5vmax'}}
             />
             <Box  display={{base:'block',md:'block',lg:'none'}} >
-                <Image w={{base:'70%',md:'60%',lg:'10%'}} src={logo} alt="logo" />
+                <Image cursor={'pointer'} onClick={()=>navigate('/')}  w={{base:'70%',md:'60%',lg:'10%'}} src={logo} alt="logo" />
             </Box>
         </HStack>
 
@@ -184,7 +190,7 @@ const Header = ({isAuthenticated}) => {
       <Box display={{base:'none',md:'none',lg:'flex'}} boxShadow={'lg'} bgColor={'#edf8f4'} w={'100%'} pos={'sticky'} top={'0'} zIndex={'10'} p={'1vmax'} >  
         <HStack  bgColor={'#edf8f4'} p={'2'} w={'90%'} m={'0 auto'}  justifyContent={'space-between'} >
         <Box   w={'20%'}  >
-            <Image w={'100%'} src={logo} alt="logo" />
+            <Image cursor={'pointer'} onClick={()=>navigate('/')}  w={'100%'} src={logo} alt="logo" />
         </Box>
         <HStack  justifyContent={'space-evenly'} alignItems={'center'}  w={{lg:'80%',xl:'60%'}}>
             <Text cursor={'pointer'} onClick={()=>navigate('/')} fontSize={'1.3vmax'} fontWeight={'600'}  children={'Home'} />

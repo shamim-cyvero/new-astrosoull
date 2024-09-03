@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import pic from '../../../assets/signup-img.png'
 import { Box, Button, Checkbox, FormControl, FormLabel, Heading, HStack, Image, Input, Select, Stack, Text, VStack } from '@chakra-ui/react'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { signup } from '../../../redux/action/UserActions'
 
 const SignUp = () => {
@@ -11,6 +11,8 @@ const SignUp = () => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [confirmPassword, setConfirmPassword] = useState("")
+  const {  loading } = useSelector(  state => state.userContainer);
+
 
   const navigate=useNavigate()
   const dispatch=useDispatch()
@@ -77,7 +79,7 @@ const SignUp = () => {
                             <Checkbox defaultChecked mt={'10px'}  size={{base:'md',md:'sm'}} fontSize={['1.4rem','1.3rem','1.2rem','1.1rem']}>I agree with <span style={{ fontWeight: "700", color: "#1f3b64" }}>terms & conditions</span></Checkbox>
 
                             <VStack w={'100%'}>
-                                <Button colorScheme='whatsapp' type='submit' size={'md'} w={'100%'} mt={'20px'} p={'22px 0px'} fontSize={'1.2rem'}>SignUp</Button>
+                                <Button isLoading={loading} colorScheme='whatsapp' type='submit' size={'md'} w={'100%'} mt={'20px'} p={'22px 0px'} fontSize={'1.2rem'}>SignUp</Button>
                             </VStack>
 
                             <Text textAlign={'center'} mt={'15px'} fontWeight={'500'} fontSize={['1.4rem','1.3rem','1.2rem','1rem']}>Already have an account? <NavLink to={'/login'} color={'green'} fontWeight={'900'} fontSize={['1.4rem','1.3rem','1.2rem','1rem']}>Login</NavLink></Text>

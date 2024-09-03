@@ -16,17 +16,19 @@ import logo from '../../../assets/logo-n.png'
 
 import './style.css'
 import { LogoutAstrologer } from '../../../redux/action/AstrologerActions';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 const AdminSideBar = () => {
   const location = useLocation()
   const { isOpen, onOpen, onClose } = useDisclosure()
   const navigate=useNavigate()
   const dispatch=useDispatch()
+  const {  loading } = useSelector(state => state.astrologerContainer	);
+
 
   const LogoutAstrologerHandler=async()=>{
-    await dispatch(LogoutAstrologer())
     navigate('/')
+    await dispatch(LogoutAstrologer())
    }
   return (
     <>
@@ -50,7 +52,7 @@ const AdminSideBar = () => {
           </VStack>
           {/* <div className="logoutWrapper"> 
             <div className="logoutBox"> */}
-              <Button onClick={() => LogoutAstrologerHandler()} w={'100%'} rightIcon={<IoLogOut />} children={'Logout'} color={'white'} colorScheme='blue' fontSize={'1.2rem'} mt={'8rem'} borderRadius={'none'} />
+              <Button isLoading={loading} onClick={() => LogoutAstrologerHandler()} w={'100%'} rightIcon={<IoLogOut />} children={'Logout'} color={'white'} colorScheme='blue' fontSize={'1.2rem'} mt={'8rem'} borderRadius={'none'} />
             {/*  c */}
         </Box>
 

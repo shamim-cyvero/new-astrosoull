@@ -3,7 +3,7 @@ import './AstrologerLogin.css'
 import { Box, Button, Checkbox, FormControl, FormLabel, Heading, HStack, Image, Input,Stack, Text, VStack } from '@chakra-ui/react'
 import {Link, useNavigate} from 'react-router-dom'
 import pic from '../../../assets/astrouser.png'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { LoginAstrologer } from '../../../redux/action/AstrologerActions'
 
 
@@ -13,6 +13,7 @@ const AstrologerLogin = () => {
   
     const navigate=useNavigate()
     const dispatch=useDispatch()
+    const {  loading } = useSelector(state => state.astrologerContainer	);
 
     const formSubmit =async (e) => {
         e.preventDefault()
@@ -42,7 +43,7 @@ const AstrologerLogin = () => {
                             </FormControl>
 
                             <VStack w={'100%'}>
-                                <Button colorScheme='whatsapp' type='submit' size={'md'} w={'100%'} mt={'20px'} p={'22px 0px'} fontSize={'1.2rem'}>Login</Button>
+                                <Button isLoading={loading} colorScheme='whatsapp' type='submit' size={'md'} w={'100%'} mt={'20px'} p={'22px 0px'} fontSize={'1.2rem'}>Login</Button>
                             </VStack>
 
                             <Text textAlign={'center'} mt={'15px'} fontWeight={'500'} fontSize={['1.4rem','1.3rem','1.2rem','1rem']}>Forgot your password? </Text>

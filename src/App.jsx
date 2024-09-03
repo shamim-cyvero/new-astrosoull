@@ -120,6 +120,7 @@ import { CircularProgress, Stack, Text } from "@chakra-ui/react";
 import { Toaster } from 'react-hot-toast';
 import { AdminLoadAllAstrologer, LoadAstrologer } from "./redux/action/AstrologerActions";
 import { GetAllCourseDetails } from "./redux/action/CourseActions";
+import { AdminLoadAllPayment } from "./redux/action/PaymentActions";
 
 
 function App() {
@@ -144,6 +145,8 @@ function App() {
     dispatch(LoadAstrologer())
     dispatch(GetAllCourseDetails())
     dispatch(AdminLoadAllAstrologer())
+    dispatch(AdminLoadAllPayment())
+ 
   //    const ViewCourseFromLocalStorage = localStorage.getItem('ViewCourse'); 
   // const usercartItems=JSON.parse(ViewCourseFromLocalStorage)
   
@@ -168,8 +171,8 @@ function App() {
 
           <Route path={"login"} element={<Login />} />
           <Route path={"signup"} element={<SignUp />} />
-          <Route path={"userprofile"} element={<UserProfile />} />
-          {/* <Route path={"userprofile"} element={isAuthenticated?<UserProfile />:<Navigate to={'/login'} />} /> */}
+          {/* <Route path={"userprofile"} element={<UserProfile />} /> */}
+          <Route path={"userprofile"} element={isAuthenticated?<UserProfile />:<Login />} />
 
           <Route path={"astrologerlogin"} element={<AstrologerLogin />} />
           <Route path={"astrologersignup"} element={<AstrologerSignup />} />

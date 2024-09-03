@@ -52,7 +52,7 @@ const HomeSlider = () => {
     return (
         <Box w={{ base: '98%', md: '97%', lg: '95%' }} m={'1.5vmax auto'} >
             <Slider  {...settings}>
-                {SlideData && SlideData.map((item) => (
+                {SlideData && SlideData.map((item,i) => (
                     // <Box  key={item.heading} bgColor={item.bg}  p={2}  borderRadius={{base:'30px',md:'0'}}>
                     //     <Stack w={{ base: '100%', md: '90%', lg: '90%' }} m={'0 auto'} alignItems={'stretch'} justifyContent={'space-between'} direction={{ base: 'row', md: 'row', lg: 'row' }}>
                     //         <VStack w={{ base: '50%', md: '50%', lg: '50%' }} spacing={4} alignItems={'flex-start'} justifyContent={'center'} >
@@ -75,7 +75,7 @@ const HomeSlider = () => {
                     //     </Stack>
 
                     // </Box>
-                    <Image src={item.image} borderRadius={'15px'} />
+                    <Image key={i} src={item.image} borderRadius={'15px'} />
                 ))}
             </Slider>
         </Box>

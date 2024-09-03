@@ -27,14 +27,16 @@ const RecentCoursePopUp = () => {
     if (usercartItems?.id) {
       dispatch(GetSignleCourseDetails(usercartItems.id));
     }
+    const hasSeenPopup = localStorage.getItem('hasSeenPopup');
+    if (!hasSeenPopup) {
+      const timeout = setTimeout(() => {
+        onOpen(); // Open the modal when the timer expires
+        localStorage.setItem('hasSeenPopup', 'true'); // Set the flag in localStorage
+      }, 5000); // Set the timer duration in milliseconds (e.g., 5000ms = 5 seconds)
 
-    const timeout = setTimeout(() => {
-    //   setTimer(true);
-      onOpen(); // Open the modal when the timer expires
-    }, 5000); // Set the timer duration in milliseconds (e.g., 5000ms = 5 seconds)
-
-    return () => clearTimeout(timeout); // Clear the timeout if the component unmounts
-  }, []);
+      return () => clearTimeout(timeout); // Clear the timeout if the component unmounts
+    }
+  }, [dispatch, usercartItems, onOpen]);
 
   return (
     <>

@@ -143,10 +143,10 @@ const AstrologerAbout = () => {
       {ShowAbout && ShowAbout === true ? (
         <>
           <VStack mb={"2vmax"} alignItems={"flex-start"} spacing={"0"}>
-            <Heading m={"1vmax 0"} fontSize={"xl"} children={"Education"} />
+            <Heading m={"1vmax 0"} fontSize={['1xl','xl']} children={"Education"} />
             <List spacing={1}>
               {astrologer?.education?.map((item, i) => (
-                <ListItem key={i}>
+                <ListItem key={i} fontSize= {['.9rem','1rem']}>
                   <ListIcon as={MdCheckCircle} color="green.500" />
                   {item.edu}
                   <IconButton onClick={()=>deleteEduHandler(item._id)} ml={'1vmax'} size='sm' icon={<FiDelete />} colorScheme={'whatsapp'}  />

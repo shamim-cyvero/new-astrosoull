@@ -85,11 +85,11 @@ const Blog = () => {
           <Box w={'100%'} boxShadow='lg' p='6' rounded='md' bg='white' border={'1px solid #d3d3d3'}>
             <VStack alignItems={'flex-start'} spacing={2}>
               <Heading children={'Categories'} fontSize={'1.2rem'} fontWeight={'700'} borderBottom={'3px solid #43d477'} p={'5px 0px'}/>
-              <Text children={'Astrlogy'} fontSize={'.9rem'} />
+              <Text children={'Astrology'} fontSize={'.9rem'} />
               <Text children={'Ayurveda'} fontSize={'.9rem'} />
               <Text children={'Palmistry'} fontSize={'.9rem'} />
               <Text children={'Vastu'} fontSize={'.9rem'} />
-              <Text children={'Numerlogy'} fontSize={'.9rem'} />
+              <Text children={'Numerology'} fontSize={'.9rem'} />
             </VStack>
           </Box>
 

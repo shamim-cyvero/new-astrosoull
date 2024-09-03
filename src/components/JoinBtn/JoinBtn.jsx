@@ -1,5 +1,6 @@
 import { Button, Heading, HStack, Input, InputGroup, InputLeftElement, InputRightElement, Stack, Text, VStack, } from "@chakra-ui/react";
 import React, { useState } from "react";
+import './JoinBtn.css'
 import { FiPhoneIncoming } from "react-icons/fi";
 import { useDispatch } from "react-redux";
 import { UserContactByEmail } from "../../redux/action/UserActions";
@@ -21,10 +22,10 @@ const JoinBtn = () => {
 
   return (
     <>
-      <Stack w={'90%'} m={'auto'} mt={'50px'} direction={{ base: 'column', md: 'row' }} alignItems={'center'} justifyContent={'space-around'}>
-        <Stack w={'100%'} bg={'#22c35e'} color={'white'} p={'20px 0'} rounded='xl' alignItems={'center'} justifyContent={'space-around'} direction={{ base: 'column', md: 'row' }}>
+      <Stack w={'90%'}  m={'auto'} mt={'50px'} direction={{ base: 'column', md: 'row' }} alignItems={'center'} justifyContent={'space-around'}>
+        <Stack w={'100%'}  className="joinBtn"  color={'white'} p={'20px 0'} rounded='xl' alignItems={'center'} justifyContent={'space-around'} direction={{ base: 'column', md: 'row' }}>
           <VStack w={['90%', '90%', '45%']} alignItems={'flex-start'}>
-            <Heading children={"Join us today"} fontSize={'2.5rem'} />
+            <Heading children={"Join us today"} fontSize={['1.5rem','2rem']} />
             <Text children={
                 "#We will send the best deals and offers to your email."} />
           </VStack>

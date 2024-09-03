@@ -45,7 +45,7 @@ const CourseCard = ({ courseId, image, name, category, rating, totalRating, pric
         <>
             <HStack  onClick={()=>ShowSingleCourseDetails(courseId)} cursor={'pointer'} w={'100%'} alignItems={'center'} justifyContent={'center'}>
 
-                <Box w={'100%'} alignItems={'center'} justifyContent={'center'} p={'6px'} mt={'20px'} borderRadius={'10px'}>
+                <Box w={'90%'} alignItems={'center'} justifyContent={'center'} p={'6px'} mt={'20px'} borderRadius={'10px'}>
 
 
                     <Box pos={'relative'} w={'100%'} h={'170px'} overflow={'hidden'} borderRadius={'10px 10px 0 0'}>
@@ -66,7 +66,7 @@ const CourseCard = ({ courseId, image, name, category, rating, totalRating, pric
                                 initialRating={rating}
                                 readonly
                             />
-                            <Button leftIcon={<FaStar />} colorScheme='whatsapp' variant='solid' size={'xs'}>
+                            <Button leftIcon={<FaStar />}cursor={'default'} colorScheme='whatsapp' variant='solid' size={'xs'}>
                                 {totalRating}
                             </Button>
                         </HStack>

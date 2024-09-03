@@ -86,8 +86,8 @@ const Testimonial = () => {
             <Box style={{ width: "90%", margin: "auto", marginTop: "40px", marginBottom: "50px" }} >
 
                 <VStack>
-                    <Heading children={'Testimonials'} color={'#1f3b64'} fontSize={['2.1rem','2rem','1.9rem','1.8rem']} />
-                    <Text children={'#What our customers say about us'} fontSize={['1.3rem',  '1.2rem', '1.1rem','1rem' ]} fontWeight={'350'} />
+                    <Heading children={'Testimonials'} color={'#1f3b64'} fontSize={['1.2rem','1.6rem','1.8rem']}  />
+                    <Text children={'#What our customers say about us'} fontSize={['.9rem', '1.1rem','1rem' ]} fontWeight={'350'} />
                 </VStack>
 
                 <Slider {...settings}>

@@ -128,7 +128,7 @@ const AstrologerProfile = () => {
 
 		{/* astrologer Details and change Model */}
         <VStack p={2} spacing={'1'} alignItems={'flex-start'} >
-            <Heading letterSpacing={'4px'}  fontSize={'3xl'} children={astrologer?.name} />
+            <Heading letterSpacing={'4px'}  fontSize={['2xl','3xl']} textTransform={'capitalize'} children={astrologer?.name} />
             <HStack >              
             	<Rating
             	  emptySymbol={<FaStar color='gray' />}
@@ -188,7 +188,7 @@ const AstrologerProfile = () => {
 										children={'submit'}
 										mr={3}
 										variant={'solid'}
-										colorScheme={'orange'}
+										colorScheme={'whataspp'}
 										isLoading={loading}
 									/>
 									<Button

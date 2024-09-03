@@ -158,7 +158,7 @@ const AstrologersProfile = () => {
                       initialRating={item.rating}
                       readonly
                     />
-                  <Button colorScheme='whatsapp' variant='solid' size={'xs'} fontSize={'.8rem'}>
+                  <Button colorScheme='whatsapp' variant='solid' size={'xs'} fontSize={'.8rem'} cursor={'default'}>
                       {item.rating}
                   </Button>
                   <Text children={'₹50 / Min'} />

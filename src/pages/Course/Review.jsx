@@ -46,7 +46,7 @@ const { loading } = useSelector((state) => state.courseContainer);
                 reviews && reviews.map((item) => (
                     // <Heading mt={10} fontSize={'1.5rem'} children={'Comments'} />
                     <Box w={'100%'} p={5} mb={5} spacing={5} alignItems={'center'} justifyContent={'center'} boxShadow='lg' mt={'10px'} rounded='md' bg='white'>
-                        <Heading   mb={5} fontSize={'1.3rem'} children={'Comments : '} />
+                        <Heading   mb={5} fontSize={['1rem','1.2rem']} children={'Comments : '} />
                         <HStack w={'100%'}>
                             <Avatar name={item.avatar} src={item.avatar} size={'lg'} />
                             <VStack w={'100%'} alignItems={'flex-start'} ml={5}>
@@ -69,15 +69,15 @@ const { loading } = useSelector((state) => state.courseContainer);
 
 
             <form style={{ width: '100%', marginTop: '20px' }} onSubmit={ReviewHandler} >
-                <Heading mb='8px' fontSize={'1.5rem'} children={`Give Your Review`} />
+                <Heading mb='8px' fontSize={['1rem','1.2rem']} children={`Give Your Review`} />
                 <Rating
-                      emptySymbol={<FaStar color='gray' style={{ fontSize: '30px' }} />}
-                      fullSymbol={<FaStar color='tomato' style={{ fontSize: '30px' }} />}
+                      emptySymbol={<FaStar color='gray' fontSize={['1rem','1.2rem']} />}
+                      fullSymbol={<FaStar color='tomato' fontSize={['1rem','1.2rem']} />}
                     //   initialRating={0}
                       onChange={(rate) => setNewRating(rate)}
                 />
                 <Textarea mt={'1vmax'} required cols={'3'} rows={'8'} onChange={(e)=>setComment(e.target.value)} />
-                <Button isLoading={loading} type='submit' colorScheme='whatsapp' mt='10px' size={'md'} w={['50%', '50%', '25%']}>Post review</Button>
+                <Button isLoading={loading} type='submit' colorScheme='whatsapp' mt='10px'  size={['sm','md']}   p={'2px 0px'} fontSize={'1.2rem'}>Post review</Button>
             </form>
 
         </> 

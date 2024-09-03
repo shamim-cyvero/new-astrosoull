@@ -106,8 +106,8 @@ const EnglishCourse = () => {
                 <Stack w={'100%'} alignItems={'center'} justifyContent={'space-between'} direction={{ base: 'column', md: 'row' }} spacing={2}>
                     <HStack w={'100%'} alignItems={'center'} justifyContent={'space-between'} direction={{ base: 'column', md: 'row' }} flexWrap={'wrap'} spacing={2}>
                         <VStack alignItems={'flex-start'}>
-                            <Heading children={'English Courses'} color={'#1f3b64'} fontSize={['2.1rem','2rem','1.9rem','1.8rem']} />
-                            <Text children={'#Learn Vedic science effortlessly with our English courses!'} fontSize={['1.3rem',  '1.2rem', '1.1rem','1rem' ]} fontWeight={'350'} />
+                            <Heading children={'English Courses'} color={'#1f3b64'} fontSize={['1.2rem','1.6rem','1.8rem']} />
+                            <Text children={'#Learn Vedic science effortlessly with our English courses!'} fontSize={['.9rem', '1.1rem','1rem' ]} fontWeight={'350'} />
                         </VStack>
                         <Button colorScheme='black' variant='outline' size={{ base: 'sm', md: 'md' }}>View All</Button>
                     </HStack>

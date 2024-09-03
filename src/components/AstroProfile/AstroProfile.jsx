@@ -183,9 +183,9 @@ const AstroProfile = () => {
                 <Stack w={'100%'} alignItems={'center'} justifyContent={'space-between'} direction={{ base: 'column', md: 'row' }} spacing={2}>
                     <HStack w={'100%'} alignItems={'center'} justifyContent={'space-between'} direction={{ base: 'column', md: 'row' }} flexWrap={'wrap'} spacing={2}>
                         <VStack alignItems={'flex-start'}>
-                            <Heading children={'Astrologers'} color={'#1f3b64'} fontSize={['2.1rem', '2rem', '1.9rem', '1.8rem']} />
+                            <Heading children={'Astrologers'} color={'#1f3b64'} fontSize={['1.2rem','1.6rem','1.8rem']}  />
                             <Stack w={'100%'} direction={{ base: 'column', md: 'row' }}>
-                                <Text children={'#Discover your path with top astrologers -'} fontSize={['1.3rem', '1.2rem', '1.1rem', '1rem']} fontWeight={'350'} />
+                                <Text children={'#Discover your path with top astrologers -'} fontSize={['.9rem', '1.1rem','1rem' ]} fontWeight={'350'} />
                                 <Text style={{ fontSize: "1rem", fontWeight: "600" }}> Book an astrology consultation</Text>
                             </Stack>
 
@@ -210,7 +210,7 @@ const AstroProfile = () => {
                                             initialRating={item.rating}
                                             readonly
                                         />
-                                        <Button colorScheme='whatsapp' variant='solid' size={'xs'} fontSize={'.8rem'}>
+                                        <Button colorScheme='whatsapp' cursor={'default'} variant='solid' size={'xs'} fontSize={'.8rem'}>
                                             {item.rating}
                                         </Button>
                                         {/* <Text children={'₹50 / Min'} /> */}

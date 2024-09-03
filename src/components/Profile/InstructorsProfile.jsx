@@ -40,7 +40,7 @@ const InstructorsProfile = () => {
                                 initialRating={item.totalRating}
                                 readonly
                             />
-                            <Button colorScheme='whatsapp' variant='solid' size={'xs'} fontSize={'.8rem'}>
+                            <Button colorScheme='whatsapp' variant='solid' size={'xs'} cursor={'default'} fontSize={'.8rem'}>
                                 {item.totalRating}
                             </Button>
                         </HStack>

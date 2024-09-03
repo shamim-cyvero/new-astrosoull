@@ -149,36 +149,36 @@ const ContactUs = () => {
 
       {/* conatac from */}
       <VStack   w={'90%'} m={'1vmax auto'} mt={'20px'} alignItems={'flex-start'} >
-        <Heading children={'Send your message directly'} color={'#1f3b64'}/>
+        <Heading children={'Send your message directly'} color={'#1f3b64'} fontSize={['1.2rem','1.8rem']}/>
         <form style={{width:"100%"}} onSubmit={ContactHandler} >
           <Stack mb={'2vmax'} spacing={8} direction={{base:'column',md:'column',lg:'row'}} w={'100%'}  justifyContent={'space-between'}>
             <VStack alignItems={'flex-start'}  w={{base:'100%',md:'100%',lg:'45%'}}>
-                <Text children={'Your name*'} fontSize={['1.2rem','1.3rem','1.2rem','1rem']} fontWeight={'500'}/>
+                <Text children={'Your name*'} fontSize={['.9rem','1rem']} fontWeight={'500'}/>
                 <Input required value={name} border={'1px solid #D3D4D8'} onChange={(e) => setName(e.target.value)} focusBorderColor='green.400' type="text"  />              
             </VStack>
             <VStack  alignItems={'flex-start'}  w={{base:'100%',md:'100%',lg:'45%'}}>
-                <Text children={'Email*'} fontSize={['1.2rem','1.3rem','1.2rem','1rem']} fontWeight={'500'}/>
+                <Text children={'Email*'} fontSize={['.9rem','1rem']} fontWeight={'500'}/>
                 <Input required value={email} onChange={(e) => setEmail(e.target.value)} focusBorderColor='green.400' border={'1px solid #D3D4D8'} type="email"  />              
             </VStack>
           </Stack>
 
           <Stack mb={'1.5vmax'} spacing={6} direction={{base:'column',md:'column',lg:'row'}} w={'100%'}  justifyContent={'space-between'}>
             <VStack alignItems={'flex-start'}  w={{base:'100%',md:'100%',lg:'45%'}}>
-                <Text children={'Phone**'} fontSize={['1.2rem','1.3rem','1.2rem','1rem']} fontWeight={'500'}/>
+                <Text children={'Phone**'} fontSize={['.9rem','1rem']} fontWeight={'500'}/>
                 <Input required value={phone} onChange={(e) => setPhone(e.target.value)}  focusBorderColor='green.400' border={'1px solid #D3D4D8'} type="number"  />              
             </VStack>
             <VStack  alignItems={'flex-start'}  w={{base:'100%',md:'100%',lg:'45%'}}>
-                <Text children={'Subject*'} fontSize={['1.2rem','1.3rem','1.2rem','1rem']} fontWeight={'500'}/>
+                <Text children={'Subject*'} fontSize={['.9rem','1rem']} fontWeight={'500'}/>
                 <Input required value={subject} onChange={(e) => setSubject(e.target.value)}  focusBorderColor='green.400' border={'1px solid #D3D4D8'} type="text"  />              
             </VStack>
           </Stack>
 
           <VStack   alignItems={'flex-start'} >
-            <Text children={'Message'} fontSize={['1.2rem','1.3rem','1.2rem','1rem']} fontWeight={'500'}/>
+            <Text children={'Message'} fontSize={['.9rem','1rem']} fontWeight={'500'}/>
             <Textarea value={message} onChange={(e) => setMessage(e.target.value)} focusBorderColor='green.400' border={'1px solid #D3D4D8'} />
           </VStack>
 
-          <Button isLoading={loading} m={'1vmax 0'} type={'submit'} size={'lg'} children={'Send Message'} colorScheme={'whatsapp'} />
+          <Button isLoading={loading} m={'1vmax 0'} type={'submit'} size={['sm','md']}   p={'2px 0px'} fontSize={'1.2rem'}children={'Send Message'} colorScheme={'whatsapp'} />
         </form>
       </VStack>
     </>

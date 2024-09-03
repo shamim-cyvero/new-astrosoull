@@ -40,7 +40,7 @@ const payHandler = async (price) => {
     )
     console.log(`key ${key}`)
    
-    const { data } = await axios.post(`${server}/payment/process`, 
+    const { data } = await axios.post(`${server}/payment/process`,   
         { price  },
         {
             headers: {
@@ -157,8 +157,10 @@ useEffect(()=>{
 
                         <VStack w={'100%'} spacing={3} > 
                             {/* <del style={{ fontSize: '1.2rem', fontWeight: '400' }}>₹20,000</del> */}
-                            <Heading children={course?.price} color={'#22c35e'} />
+
+                            <Heading children={course?.price} color={'#22c35e'} fontSize={['1.3rem','1.5rem']} />
                             <Button isLoading={payloading} onClick={isAuthenticated?()=>payHandler(course?.price):()=>alert('login First')} w={'100%'} size={'lg'} colorScheme='blue' > Buy now!</Button>
+
                             {/* <Button w={'100%'} size={'lg'} colorScheme='whatsapp' variant='outline'> Pay in Installments</Button> */}
                             {/* <Button w={'100%'} size={'lg'} colorScheme='whatsapp' > Add to Cart</Button> */}
                         </VStack>
@@ -170,16 +172,16 @@ useEffect(()=>{
                             <Heading children={'Course specifications'} fontSize={'1.3rem'} fontWeight={'700'} borderBottom={'3px solid #43d477'} p={'5px 0px'} />
 
                             <HStack w={'100%'} alignItems={'center'} justifyContent={'space-between'}>
-                                <Text display='flex' alignItems='center' fontWeight={'400'} fontSize={['1.2rem', '1rem']}><FaFileAlt size={22} />Files:</Text>
-                                <Text children={course?.lectures.length} fontSize={['1.2rem', '1rem']} fontWeight={'400'} />
+                                <Text display='flex' alignItems='center' fontWeight={'400'} fontSize={['.9rem', '1rem']}><FaFileAlt size={22} />Files:</Text>
+                                <Text children={course?.lectures.length} fontSize={['.9rem', '1rem']} fontWeight={'400'} />
                             </HStack>
                             <HStack w={'100%'} alignItems={'center'} justifyContent={'space-between'}>
-                                <Text display='flex' alignItems='center' fontWeight={'400'} fontSize={['1.2rem', '1rem']}><MdDateRange size={22} />Created date:</Text>
-                                <Text children={course?.createdAt.split('T')[0]} fontSize={['1.2rem', '1rem']} fontWeight={'400'} />
+                                <Text display='flex' alignItems='center' fontWeight={'400'} fontSize={['.9rem', '1rem']}><MdDateRange size={22} />Created date:</Text>
+                                <Text children={course?.createdAt.split('T')[0]} fontSize={['.9rem', '1rem']} fontWeight={'400'} />
                             </HStack>
                             <HStack w={'100%'} alignItems={'center'} justifyContent={'space-between'}>
-                                <Text display='flex' alignItems='center' fontWeight={'400'} fontSize={['1.2rem', '1rem']}><MdDateRange size={22} />Access Period:</Text>
-                                <Text children={'Life Time'} fontSize={['1.2rem', '1rem']} fontWeight={'400'} />
+                                <Text display='flex' alignItems='center' fontWeight={'400'} fontSize={['.9rem', '1rem']}><MdDateRange size={22} />Access Period:</Text>
+                                <Text children={'Life Time'} fontSize={['.9rem', '1rem']} fontWeight={'400'} />
                             </HStack>
                         </VStack>
                     </Box>

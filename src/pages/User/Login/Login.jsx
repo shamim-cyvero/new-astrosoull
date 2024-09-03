@@ -31,27 +31,28 @@ const Login = () => {
                     </Box>
 
                     <VStack  w={{base:'100%',md:'100%',lg:'50%'}}  spacing={3}>
-                        <Heading children={'Login in to your account'} fontSize={'2rem'} />
+                        <Heading children={'Login in to your account'} fontSize={['1.2rem','1.8rem']} />
 
                         <form style={{ width: '90%' ,marginTop:'10px'}} onSubmit={formSubmit}>
                             <FormControl id="email" mt={'10px'}>
-                                <FormLabel children={'Email:'} fontSize={['1.4rem','1.3rem','1.2rem','1rem']} fontWeight={'500'} />
-                                <Input type="email" fontSize={['1.4rem','1.3rem','1.2rem','1rem']} fontWeight={'500'} value={email} required onChange={(e)=>setEmail(e.target.value)}/>
+                                <FormLabel children={'Email:'} fontSize={['.9rem','1rem']} fontWeight={'500'} />
+                                <Input type="email" fontSize={['.9rem','1rem']} fontWeight={'500'} value={email} required onChange={(e)=>setEmail(e.target.value)}/>
                             </FormControl>
 
                             <FormControl id="password"  mt={'10px'}>
-                                <FormLabel children={'Password:'} fontSize={['1.4rem','1.3rem','1.2rem','1rem']} fontWeight={'500'} />
-                                <Input type="password" fontSize={['1.4rem','1.3rem','1.2rem','1rem']} fontWeight={'500'} value={password} required onChange={(e)=>setPassword(e.target.value)}/>
+                                <FormLabel children={'Password:'} fontSize={['1rem','1.3rem','1.2rem','1rem']} fontWeight={'500'} />
+                                <Input type="password" fontSize={['.9rem','1rem']} fontWeight={'500'} value={password} required onChange={(e)=>setPassword(e.target.value)}/>
                             </FormControl>
 
                             <VStack w={'100%'}>
-                                <Button isLoading={loading} colorScheme='whatsapp' type='submit' size={'md'} w={'100%'} mt={'20px'} p={'22px 0px'} fontSize={'1.2rem'}>Login</Button>
+                                <Button isLoading={loading} colorScheme='whatsapp' type='submit' size={['sm','md']} w={'100%'} mt={'20px'} p={'2px 0px'} fontSize={'1.2rem'}>Login</Button>
+
                             </VStack>
 
-                            <Text textAlign={'center'} mt={'15px'} fontWeight={'500'} fontSize={['1.4rem','1.3rem','1.2rem','1rem']}>Forgot your password? </Text>
-                            <Text textAlign={'center'} mt={'15px'} fontWeight={'500'} fontSize={['1.4rem','1.3rem','1.2rem','1rem']}> Don't have an account? <Link  to={'/signup'} color={'#1f3b64'} fontWeight={'700'} fontSize={['1.4rem','1.3rem','1.2rem','1rem']}>SignUp</Link></Text>
+                            <Text textAlign={'center'} mt={'15px'} fontWeight={'500'} fontSize={['.9rem','1rem']}>Forgot your password? </Text>
+                            <Text textAlign={'center'} mt={'15px'} fontWeight={'500'} fontSize={['.9rem','1rem']}> Don't have an account? <Link  to={'/signup'} color={'#1f3b64'} fontWeight={'700'} fontSize={['.9rem','1rem']}>SignUp</Link></Text>
                             <HStack m={'1vmax 0'} w={'100%'} justifyContent={'center'} alignItems={'center'}>
-                                <Button  onClick={()=>navigate('/astrologerlogin')} alignSelf={'center'} children={'Astrologer Login'} _hover={{ bg: "#1f3b64", cursor: "pointer",color:'white' }}  />
+                                <Button  onClick={()=>navigate('/astrologerlogin')} alignSelf={'center'} children={'Astrologer Login'} size={['sm','md']}   p={'2px 0px'} fontSize={'1.2rem'} _hover={{ bg: "#1f3b64", cursor: "pointer",color:'white' }}  />
                             </HStack>
                         </form>
                     </VStack>

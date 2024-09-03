@@ -66,9 +66,9 @@ const AdminAstrologerAbout = () => {
 
         <VStack mb={"2vmax"} alignItems={"flex-start"} spacing={"0"}>
           <Heading m={"1vmax 0"} fontSize={"xl"} children={"Experiences"} />
-          <List spacing={1}>
+          <List spacing={1} >
             {astrologer?.experience?.map((item, i) => (
-              <ListItem key={i}>
+              <ListItem key={i} fontSize={['.9rem','1rem']}>
                 <ListIcon as={MdCheckCircle} color="green.500" />
                 {item.exp}
               </ListItem>
@@ -78,7 +78,7 @@ const AdminAstrologerAbout = () => {
 
         <VStack alignItems={"flex-start"} spacing={"0"}>
           <Heading m={"1vmax 0"} fontSize={"xl"} children={"About"} />
-          <Text children={astrologer?.about} />
+          <Text children={astrologer?.about} fontSize={['.9rem','1rem']}/>
         </VStack>
       
     

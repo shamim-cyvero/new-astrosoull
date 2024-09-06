@@ -120,7 +120,7 @@ useEffect(()=>{
             {courses && courses.map((item) => (
 
 
-              <Coursecard id={item._id} image={item.banner?.url} name={item.name} category={item.category} rating={item.rating} totalRating={item.rating} price={item.price}  />
+              <Coursecard key={item._id} id={item._id} image={item.banner?.url} name={item.name} category={item.category} rating={item.rating} totalRating={item.rating} price={item.price}  />
 
             ))
             }

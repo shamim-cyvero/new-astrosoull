@@ -91,7 +91,7 @@ const AdminAstrologerProfile = () => {
             />
             <HStack>
               <Rating
-                emptySymbol={<FaStar color="gray" />}
+                emptySymbol={<FaStar color="gray" />} 
                 fullSymbol={<FaStar color="tomato" />}
                 initialRating={SingleAstrologer?.rating}
                 readonly
@@ -102,7 +102,10 @@ const AdminAstrologerProfile = () => {
                 children={SingleAstrologer?.rating}
                 cursor={'default'}
               />
+			        <Text children={`₹ ${SingleAstrologer.chargePerMin?SingleAstrologer.chargePerMin:'00'}/Min`} />
+
             </HStack>
+            <Text children={`${SingleAstrologer.expert?SingleAstrologer.expert:'no update'}} | ${SingleAstrologer.language?SingleAstrologer.language:'no update'}`} />
             <Text children={SingleAstrologer?.email} />
             <Text children={SingleAstrologer?.phone} />
             <Text children={SingleAstrologer?.address} />

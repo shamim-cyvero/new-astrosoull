@@ -149,7 +149,9 @@ const AstrologersProfile = () => {
           <VStack w={'98%'} h={'250px'} alignItems={'center'} justifyContent={'center'} spacing={2} p={'6px 0px'} boxShadow='lg' rounded='md' bg='white'>
               <Avatar name={item.name} src={item.avatar?.url} size={'lg'} />
               <Heading children={item.name} color={'#1f3b64'} fontSize={'1.1rem'} mb={'10px'} textAlign={'center'} />
-              <Text children={'Vedic, Numerology Exp: 3+ Year'} fontSize={'.9rem'} color={'grey'} fontWeight={'400'}textAlign={'center'}  />
+              {/* <Text children={'Vedic, Numerology Exp: 3+ Year'} fontSize={'.9rem'} color={'grey'} fontWeight={'400'}textAlign={'center'}  /> */}
+            <Text children={`${item.expert?item.expert:'no'} | ${item?.language?item.language:'no'}`} />
+              
               <HStack spacing={2} textAlign={'center'}>
                   {/* <Text children={item.rating} /> */}
                   <Rating
@@ -161,7 +163,8 @@ const AstrologersProfile = () => {
                   <Button colorScheme='whatsapp' variant='solid' size={'xs'} fontSize={'.8rem'} cursor={'default'}>
                       {item.rating}
                   </Button>
-                  <Text children={'₹50 / Min'} />
+                <Text children={`₹ ${item.chargePerMin ? item.chargePerMin : '00'}/Min`} />
+
               </HStack>
               <Button colorScheme='whatsapp' size={'sm'}>{'Book a Consultation'}</Button>
           </VStack>

@@ -152,7 +152,7 @@ const { loading, course } = useSelector((state) => state.courseContainer);
 
                             <TabPanels>
                                 <TabPanel>
-                                    <Information info={course?.description} />
+                                    <Information enrolledUsers={course?.enrolledUsers} info={course?.description} />
                                 </TabPanel>
                                 <TabPanel>
                                     <Content lectures={course?.lectures} rating={course?.rating} courseId={course?._id}/>

@@ -158,13 +158,13 @@ export const ChangeAvatarAstrologer = (avatar) => async (dispatch) => {
   }
 };
 
-export const UpdateAstrologerDetails = (name, phone, email, address,about) => async (dispatch) => {
+export const UpdateAstrologerDetails = (name, phone, email, address,about, chargePerMin, expert, language) => async (dispatch) => {
     try {
       dispatch(updateAstrologerDetailsRequest()); 
 
       const { data } = await axios.put(
         `${server}/astrologer/update/profile`,
-        { name, phone, email, address,about},
+        { name, phone, email, address,about,chargePerMin, expert, language},
         {
           headers: {
             "Content-Type": "application/json",

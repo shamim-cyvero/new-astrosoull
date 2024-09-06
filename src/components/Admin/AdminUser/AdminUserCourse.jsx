@@ -17,16 +17,18 @@ const AdminUserCourse = ({course}) => {
                         <Th bg='#162536' color='white'>Name</Th>
                         <Th bg='#162536' color='white'>Date</Th>
                         <Th bg='#162536' color='white'>Price</Th>
+                        <Th bg='#162536' color='white'>Payment_id</Th>
+                        {/* <Th bg='#162536' color='white'>Action</Th> */}
                     </Tr>
                 </Thead>
                 <Tbody>
                     {course && course.map((item,i) => (
                         <Tr key={i}>
                             <Td>{i+1}</Td>
-    
-                            <Td>{item.name}</Td>
-                            <Td>{item.course}</Td>
-                            <Td>{item.meeting}</Td>
+                            <Td>{item?.name}</Td>
+                            <Td>{item?.date.split("T")[0]}</Td>
+                            <Td>{item?.price}</Td>
+                            <Td>{item?.payment_id}</Td>
                           
                         </Tr>
                     ))}

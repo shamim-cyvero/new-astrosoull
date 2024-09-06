@@ -162,6 +162,19 @@ const UserSlice = createSlice({
       state.loading = false;
       state.error = action.payload;
     },
+
+    UserEnrolledCheckRequest: (state) => {
+      state.loading = true;
+    },
+    UserEnrolledCheckSuccess: (state, action) => {
+      state.loading = false;
+      state.isEnrolled = action.payload;
+      state.message = action.payload?.message;
+    },
+    UserEnrolledCheckFail: (state, action) => {
+      state.loading = false;
+      state.error = action.payload;
+    },
   },
 });
 
@@ -202,6 +215,9 @@ export const {
   AdminLoadSingleUserRequest,
   AdminLoadSingleUserSuccess,
   AdminLoadSingleUserFail,
+  UserEnrolledCheckFail,
+  UserEnrolledCheckRequest,
+  UserEnrolledCheckSuccess,
 } = UserSlice.actions;
 
 export default UserSlice.reducer;

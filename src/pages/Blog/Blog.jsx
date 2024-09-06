@@ -97,8 +97,8 @@ const Blog = () => {
             <VStack align={'flex-start'} spacing={5}>
               <Heading children={'Popular posts'} fontSize={'1.2rem'} fontWeight={'700'}  borderBottom={'3px solid #43d477'} p={'5px 0px'} />
               {
-                popularPosts && popularPosts.map((item) => (
-                  <HStack w={'100%'}>
+                popularPosts && popularPosts.map((item,i) => (
+                  <HStack key={i} w={'100%'}>
                     <Box w={'39%'}>
                       <Image src={item.image} w={'100%'}  borderRadius={'lg'} />
                     </Box>
@@ -119,8 +119,8 @@ const Blog = () => {
             <VStack align={'flex-start'} spacing={5}>
               <Heading children={'Popular Course'} fontSize={'1.2rem'} fontWeight={'700'}  borderBottom={'3px solid #43d477'} p={'5px 0px'} />
               {
-                popularCourse && popularCourse.map((item) => (
-                  <HStack w={'100%'}>
+                popularCourse && popularCourse.map((item,i) => (
+                  <HStack key={i} w={'100%'}>
                     <Box w={'39%'}>
                       <Image src={item.img} w={'100%'} borderRadius={'lg'} />
                     </Box>

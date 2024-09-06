@@ -18,7 +18,7 @@ import pic3 from '../../../assets/astrologerImg/astro3.png'
 import './Dashboard.css'
 import { BarChart, DoughnutChart } from "../Charts/Chart";
 import { BiMaleFemale } from "react-icons/bi";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { GrTransaction } from "react-icons/gr";
 import { AdminLoadAllPayment } from "../../../redux/action/PaymentActions";
 // import DashboardTableTransaction from "../DashboardTable/DashboardTableTransaction";
@@ -38,6 +38,7 @@ const Dashboard = () => {
     state => state.astrologerContainer
   );
 const {  courses } = useSelector((state) => state.courseContainer);
+const dispatch=useDispatch()
 
 
 //   const recentUser = [
@@ -113,6 +114,9 @@ const {  courses } = useSelector((state) => state.courseContainer);
 // useEffect(()=>{
 //   dispatch(AdminLoadAllPayment())
 // },[])
+useEffect(()=>{
+  dispatch(AdminLoadAllPayment())
+},[])
   return (
     <>
       <Header />
@@ -152,7 +156,7 @@ const {  courses } = useSelector((state) => state.courseContainer);
             <Card boxShadow={'lg'} maxW='400px' w={'100%'} bg={'#bf2938'} >
               <CardBody w={'100%'}>
                 <HStack w={'100%'} alignItems={'center'} justifyContent={'space-between'}>
-                  <Heading children={'Total Money'} fontSize={'1.5rem'} color={'white'} opacity={'.5'} textTransform={'capitalize'} />
+                  <Heading children={'Total Revenue'} fontSize={'1.5rem'} color={'white'} opacity={'.5'} textTransform={'capitalize'} />
                   <GrTransaction fontSize={'3rem'} color={'white'} opacity={'.3'} />
                 </HStack>
                 <Text children={totalEarnings?totalEarnings:'000'} fontSize={'2rem'} fontWeight={'700'} color={'white'} />

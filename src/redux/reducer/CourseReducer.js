@@ -75,7 +75,7 @@ const CourseSlice = createSlice({
     },
     LoadAllCourseByCategorySuccess: (state, action) => {
       state.loading = false;
-      state.courses = action.payload.course;
+      state.coursesByCate = action.payload.course;
       state.message = action.payload.message;
     },
     LoadAllCourseByCategoryFail: (state, action) => {

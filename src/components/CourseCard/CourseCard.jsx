@@ -38,9 +38,9 @@ const CourseCard = ({ courseId, image, name, category, rating, totalRating, pric
  const ShowSingleCourseDetails=async (courseId)=>{
     await dispatch(GetSignleCourseDetails(courseId))   
     navigate('/course')  
-    // navigate('/admin/course/single/course')  
+    // navigate('/admin/course/single/course')    
  }  
-
+ 
     return (
         <>
             <HStack  onClick={()=>ShowSingleCourseDetails(courseId)} cursor={'pointer'} w={'100%'} alignItems={'center'} justifyContent={'center'}>
@@ -53,10 +53,10 @@ const CourseCard = ({ courseId, image, name, category, rating, totalRating, pric
                         {/* <Button variant={'gosht'} bg={'#f63c3c'} color={'white'} pos={'absolute'} top={'10%'} left={'2%'} size={'xs'} borderRadius={'10px 0 10px 0'} fontWeight={'400'}>{23} %Offer</Button> */}
                     </Box>
                     <VStack w={'100%'} alignItems={'flex-start'} borderRadius={'0 0 10px 10px'} boxShadow='lg' bg='white' pl={'10px'} pb={'15px'}>
-                        <HStack pt={'5px'}>
+                        {/* <HStack pt={'5px'}>
                             <Avatar name='Dan Abrahmov' src={teacherImg} size={'sm'} />
                             <Text children={'Mr.Rahull Verma.'} fontSize={'.9rem'} fontWeight={'500'} color={'grey'} />
-                        </HStack>
+                        </HStack> */}
                         <Heading children={name} fontSize={'1.3rem'} w={'100%'} textOverflow={'ellipsis'} whiteSpace={'nowrap'} overflow={'hidden'} mb={'8px'} />
                         <Text children={category} fontSize={'.9rem'} textDecoration={'underline'} />
                         <HStack>

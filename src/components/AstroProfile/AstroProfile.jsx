@@ -201,7 +201,7 @@ const AstroProfile = () => {
                                 <VStack w={'98%'} h={'250px'} alignItems={'center'} justifyContent={'center'} spacing={2} p={'6px 0px'} boxShadow='lg' rounded='md' bg='white'>
                                     <Avatar name={item.name} src={item.avatar?.url} size={'lg'} />
                                     <Heading children={item.name} color={'#1f3b64'} fontSize={'1.4rem'} textTransform={'capitalize'}mb={'10px'} textAlign={'center'} />
-                                    <Text children={'Vedic, Numerology Exp: 3+ Year'} fontSize={'1rem'} color={'grey'} fontWeight={'400'} textAlign={'center'} />
+                                    <Text children={`${item.expert?item.expert:'no update'}} | ${item.language?item.language:'no update'}`} fontSize={'1rem'} color={'grey'} fontWeight={'400'} textAlign={'center'} />
                                     <HStack spacing={2} textAlign={'center'}>
                                         {/* <Text children={item.rating} /> */}
                                         <Rating

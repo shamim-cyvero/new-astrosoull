@@ -34,6 +34,9 @@ import {
   UserContactFail,
   UserContactRequest,
   UserContactSuccess,
+  UserEnrolledCheckFail,
+  UserEnrolledCheckRequest,
+  UserEnrolledCheckSuccess,
 } from "../reducer/UserReducer";
 import toast from "react-hot-toast"; 
 
@@ -291,4 +294,30 @@ export const UserContactByEmail = ( email) => async (dispatch) => {
   }
 };
 
+
+export const UserEnrolled = ( courseId) => async (dispatch) => {
+  try {
+    dispatch(UserEnrolledCheckRequest());
+    alert(courseId)
+
+    const { data } = await axios.post(
+      `${server}/user/enrolled/course`,
+      { courseId},
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        withCredentials: true,
+      }
+    );
+
+    dispatch(UserEnrolledCheckSuccess(data));
+    console.log(data)
+    // toast.success(data.message);
+  } catch (error) {
+    dispatch(UserEnrolledCheckFail(error.message));
+    // toast.error(error.message);
+
+  }
+};
 

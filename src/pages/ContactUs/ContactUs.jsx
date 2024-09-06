@@ -93,8 +93,9 @@ const ContactUs = () => {
         spacing={8}
       >
         {cousreCardData &&
-          cousreCardData.map((item) => (
+          cousreCardData.map((item,i) => (
             <Box
+            key={i}
               w={{ base: "700px", md: "350px" }}
               h={{ base: "220px", md: "200px" }}
               borderRadius={"15px"}

@@ -79,8 +79,8 @@ const Header = ({isAuthenticated}) => {
 
    }
    const GetCoureByCategoryHandler=async (key)=>{
-     onClose()
      await dispatch(GetAllCourseDetailsByCategory(key))
+     onClose()
      navigate(`/${key}`)
 
    }
@@ -292,31 +292,31 @@ const Header = ({isAuthenticated}) => {
 
                   <AccordionPanel >
                     <VStack w={'100%'}  alignItems={'flex-start'} >
-                      <HStack onClick={()=>closeMenuOnClick('/astrology')}  justifyContent={'space-evenly'} alignItems={'center'} >
+                      <HStack onClick={()=>GetCoureByCategoryHandler('astrology')}  justifyContent={'space-evenly'} alignItems={'center'} >
                         <Box  >
                             <Image w={'35%'} src={c1} alt="c1" />
                         </Box>
                         <Text  children={'Astrology'} fontSize={'1rem'} />
                       </HStack>
-                      <HStack onClick={()=>closeMenuOnClick('/ayurveda')}  justifyContent={'space-evenly'} alignItems={'center'}>
+                      <HStack onClick={()=>GetCoureByCategoryHandler('ayurveda')}  justifyContent={'space-evenly'} alignItems={'center'}>
                         <Box >
                             <Image w={'35%'} src={c2} alt="c2" />
                         </Box>
                         <Text children={'Ayurveda'} fontSize={'1rem'} />
                       </HStack>
-                      <HStack onClick={()=>closeMenuOnClick('/numerology')}  justifyContent={'space-evenly'} alignItems={'center'}>
+                      <HStack onClick={()=>GetCoureByCategoryHandler('numerology')}  justifyContent={'space-evenly'} alignItems={'center'}>
                         <Box >
                             <Image w={'35%'} src={c3} alt="c3" />
                         </Box>
                         <Text children={'Numerology'} fontSize={'1rem'} />
                       </HStack>
-                      <HStack onClick={()=>closeMenuOnClick('/palmistry')}  justifyContent={'space-evenly'} alignItems={'center'}>
+                      <HStack onClick={()=>GetCoureByCategoryHandler('palmistry')}  justifyContent={'space-evenly'} alignItems={'center'}>
                         <Box >
                             <Image w={'35%'} src={c4} alt="c4" />
                         </Box>
                         <Text children={'Palmistry'} fontSize={'1rem'} />
                       </HStack>
-                      <HStack onClick={()=>closeMenuOnClick('/vastu')}  justifyContent={'space-evenly'} alignItems={'center'}>
+                      <HStack onClick={()=>GetCoureByCategoryHandler('vastu')}  justifyContent={'space-evenly'} alignItems={'center'}>
                         <Box >
                             <Image w={'35%'} src={c5} alt="c5" />
                         </Box>

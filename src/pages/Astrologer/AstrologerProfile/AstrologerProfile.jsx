@@ -28,8 +28,11 @@ const AstrologerProfile = () => {
 	const [email, SetEmail] = useState('');
 	const [address, SetAddress] = useState('');
 	const [about, SetAbout] = useState('');
+	const [chargePerMin, SetChargePerMin] = useState('');
+	const [expert, SetExpert] = useState('');
+	const [language, SetLanguage] = useState('');
 
-
+	// chargePerMin, expert, language
 	const { isOpen, onOpen, onClose } = useDisclosure();
 
   const dispatch=useDispatch()
@@ -62,7 +65,7 @@ const AstrologerProfile = () => {
             navigate('/astrologerprofile');
       };
       const ChangeAstrologerDetailsHandler = async () => {
-        await dispatch(UpdateAstrologerDetails(name, phone, email, address,about));
+        await dispatch(UpdateAstrologerDetails(name, phone, email, address,about,chargePerMin, expert, language));
         dispatch(LoadAstrologer())
     
         onClose();
@@ -137,7 +140,9 @@ const AstrologerProfile = () => {
             	  readonly
             	/>
             	<Button cursor={'default'} size={'sm'} colorScheme={'whatsapp'} children={astrologer?.rating} />
+			<Text children={`₹${astrologer?.chargePerMin}/Min`} />
             </HStack>
+            <Text children={`${astrologer?.expert} | ${astrologer?.language}`} />
             <Text children={astrologer?.email} />
             <Text children={astrologer?.phone} />
             <Text children={astrologer?.address} />
@@ -179,6 +184,24 @@ const AstrologerProfile = () => {
 											type="text"
 											placeholder="about"
 										/>
+										<Input
+											value={chargePerMin}
+											onChange={e => SetChargePerMin(e.target.value)}
+											type="number"
+											placeholder="SetChargePerMin - 20"
+										/>
+										<Input
+											value={expert}
+											onChange={e => SetExpert(e.target.value)}
+											type="text"
+											placeholder="Vedic, Numerology, Astrology, Numerology"
+										/>
+										<Input
+											value={language}
+											onChange={e => SetLanguage(e.target.value)}
+											type="text"
+											placeholder="Hindi,English"
+										/>
 									</VStack>
 								</ModalBody>
 
@@ -187,8 +210,8 @@ const AstrologerProfile = () => {
 										onClick={ChangeAstrologerDetailsHandler}
 										children={'submit'}
 										mr={3}
-										variant={'solid'}
-										colorScheme={'whataspp'}
+										// variant={'solid'}
+										colorScheme={'whatsapp'}
 										isLoading={loading}
 									/>
 									<Button

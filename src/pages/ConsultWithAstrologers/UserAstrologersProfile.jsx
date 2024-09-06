@@ -41,8 +41,6 @@ const UserAstrologersProfile = () => {
 }
 
 
-;
-
   const profileDetails = [
     {
       image: astro1,
@@ -142,7 +140,7 @@ const UserAstrologersProfile = () => {
 
             <VStack p={2} spacing={'1'}  alignItems={'flex-start'} >
                 <Heading letterSpacing={'4px'}  fontSize={['1xl','3xl']} textTransform={'capitalize'} children={SingleAstrologer?.name} />
-                <Text children={'Astrology | Vastu Specialist'} fontSize={['.9rem','1rem']}/>
+                <Text children={SingleAstrologer?.expert} fontSize={['.9rem','1rem']}/>
                 <HStack >
                     {/* <Rating
                       emptySymbol={<FaStar color='gray' />}
@@ -156,7 +154,9 @@ const UserAstrologersProfile = () => {
                     />
                     <Button size={'sm'} colorScheme={'whatsapp'} children={SingleAstrologer.rating} cursor={'default'}/>
                 </HStack>
-                <Text children={'₹50 / Min'} />
+                <Text children={`₹ ${SingleAstrologer.chargePerMin ? SingleAstrologer.chargePerMin : '00'}/Min`} />
+
+                <Text children={astrologer?.email} />
 
             </VStack>
         </Stack>
@@ -171,45 +171,34 @@ const UserAstrologersProfile = () => {
         <TabPanels >
 
           <TabPanel p={'4'}>
-            <VStack mb={'2vmax'}  alignItems={'flex-start'} spacing={'0'} >
-              <Heading m={'1vmax 0'} fontSize={['1xl','xl']} children={'Education'} />
-              <List spacing={1}>
-                <ListItem fontSize={['.9rem','1rem']}>
-                  <ListIcon as={MdCheckCircle} color='green.500' />
-                    Associate in Physical Therapy from University of British Columbia
-                </ListItem>   
-                <ListItem fontSize={['.9rem','1rem']}>
-                  <ListIcon as={MdCheckCircle} color='green.500' />
-                  Bachelor of Arts in Psychology from Duke University
-                </ListItem>     
-                <ListItem fontSize={['.9rem','1rem']}>
-                  <ListIcon as={MdCheckCircle} color='green.500' />
-                  Master of Public Health from Cornell University
-                </ListItem>            
-              </List>
-            </VStack>
+          <VStack mb={"2vmax"} alignItems={"flex-start"} spacing={"0"}>
+            <Heading m={"1vmax 0"} fontSize={"xl"} children={"Education"} />
+            <List spacing={1}>
+              {SingleAstrologer?.education?.map((item, i) => (
+                <ListItem key={i}>
+                  <ListIcon as={MdCheckCircle} color="green.500" />
+                  {item.edu}
+                </ListItem>
+              ))}
+            </List>
+          </VStack>
 
-            <VStack mb={'2vmax'} alignItems={'flex-start'} spacing={'0'} >
-              <Heading m={'1vmax 0'} fontSize={['1xl','xl']} children={'Experiences'} />
-              <List spacing={1}>
-                <ListItem fontSize={['.9rem','1rem']}>
-                  <ListIcon as={MdCheckCircle} color='green.500' />
-                  10 years of experience working with astrolok
-                </ListItem>             
-              </List>
-            </VStack>
+          <VStack mb={"2vmax"} alignItems={"flex-start"} spacing={"0"}>
+            <Heading m={"1vmax 0"} fontSize={"xl"} children={"Experiences"} />
+            <List spacing={1}>
+              {SingleAstrologer?.experience?.map((item, i) => (
+                <ListItem key={i}>
+                  <ListIcon as={MdCheckCircle} color="green.500" />
+                  {item.exp}
+                </ListItem>
+              ))}
+            </List>
+          </VStack>
 
-            <VStack alignItems={'flex-start'} spacing={'0'} >
-              <Heading m={'1vmax 0'} fontSize={['1xl','xl']} children={'About'} />
-              <Text fontSize={['.9rem','1rem']} children={`
-                Mr. Narendra Umrikar, a globally recognized Indian Vaastu Astrologer with 6+ years of expertise. 
-                His journey commenced at Asttrolok, and through dedication and study, he obtained an M.Phil in Vaastu Shastra.
-                Now, with over 16 years of experience, he's a cornerstone in the field and a member of the Institute of 
-                Vedic Vaastu & Research Foundation, Indore.
-                `} 
-              />
-
-            </VStack>
+          <VStack alignItems={"flex-start"} spacing={"0"}>
+            <Heading m={"1vmax 0"} fontSize={"xl"} children={"About"} />
+            <Text children={SingleAstrologer?.about} />
+          </VStack>
           </TabPanel>
 
 

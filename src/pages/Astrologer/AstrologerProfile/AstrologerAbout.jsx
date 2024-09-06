@@ -53,8 +53,14 @@ const AstrologerAbout = () => {
   const navigate = useNavigate();
 
   const HandleExpAndEdu = async () => {
+    if(!education && !experience){
+      return alert('education and experience required')
+    }
     await dispatch(AstrologerAddNewExpAndEdu(education, experience));
     await dispatch(LoadAstrologer());
+    onClose()
+    SetEducationData("")
+    SetExperienceData("")
   };
 
   const deleteExpHandler = async (expId) => {
@@ -62,7 +68,6 @@ const AstrologerAbout = () => {
     await dispatch(LoadAstrologer());
   };
   const deleteEduHandler = async (eduId) => {
-    alert(eduId)
     await dispatch(AstrologerDeleteEdu(eduId));
     await dispatch(LoadAstrologer());
   };
@@ -83,7 +88,7 @@ const AstrologerAbout = () => {
         colorScheme={ShowAbout?"red":"whatsapp"}
       />
 
-      {/* about update modal */}
+      {/* about update modal */} 
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
@@ -106,6 +111,7 @@ const AstrologerAbout = () => {
                       value={experience}
                       onChange={(e) => SetExperienceData(e.target.value)}
                       placeholder={"Experiences"}
+                      required
                     />
                     <Heading
                       m={"1vmax 0"}
@@ -116,6 +122,7 @@ const AstrologerAbout = () => {
                       value={education}
                       onChange={(e) => SetEducationData(e.target.value)}
                       placeholder={"Education"}
+                      required
                     />
                   </VStack>
                 </ModalBody>
@@ -127,11 +134,13 @@ const AstrologerAbout = () => {
                     variant={"solid"}
                     colorScheme={"orange"}
                     onClick={() => HandleExpAndEdu()}
+                    isLoading={loading}
                   />
                   <Button
                     children={"Close"}
                     colorScheme="blue"
                     onClick={onClose}
+                    isDisabled={loading}
                   />
                 </ModalFooter>
               </ModalContent>
@@ -176,11 +185,11 @@ const AstrologerAbout = () => {
             />
           </VStack> */}
 
-          <Button
+          {/* <Button
             colorScheme={"whatsapp"}
             children={"save"}
             onClick={() => HandleUpateExpAndEdu()}
-          />
+          /> */}
         </>
       ) : (
         <>

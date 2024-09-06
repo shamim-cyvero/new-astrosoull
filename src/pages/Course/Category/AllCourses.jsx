@@ -10,13 +10,20 @@ import slide6 from '../../../assets/HindiCourseImg/slide6.jpg'
 import CourseCard from '../../../components/CourseCard/CourseCard'
 import teacher from '../../../assets/HindiCourseImg/rahul_verma.png';
 import { useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 
 const AllCourses = () => {
 
 const { loading, courses } = useSelector((state) => state.courseContainer);
+const navigate=useNavigate() 
+
 
   return (
     <>
+    {
+      !loading && courses?(
+        <>
+
         <Box  w={"100%"}  >
             <Image src={b} alt={'img'} w={'100%'}  objectFit={'cover'} />
         </Box>
@@ -30,6 +37,11 @@ const { loading, courses } = useSelector((state) => state.courseContainer);
             ))
         }
         </HStack>
+        </>
+      ):(
+        navigate('/')
+      )
+    }
     </>
   )
 }

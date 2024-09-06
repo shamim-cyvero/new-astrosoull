@@ -37,7 +37,7 @@ const Review = ({ loading,reviews, rating ,courseId}) => {
             {
                 reviews && reviews.map((item) => (
                     // <Heading mt={10} fontSize={'1.5rem'} children={'Comments'} />
-                    <Box w={'100%'} p={5} mb={5} spacing={5} alignItems={'center'} justifyContent={'center'} boxShadow='lg' mt={'10px'} rounded='md' bg='white'>
+                    <Box key={item._id} w={'100%'} p={5} mb={5} spacing={5} alignItems={'center'} justifyContent={'center'} boxShadow='lg' mt={'10px'} rounded='md' bg='white'>
                         {/* <Heading   mb={5} fontSize={'1.3rem'} children={'Comments : '} /> */}
                         <Button isLoading={loading} m={'1vmax 0'} alignSelf={'flex-end'} onClick={()=>deleteReviewHandler(item._id)} top={'10%'} left={'2%'} size={'sm'}  colorScheme='red' >Delete Review</Button>
 

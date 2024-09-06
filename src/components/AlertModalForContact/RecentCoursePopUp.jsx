@@ -36,7 +36,7 @@ const RecentCoursePopUp = () => {
 
       return () => clearTimeout(timeout); // Clear the timeout if the component unmounts
     }
-  }, [dispatch, usercartItems, onOpen]);
+  }, []);
 
   return (
     <>

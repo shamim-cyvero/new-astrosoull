@@ -16,68 +16,74 @@ import Content from './Content';
 import Review from './Review';
 import Rating from 'react-rating';
 import { FaStar } from 'react-icons/fa6';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { server } from '../../main';
 import axios from 'axios';
+import { ClearPaymentError, ClearPaymentMessage, GetPaymentKey, PaymentProcess } from '../../redux/action/PaymentActions';
+import { UserEnrolled } from '../../redux/action/UserActions';
 
 const SingleCourse = () => {
-  const [payloading, setPayLoading] = useState(false) 
+  const [isEnrolled, setIsEnrolled] = useState(false) 
+
 
 const { loading, course } = useSelector((state) => state.courseContainer);
 const {  user,isAuthenticated } = useSelector( (state) => state.userContainer);
+const { payloading, PaymentOrder,Paymentkey,error,message } = useSelector( (state) => state.paymentContainer);
+const {  isAstrologerAuthenticated  } = useSelector( state => state.astrologerContainer );
+
 const navigate=useNavigate() 
- 
+const dispatch=useDispatch()
+
+
+
 const payHandler = async (price) => {
-    setPayLoading(true)
-    const { data: { key } } = await axios.get(`${server}/payment/key`,
+    await dispatch(GetPaymentKey(course._id))
+    // await dispatch(PaymentProcess(price)) 
+    const { data } = await axios.post(
+        `${server}/payment/process`,
+        { price },
         {
-            headers: {
-                "Content-Type": "application/json", 
-              },
-            withCredentials: true,
+          headers: {
+            "Content-Type": "application/json",
+          },
+          withCredentials: true,
         }
-    )
-    console.log(`key ${key}`)
-   
-    const { data } = await axios.post(`${server}/payment/process`,   
-        { price  },
-        {
-            headers: {
-                "Content-Type": "application/json", 
-              },
-            withCredentials: true,
-        }
-    )
-    console.log(`order ${data.order}`)
+      );
+    
+    if(data){
+        const option = {
+           key: Paymentkey,
+           amount: data.order.amount,
+           currency: 'INR',
+           name: course?.name,
+           description: course?.description,
+           image:  course?.banner?.url ,
+           order_id: data.order.id,
+           // callback_url: `${server}/payment/verfication`,
+           callback_url: `${server}/payment/verfication/${course._id}`,
+           
+           prefill: {               //user details who is logined
+               name: user.name,
+               email: user.email,
+               contact: user.phone
+           },
+           notes: {
+               address: 'ok address'
+           },
+           theme: {
+               color: '#939182'
+           } 
+       };
+    
+       const razor = new window.Razorpay(option);
+       razor.open()      
 
-    const option = {
-        key: key,
-        amount: data.order.amount,
-        currency: 'INR',
-        name: course?.name,
-        description: course?.description,
-        image:  course?.banner?.url ,
-        order_id: data.order.id,
-        // callback_url: `${server}/payment/verfication`,
-        callback_url: `${server}/payment/verfication/${course._id}`,
-        
-        prefill: {               //user details who is logined
-            name: user.name,
-            email: user.email,
-            contact: user.phone
-        },
-        notes: {
-            address: 'ok address'
-        },
-        theme: {
-            color: '#939182'
-        } 
-    };
-    setPayLoading(false)
+    }else{
+        return alert('click again')
+    }
+       
 
-    const razor = new window.Razorpay(option);
-    razor.open()
 }
 
 useEffect(()=>{
@@ -90,8 +96,38 @@ useEffect(()=>{
              };
      localStorage.setItem('ViewCourse', JSON.stringify(ViewCourse)); 
     }
+    // dispatch(ClearPaymentMessage())   
+    // dispatch(ClearPaymentError())  
 
-},[])
+//    dispatch(UserEnrolled(course._id))
+// let isEnrolled = false;
+let isEnrolled = course?.enrolledUsers.some(
+  (rev) => rev?.user.toString() === user?._id.toString()
+);
+setIsEnrolled(isEnrolled)
+
+// document.addEventListener("contextmenu", (event) => event.preventDefault());
+
+
+// const blockKeys = (event) => {
+//     // Disable "Print Screen" (PrtScn key)
+//     if (event.key === "PrintScreen") {
+//       event.preventDefault();
+//     }
+
+//     // Disable Ctrl+S (Save page), Ctrl+P (Print page), and other key combinations
+//     if (event.ctrlKey && (event.key === "s" || event.key === "p")) {
+//       event.preventDefault();
+//     }
+//   };
+
+//   document.addEventListener("keydown", blockKeys);
+
+//   return () => {
+//     document.removeEventListener("contextmenu", (event) => event.preventDefault());
+//     document.removeEventListener("keydown", blockKeys);
+//   };
+},[ ])
 
     return (
         <>
@@ -156,15 +192,19 @@ useEffect(()=>{
                     <Box w={'100%'} alignItems={'flex-start'} boxShadow='lg' p='4' rounded='md' bg='white'>
 
                         <VStack w={'100%'} spacing={3} > 
-                            {/* <del style={{ fontSize: '1.2rem', fontWeight: '400' }}>₹20,000</del> */}
-
-                            <Heading children={course?.price} color={'#22c35e'} fontSize={['1.3rem','1.5rem']} />
-                            <Button isLoading={payloading} onClick={isAuthenticated?()=>payHandler(course?.price):()=>alert('login First')} w={'100%'} size={'lg'} colorScheme='blue' > Buy now!</Button>
-
-                            {/* <Button w={'100%'} size={'lg'} colorScheme='whatsapp' variant='outline'> Pay in Installments</Button> */}
-                            {/* <Button w={'100%'} size={'lg'} colorScheme='whatsapp' > Add to Cart</Button> */}
+                            <Heading children={isEnrolled===true?'You have Enrolled ':`Rs - ${course?.price}`} color={'#22c35e'} fontSize={['1.3rem','1.5rem']} />
+                            {
+                                
+                                isEnrolled ?(
+                                    null
+                                ):isAstrologerAuthenticated?(
+                                    <Heading children={'Astrologer not allow to enrolled'} color={'#22c35e'} fontSize={['1.3rem','1.5rem']} />
+                                ):(
+                                
+                                    <Button isLoading={payloading} onClick={isAuthenticated?()=>payHandler(course?.price):()=>alert('login First')} w={'100%'} size={'lg'} colorScheme='blue' > Buy now!</Button>
+                               )
+                            }
                         </VStack>
-                        {/* <Text fontSize={'1.1rem'} fontWeight={'700'} mt={'10px'} children={'This Course includes:'} /> */}
                     </Box>
 
                     <Box w={'100%'} mt={'15px'} boxShadow='lg' p='4' rounded='md' bg='white'>

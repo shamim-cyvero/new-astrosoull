@@ -83,7 +83,7 @@ const Footer = () => {
                 .Our goal:guide to englightenment,share wisdom globally.`}
                   />
                   <HStack mt={"10px"} spacing={4}>
-                    <Link to={'https://www.facebook.com/astrosoullrahulverma'}>
+                    <Link to={'https://www.facebook.com/astrosoullrahulverma'} target="_blank">
                       <Image
                         src={fb}
                         alt="fb"
@@ -92,7 +92,7 @@ const Footer = () => {
                       />
                     </Link>
 
-                    <Link to={'https://www.instagram.com/astro_soull12/'}>
+                    <Link to={'https://www.instagram.com/astro_soull12/'}  target="_blank">
                       <Image
                         src={instagram}
                         alt="instagram"
@@ -100,7 +100,7 @@ const Footer = () => {
                         aspectRatio={"2/2"}
                       />
                     </Link>
-                    <Link to={'https://x.com/i/flow/login?redirect_after_login=%2Fsoullastro'}>
+                    <Link to={'https://x.com/i/flow/login?redirect_after_login=%2Fsoullastro'}  target="_blank">
 
                       <Image
                         src={Twitter}
@@ -109,7 +109,7 @@ const Footer = () => {
                         aspectRatio={"2/2"}
                       />
                     </Link>
-                    <Link to={'https://api.whatsapp.com/send?phone=9910464896'}>
+                    <Link to={'https://api.whatsapp.com/send?phone=919910464896'}  target="_blank">
                       <Image
                         src={Whatsapp}
                         alt="Whatsapp"
@@ -117,7 +117,7 @@ const Footer = () => {
                         aspectRatio={"2/2"}
                       />
                     </Link>
-                    <Link to={'https://www.youtube.com/watch?v=DU4wz6FM60I'}>
+                    <Link to={'https://www.youtube.com/watch?v=DU4wz6FM60I'}  target="_blank">
                       <Image
                         src={youtube}
                         alt="youtube"
@@ -205,7 +205,7 @@ const Footer = () => {
                       "Join a global astrology network with 100K diverse memebers."
                     }
                   />
-                  <Link to={'https://www.youtube.com/watch?v=DU4wz6FM60I'}>
+                  <Link to={'https://www.youtube.com/watch?v=DU4wz6FM60I'}  target="_blank">
                     <Image src={youtube} alt="youtube" w={"20%"} />
                   </Link>
                 </VStack>

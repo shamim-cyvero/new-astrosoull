@@ -200,29 +200,32 @@ function App() {
           <Route path={"/vastu"} element={<Vastu />} />
           <Route path={"/all/courses"} element={<AllCourses />} />
 
-          <Route path="/admin/dashboard" element={isAstrologerAuthenticated?<Dashboard />:<Navigate to={'/astrologerlogin'} /> } />
 
-          <Route path="/admin/course" element={isAstrologerAuthenticated?<AdminCourse />:<Navigate to={'/astrologerlogin'} />} />
-          <Route path="/admin/course/addcourse" element={<AddCourse />} />
+          {/* ------------------------ADMIN ROUTES---------------------------------- */}
+
+          <Route path="/admin/dashboard" element={isAstrologerAuthenticated===true ?<Dashboard />:<AstrologerLogin /> } />
+
+          <Route path="/admin/course" element={isAstrologerAuthenticated===true ?<AdminCourse />:<AstrologerLogin />} />
+          <Route path="/admin/course/addcourse" element={isAstrologerAuthenticated===true ?<AddCourse />:<AstrologerLogin />} />
           {/* <Route path={"/admin/course/single/course"} element={<SingleCourse />} /> */}
           <Route
             path="/admin/course/addcourse/newcourse"
-            element={isAstrologerAuthenticated?<NewCourse />:<Navigate to={'/astrologerlogin'} />} 
+            element={isAstrologerAuthenticated===true ?<NewCourse />:<AstrologerLogin />} 
           />
 
-          <Route path="/admin/astrologer" element={isAstrologerAuthenticated?<AdminAstrologer />:<Navigate to={'/astrologerlogin'} />} />
-          <Route path="/admin/astrologer/profile" element={isAstrologerAuthenticated?<AdminAstrologerProfile />:<Navigate to={'/astrologerlogin'} />} />
-          <Route path="/admin/user" element={isAstrologerAuthenticated?<AdminUser />:<Navigate to={'/astrologerlogin'} />} />
-          <Route path="/admin/user/profile" element={isAstrologerAuthenticated?<Admin_userProfile />:<Navigate to={'/astrologerlogin'} />} />
-          <Route path="/admin/adminprofile" element={isAstrologerAuthenticated?<AdminProfile />:<Navigate to={'/astrologerlogin'} />} />
+          <Route path="/admin/astrologer" element={isAstrologerAuthenticated===true ?<AdminAstrologer />:<AstrologerLogin />} />
+          <Route path="/admin/astrologer/profile" element={isAstrologerAuthenticated===true ?<AdminAstrologerProfile />:<AstrologerLogin />} />
+          <Route path="/admin/user" element={isAstrologerAuthenticated===true ?<AdminUser />:<AstrologerLogin />} />
+          <Route path="/admin/user/profile" element={isAstrologerAuthenticated===true ?<Admin_userProfile />:<AstrologerLogin />} />
+          <Route path="/admin/adminprofile" element={isAstrologerAuthenticated===true ?<AdminProfile />:<AstrologerLogin />} />
 
-          <Route path="/admin/blog" element={isAstrologerAuthenticated?<AdminBlog />:<Navigate to={'/astrologerlogin'} />} />
-          <Route path="/admin/blog/addblog" element={isAstrologerAuthenticated?<AddBlog />:<Navigate to={'/astrologerlogin'} />} />
-          <Route path="/admin/blog/addblog/newblog" element={isAstrologerAuthenticated?<NewBlog />:<Navigate to={'/astrologerlogin'} />} />
+          <Route path="/admin/blog" element={isAstrologerAuthenticated===true ?<AdminBlog />:<AstrologerLogin />} />
+          <Route path="/admin/blog/addblog" element={isAstrologerAuthenticated===true ?<AddBlog />:<AstrologerLogin />} />
+          <Route path="/admin/blog/addblog/newblog" element={isAstrologerAuthenticated?<NewBlog />:<AstrologerLogin />} />
 
-          <Route path="/admin/transaction" element={isAstrologerAuthenticated?<AdminTransaction />:<Navigate to={'/astrologerlogin'} />} />
-          <Route path="/admin/notification" element={isAstrologerAuthenticated?<AdminNotification />:<Navigate to={'/astrologerlogin'} />} />
-          <Route path="/admin/setting" element={isAstrologerAuthenticated?<AdminSetting />:<Navigate to={'/astrologerlogin'} />} />
+          <Route path="/admin/transaction" element={isAstrologerAuthenticated===true ?<AdminTransaction />:<AstrologerLogin />} />
+          <Route path="/admin/notification" element={isAstrologerAuthenticated===true ?<AdminNotification />:<AstrologerLogin />} />
+          <Route path="/admin/setting" element={isAstrologerAuthenticated===true ?<AdminSetting />:<AstrologerLogin />} />
         </Routes>      
         
      </Suspense>

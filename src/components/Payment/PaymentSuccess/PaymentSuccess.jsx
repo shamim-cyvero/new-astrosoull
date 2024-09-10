@@ -1,15 +1,22 @@
 import React from 'react'
-import { useSearchParams } from 'react-router-dom'
+import { useNavigate, useSearchParams } from 'react-router-dom'
+import { FaCheckCircle } from "react-icons/fa";
+import { Button, Heading, Text, VStack } from '@chakra-ui/react';
+
 
 const PaymentSuccess = () => {
+    const navigate=useNavigate()
+
 
     const search = useSearchParams()[0]
     const refrenceid = search.get("refrence") 
     return (
-        <div style={{display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center',width:'100%',height:'100vh'}}>
-            <h1>Payment Success</h1>
-            <p>payment id: {refrenceid}</p>
-        </div>
+        <VStack w={'100%'} h={'70vh'} justifyContent={'center'} alignItems={'center'} >
+            <FaCheckCircle color={'#2ac362'} size={'10vmax'} />
+            <Heading fontSize={'2vmax'}>Payment Success</Heading>
+            <Text fontSize={'1.5vmax'}>payment id: {refrenceid}</Text>
+            <Button onClick={()=>navigate('/userprofile')} colorScheme={'whatsapp'} children={'Go To Profile'} />
+        </VStack>
     )
 }
 

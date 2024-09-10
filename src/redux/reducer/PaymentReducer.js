@@ -46,6 +46,18 @@ const PaymentSlice = createSlice({
       state.error = action.payload;
     },
 
+    AdminDeletePaymentRequest: (state) => {
+      state.payloading = true;
+    },
+    AdminDeletePaymentSuccess: (state, action) => {
+      state.payloading = false;
+      state.message = action.payload.message;
+    },
+    AdminDeletePaymentFail: (state, action) => {
+      state.payloading = false;
+      state.error = action.payload;
+    },
+
     ClearPaymentMessageRequest: (state, action) => {
       state.message = null;
     },
@@ -64,7 +76,12 @@ export const {
   GetPaymentKeySuccess,
   PaymentProcessFail,
   PaymentProcessRequest,
-  PaymentProcessSuccess,ClearPaymentErrorRequest,ClearPaymentMessageRequest
+  PaymentProcessSuccess,
+  ClearPaymentErrorRequest,
+  ClearPaymentMessageRequest,
+  AdminDeletePaymentFail,
+  AdminDeletePaymentRequest,
+  AdminDeletePaymentSuccess,
 } = PaymentSlice.actions;
 
 export default PaymentSlice.reducer;

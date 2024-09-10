@@ -7,12 +7,12 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Avatar, Box, Button, Grid, Heading, HStack, IconButton, Tab, Table, TableContainer, TabList, TabPanel, TabPanels, Tabs, Tbody, Td, Tfoot, Th, Thead, Tr } from '@chakra-ui/react'
 import axios from 'axios';
 import { server } from '../../../main';
-import { AdminLoadAllPayment } from '../../../redux/action/PaymentActions';
+import { AdminDeletePaymentTransaction, AdminLoadAllPayment } from '../../../redux/action/PaymentActions';
 
 
 const AdminTransaction = () => {
 //   const [transaction, setTransaction] = useState({}) 
-  const {  loading,payment,totalEarnings } = useSelector(
+  const {  payloading,payment,totalEarnings } = useSelector(
     state => state.paymentContainer
 );
 console.log(totalEarnings)
@@ -48,6 +48,12 @@ const dispatch=useDispatch()
 
 
     ]
+
+    const deleteTransactionHandler=async(TranId)=>{   
+        await dispatch(AdminDeletePaymentTransaction(TranId))
+        await dispatch(AdminLoadAllPayment())
+
+    }
     // "_id": "66d6e1f9307f80153b226683",
     // "razorpay_payment_id": "pay_OsecVT5xcS9GOR",
     // "razorpay_order_id": "order_Osebw8Q0bbCzgI",
@@ -114,7 +120,8 @@ useEffect(()=>{
                                             colorScheme='red'
                                             _hover={{ background: 'white', color: 'red' }}
                                             icon={<MdDelete size={'xs'} />}
-                                            onClick={()=>deleteUserHandler(item._id)}
+                                            onClick={()=>deleteTransactionHandler(item._id)}
+                                            isLoading={payloading}
                                         />
                                     </HStack>
                                 </Td>

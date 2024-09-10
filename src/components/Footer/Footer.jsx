@@ -78,9 +78,7 @@ const Footer = () => {
                   <Text
                     fontSize={["1rem", "1.1rem", "1rem"]}
                     mt={"20px"}
-                    children={`Welcome to astrosoull,
-                recognized among india's top 3 astrology institutes,offering courses in astrology,numerlogy,plamistry,vastu & ayurveda
-                .Our goal:guide to englightenment,share wisdom globally.`}
+                    children={`Welcome to AstroSoull, proudly recognized as one of the leading astrology institutes in India. We provide comprehensive courses in astrology, numerology, palmistry, Vastu, and Ayurveda. Our purpose is to illuminate your path and spread our knowledge across the globe.`}
                   />
                   <HStack mt={"10px"} spacing={4}>
                     <Link to={'https://www.facebook.com/astrosoullrahulverma'} target="_blank">
@@ -92,7 +90,7 @@ const Footer = () => {
                       />
                     </Link>
 
-                    <Link to={'https://www.instagram.com/astro_soull12/'}  target="_blank">
+                    <Link to={'https://www.instagram.com/astro_soull12/'} target="_blank">
                       <Image
                         src={instagram}
                         alt="instagram"
@@ -100,7 +98,7 @@ const Footer = () => {
                         aspectRatio={"2/2"}
                       />
                     </Link>
-                    <Link to={'https://x.com/i/flow/login?redirect_after_login=%2Fsoullastro'}  target="_blank">
+                    <Link to={'https://x.com/i/flow/login?redirect_after_login=%2Fsoullastro'} target="_blank">
 
                       <Image
                         src={Twitter}
@@ -109,7 +107,7 @@ const Footer = () => {
                         aspectRatio={"2/2"}
                       />
                     </Link>
-                    <Link to={'https://api.whatsapp.com/send?phone=919910464896'}  target="_blank">
+                    <Link to={'https://api.whatsapp.com/send?phone=919910464896'} target="_blank">
                       <Image
                         src={Whatsapp}
                         alt="Whatsapp"
@@ -117,7 +115,7 @@ const Footer = () => {
                         aspectRatio={"2/2"}
                       />
                     </Link>
-                    <Link to={'https://www.youtube.com/watch?v=DU4wz6FM60I'}  target="_blank">
+                    <Link to={'https://www.youtube.com/watch?v=DU4wz6FM60I'} target="_blank">
                       <Image
                         src={youtube}
                         alt="youtube"
@@ -202,10 +200,10 @@ const Footer = () => {
                     fontSize={["1rem", "1.1rem", "1rem"]}
                     mt={"10px"}
                     children={
-                      "Join a global astrology network with 100K diverse memebers."
+                      "Be a part of our global astrology network, which has 1.21K subscribers"
                     }
                   />
-                  <Link to={'https://www.youtube.com/watch?v=DU4wz6FM60I'}  target="_blank">
+                  <Link to={'https://www.youtube.com/watch?v=DU4wz6FM60I'} target="_blank">
                     <Image src={youtube} alt="youtube" w={"20%"} />
                   </Link>
                 </VStack>

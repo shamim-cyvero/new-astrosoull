@@ -46,7 +46,7 @@ const AstrologersProfile = () => {
             exp: 'Vedic, Numerology Exp: 3+ Year',
             rating: 'star',
             totalRating: '4.1',
-            appointment: 'Book a Consultation'
+            appointment: 'Book a Meeting'
         },
         {
             image: astro2,
@@ -54,7 +54,7 @@ const AstrologersProfile = () => {
             exp: 'Astrology Hindi,English Exp: 5+ Year',
             rating: 'star',
             totalRating: '4.5',
-            appointment: 'Book a Consultation'
+            appointment: 'Book a Meeting'
         },
         {
             image: astro3,
@@ -62,7 +62,7 @@ const AstrologersProfile = () => {
             exp: 'Tarot Reading, Numerology, Hindi,English Exp: 3+ Year',
             rating: 'star',
             totalRating: '4',
-            appointment: 'Book a Consultation'
+            appointment: 'Book a Meeting'
         },
         {
             image: astro4,
@@ -70,7 +70,7 @@ const AstrologersProfile = () => {
             exp: 'Career,Marriage,Relationship,Rarot Reading Hindi,English Exp: 5+ Year',
             rating: 'star',
             totalRating: '4.5',
-            appointment: 'Book a Consultation'
+            appointment: 'Book a Meeting'
         },
         {
             image: astro5,
@@ -78,7 +78,7 @@ const AstrologersProfile = () => {
             exp: 'Astrology Hindi,English Exp: 5+ Year',
             rating: 'star',
             totalRating: '4.5',
-            appointment: 'Book a Consultation'
+            appointment: 'Book a Meeting'
         },
         {
             image: astro6,
@@ -86,7 +86,7 @@ const AstrologersProfile = () => {
             exp: 'Relationship Hindi, Exp: 30+ Year',
             rating: 'star',
             totalRating: '4.5',
-            appointment: 'Book a Consultation'
+            appointment: 'Book a Meeting'
         },
         {
             image: astro7,
@@ -94,7 +94,7 @@ const AstrologersProfile = () => {
             exp: 'Vedic Hindi, Exp: 3+ Year',
             rating: 'star',
             totalRating: '4.1',
-            appointment: 'Book a Consultation'
+            appointment: 'Book a Meeting'
         },
         {
             image: astro8,
@@ -102,7 +102,7 @@ const AstrologersProfile = () => {
             exp: 'Psychologist,Vedic,Relationship Hindi,English Exp: 3+ Year',
             rating: 'star',
             totalRating: '4.3',
-            appointment: 'Book a Consultation'
+            appointment: 'Book a Meeting'
         },
         {
             image: astro9,
@@ -110,7 +110,7 @@ const AstrologersProfile = () => {
             exp: 'Vedic Hindi, Exp: 3+ Year',
             rating: 'star',
             totalRating: '4.3',
-            appointment: 'Book a Consultation'
+            appointment: 'Book a Meeting'
         },
         {
             image: astro11,
@@ -118,7 +118,7 @@ const AstrologersProfile = () => {
             exp: 'Marriage, Pshychologist,Vedic Hindi, Exp: 5+ Year',
             rating: 'star',
             totalRating: '4.3',
-            appointment: 'Book a Consultation'
+            appointment: 'Book a Meeting'
         },
         {
             image: astro12,
@@ -126,7 +126,7 @@ const AstrologersProfile = () => {
             exp: 'Chandigarh Hindi Exp: 2+ Year',
             rating: 'star',
             totalRating: '4.3',
-            appointment: 'Book a Consultation'
+            appointment: 'Book a Meeting'
         },
         {
             image: astro13,
@@ -134,7 +134,7 @@ const AstrologersProfile = () => {
             exp: 'Vedic,Numerology Hindi,Punjabi Exp: 3+ Year',
             rating: 'star',
             totalRating: '4.3',
-            appointment: 'Book a Consultation'
+            appointment: 'Book a Meeting'
         },
     ]
   
@@ -166,7 +166,7 @@ const AstrologersProfile = () => {
                 <Text children={`₹ ${item.chargePerMin ? item.chargePerMin : '00'}/Min`} />
 
               </HStack>
-              <Button mt={2} colorScheme='whatsapp' size={'sm'}>{'Book a Consultation'}</Button>
+              <Button mt={2} colorScheme='whatsapp' size={'sm'}>{'Book a Meeting'}</Button>
           </VStack>
       </Box>
   ))

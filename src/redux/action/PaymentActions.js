@@ -1,6 +1,9 @@
 import axios from "axios";
 import { server } from "../../main";
 import {
+  AdminDeletePaymentFail,
+  AdminDeletePaymentRequest,
+  AdminDeletePaymentSuccess,
   AdminLoadAllPaymentFail,
   AdminLoadAllPaymentRequest,
   AdminLoadAllPaymentSuccess,
@@ -80,6 +83,25 @@ export const AdminLoadAllPayment = () => async (dispatch) => {
     // toast.success(data.message);
   } catch (error) {
     dispatch(AdminLoadAllPaymentFail(error.message));
+    // toast.error(error.response.data.message);
+  }
+};
+
+export const AdminDeletePaymentTransaction = (TranId) => async (dispatch) => {
+  try {
+    dispatch(AdminDeletePaymentRequest());
+
+    const { data } = await axios.delete(`${server}/payment/delete/${TranId}`, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+      withCredentials: true,
+    });
+
+    dispatch(AdminDeletePaymentSuccess(data));
+    toast.success(data.message);
+  } catch (error) {
+    dispatch(AdminDeletePaymentFail(error.message));
     // toast.error(error.response.data.message);
   }
 };

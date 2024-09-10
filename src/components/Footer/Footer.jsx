@@ -195,11 +195,13 @@ const Footer = () => {
 
               <Box w={"90%"}>
                 <Text borderTop={"1px solid #718096"} />
+
+
                 <Text p={'20px 0px'}
                   fontSize={["1rem", "1.1rem", "1rem"]}
                   fontWeight={"600"}
-                  children="© All copyrights reserved 2023 astrosoull.com | Privacy Policy | Terms & Conditions | Cancellation & Refund Policy"
-                />
+                >© All copyrights reserved 2023 astrosoull.com <span onClick={() => navigate('/privacy-policy')}>| Privacy Policy </span><span style={{ cursor: 'pointer' }} onClick={() => navigate('/terms-conditons')}>| Terms & Conditions </span><span style={{ cursor: 'pointer' }} onClick={() => navigate('/')}> | Cancellation & Refund Policy</span></Text>
+
               </Box>
             </Stack>
           </>

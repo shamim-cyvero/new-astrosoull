@@ -113,7 +113,11 @@ const PaymentSuccess = lazy(() => import('./components/Payment/PaymentSuccess/Pa
 
 const AdminTransaction = lazy(() => import('./components/Admin/AdminTransaction/AdminTransaction'));
 // import AdminTransaction from "./components/Admin/AdminTransaction/AdminTransaction";
+const Privacy_Policy = lazy(() => import('./pages/Privacy_Policy/Privacy_Policy'));
+// import Privacy_Policy from "./pages/Privacy_Policy/Privacy_Policy";
 
+// import TermsAndConditions from "./pages/TermsAndConditions/TermsAndConditions";
+const TermsAndConditions= lazy(() => import('./pages/TermsAndConditions/TermsAndConditions'));
 import { useDispatch, useSelector } from "react-redux";
 import { AdminLoadAllUser, LoadUser, UserEnrolled } from "./redux/action/UserActions";
 import { CircularProgress, Stack, Text } from "@chakra-ui/react";
@@ -121,6 +125,8 @@ import { Toaster } from 'react-hot-toast';
 import { AdminLoadAllAstrologer, LoadAstrologer } from "./redux/action/AstrologerActions";
 import { GetAllCourseDetails } from "./redux/action/CourseActions";
 import { AdminLoadAllPayment } from "./redux/action/PaymentActions";
+
+
 
 
 function App() {
@@ -192,6 +198,8 @@ function App() {
           />
 
           <Route path={"/course"} element={<SingleCourse />} />
+          <Route path={"/terms-conditons"} element={<TermsAndConditions />} />
+          <Route path={"/privacy-policy"} element={<Privacy_Policy />} />
 
           <Route path={"/astrology"} element={<Astrology />} />
           <Route path={"/ayurveda"} element={<Ayurveda />} />

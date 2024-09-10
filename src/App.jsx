@@ -117,6 +117,8 @@ const Privacy_Policy = lazy(() => import('./pages/Privacy_Policy/Privacy_Policy'
 // import Privacy_Policy from "./pages/Privacy_Policy/Privacy_Policy";
 
 // import TermsAndConditions from "./pages/TermsAndConditions/TermsAndConditions";
+const PageNotFound = lazy(() => import('./pages/PageNotFound/PageNotFound'));
+// import PageNotFound from "./pages/PageNotFound/PageNotFound";
 const TermsAndConditions= lazy(() => import('./pages/TermsAndConditions/TermsAndConditions'));
 import { useDispatch, useSelector } from "react-redux";
 import { AdminLoadAllUser, LoadUser, UserEnrolled } from "./redux/action/UserActions";
@@ -186,6 +188,7 @@ function App() {
           {/* <Route path={"astrologerprofile"} element={isAstrologerAuthenticated?<AstrologerProfile />:<Navigate to={'/astrologerlogin'} /> } /> */}
 
           <Route path='/paymentsuccess' element={<PaymentSuccess />} />
+          <Route path='/*' element={<PageNotFound />} />
 
 
           <Route

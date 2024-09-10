@@ -145,8 +145,8 @@ const AstrologersProfile = () => {
 
 {
   allastrologer && allastrologer.map((item) => (
-      <Box cursor={'pointer'} onClick={()=>ShowSingleAstrologerDetails(item._id)}  key={item._id} w={'300px'} m={'20px auto'} p={'10px'} mt={'20px'} borderRadius={'10px'} >
-          <VStack w={'98%'} h={'250px'} alignItems={'center'} justifyContent={'center'} spacing={2} p={'6px 0px'} boxShadow='lg' rounded='md' bg='white'>
+      <Box cursor={'pointer'} onClick={()=>ShowSingleAstrologerDetails(item._id)}  key={item._id} w={'340px'} m={'20px auto'} p={['0px','10px']} mt={'20px'} borderRadius={'10px'} >
+          <VStack w={'100%'}  h={'250px'} alignItems={'center'} justifyContent={'center'} spacing={2} p={'6px 0px'} boxShadow='lg' rounded='md' bg='white'>
               <Avatar name={item.name} src={item.avatar?.url} size={'lg'} />
               <Heading children={item.name} color={'#1f3b64'} fontSize={'1.1rem'} mb={'10px'} textAlign={'center'} />
               {/* <Text children={'Vedic, Numerology Exp: 3+ Year'} fontSize={'.9rem'} color={'grey'} fontWeight={'400'}textAlign={'center'}  /> */}
@@ -166,7 +166,7 @@ const AstrologersProfile = () => {
                 <Text children={`₹ ${item.chargePerMin ? item.chargePerMin : '00'}/Min`} />
 
               </HStack>
-              <Button colorScheme='whatsapp' size={'sm'}>{'Book a Consultation'}</Button>
+              <Button mt={2} colorScheme='whatsapp' size={'sm'}>{'Book a Consultation'}</Button>
           </VStack>
       </Box>
   ))

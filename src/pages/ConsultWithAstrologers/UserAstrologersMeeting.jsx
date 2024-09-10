@@ -2,7 +2,7 @@ import { Box, Button, FormControl, FormLabel, Heading, HStack, Input, InputGroup
 import React, { useState } from 'react'
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
-const UserAstrologersMeeting = () => {
+const UserAstrologersMeeting = ({chargePerMin}) => {
 
     // for meeting form state
     const [name, setName] = useState("");
@@ -13,6 +13,7 @@ const UserAstrologersMeeting = () => {
     const [selectedtime, setSelectedTime] = useState();
     const [selectedminutes, setSelectedMinutes] = useState();
     const [showmeetingForm, setShowMeetingForm] = useState(false);
+    const [chargePerMinPrice, setChargePerMinPrice] = useState(0);
 
     const formattedDate = `${value.toLocaleDateString("en-US", {
         weekday: "long",
@@ -41,8 +42,10 @@ const UserAstrologersMeeting = () => {
     }
     const handleClickMinutes = (min) => {
         setSelectedMinutes(min)
+        setChargePerMinPrice(min*chargePerMin)
         console.log(min)
     }
+    console.log(chargePerMinPrice)
     return (
         <>
             <VStack justifyContent={"center"} alignItems={"center"}>
@@ -70,19 +73,19 @@ const UserAstrologersMeeting = () => {
                     >
                         <Button
                             boxShadow={"md"}
-                            colorScheme={selectedminutes === '30 Min' ? 'whatsapp' : 'gray'}
+                            colorScheme={selectedminutes === 30  ? 'whatsapp' : 'gray'}
                             borderRadius={"15px"}
                             size={["sm", "md"]}
-                            onClick={() => handleClickMinutes('30 Min')}
+                            onClick={() => handleClickMinutes(30)}
                         >
                             30 Min
                         </Button>
                         <Button
-                            colorScheme={selectedminutes === '15 Min' ? 'whatsapp' : 'gray'}
+                            colorScheme={selectedminutes === 15 ? 'whatsapp' : 'gray'}
                             boxShadow={"md"}
                             borderRadius={"15px"}
                             size={["sm", "md"]}
-                            onClick={() => handleClickMinutes('15 Min')}
+                            onClick={() => handleClickMinutes(15)}
                         >
                             15 Min
                         </Button>
@@ -184,7 +187,7 @@ const UserAstrologersMeeting = () => {
                             <Text
                                 fontWeight={"500"}
                                 fontSize={"1rem"} color={'#1f3b64'}
-                            >Meeting Time: {formattedDate} {selectedtime}  Duration: {selectedminutes}</Text>
+                            >Meeting Time: {formattedDate} {selectedtime}  Duration: {`${selectedminutes} Min`} </Text>
 
                             <form
                                 style={{ marginTop: "15px" }}

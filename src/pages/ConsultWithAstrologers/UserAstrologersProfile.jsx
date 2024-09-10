@@ -252,7 +252,7 @@ const UserAstrologersProfile = () => {
                 </TabPanel>
 
                 <TabPanel p={["0", "4"]}>
-                  <UserAstrologersMeeting />
+                  <UserAstrologersMeeting chargePerMin={SingleAstrologer.chargePerMin} />
                 </TabPanel>
 
               </TabPanels>

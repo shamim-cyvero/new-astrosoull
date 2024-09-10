@@ -30,7 +30,7 @@ import locationimg from "../../assets/FooterImg/location.png";
 import mail from "../../assets/FooterImg/email.png";
 import youtube from "../../assets/FooterImg/youtube.png";
 import JoinBtn from "../JoinBtn/JoinBtn";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Footer = () => {
   // #1f3b64 green #43d477
@@ -83,31 +83,48 @@ const Footer = () => {
                 .Our goal:guide to englightenment,share wisdom globally.`}
                   />
                   <HStack mt={"10px"} spacing={4}>
-                    <Image
-                      src={instagram}
-                      alt="instagram"
-                      w={"30px"}
-                      aspectRatio={"2/2"}
-                    />
-                    <Image
-                      src={Whatsapp}
-                      alt="Whatsapp"
-                      w={"30px"}
-                      aspectRatio={"2/2"}
-                    />
-                    <Image
-                      src={Twitter}
-                      alt="Twitter"
-                      w={"30px"}
-                      aspectRatio={"2/2"}
-                    />
-                    <Image src={fb} alt="fb" w={"30px"} aspectRatio={"2/2"} />
-                    <Image
-                      src={Pinterest}
-                      alt="Pinterest"
-                      w={"30px"}
-                      aspectRatio={"2/2"}
-                    />
+                    <Link to={'https://www.facebook.com/astrosoullrahulverma'}>
+                      <Image
+                        src={fb}
+                        alt="fb"
+                        w={"30px"}
+                        aspectRatio={"2/2"}
+                      />
+                    </Link>
+
+                    <Link to={'https://www.instagram.com/astro_soull12/'}>
+                      <Image
+                        src={instagram}
+                        alt="instagram"
+                        w={"30px"}
+                        aspectRatio={"2/2"}
+                      />
+                    </Link>
+                    <Link to={'https://x.com/i/flow/login?redirect_after_login=%2Fsoullastro'}>
+
+                      <Image
+                        src={Twitter}
+                        alt="Twitter"
+                        w={"30px"}
+                        aspectRatio={"2/2"}
+                      />
+                    </Link>
+                    <Link to={'https://api.whatsapp.com/send?phone=9910464896'}>
+                      <Image
+                        src={Whatsapp}
+                        alt="Whatsapp"
+                        w={"30px"}
+                        aspectRatio={"2/2"}
+                      />
+                    </Link>
+                    <Link to={'https://www.youtube.com/watch?v=DU4wz6FM60I'}>
+                      <Image
+                        src={youtube}
+                        alt="youtube"
+                        w={"40px"}
+                        aspectRatio={"2/2"}
+                      />
+                    </Link>
                   </HStack>
                 </VStack>
 
@@ -188,7 +205,9 @@ const Footer = () => {
                       "Join a global astrology network with 100K diverse memebers."
                     }
                   />
-                  <Image src={youtube} alt="youtube" w={"20%"} />
+                  <Link to={'https://www.youtube.com/watch?v=DU4wz6FM60I'}>
+                    <Image src={youtube} alt="youtube" w={"20%"} />
+                  </Link>
                 </VStack>
 
               </Stack>
@@ -200,7 +219,7 @@ const Footer = () => {
                 <Text p={'20px 0px'}
                   fontSize={["1rem", "1.1rem", "1rem"]}
                   fontWeight={"600"}
-                >© All copyrights reserved 2023 astrosoull.com <span onClick={() => navigate('/privacy-policy')}>| Privacy Policy </span><span style={{ cursor: 'pointer' }} onClick={() => navigate('/terms-conditons')}>| Terms & Conditions </span><span style={{ cursor: 'pointer' }} onClick={() => navigate('/')}> | Cancellation & Refund Policy</span></Text>
+                >© All copyrights reserved 2023 astrosoull.com <span style={{ cursor: 'pointer' }} onClick={() => navigate('/privacy-policy')}>| Privacy Policy </span><span style={{ cursor: 'pointer' }} onClick={() => navigate('/terms-conditons')}>| Terms & Conditions </span><span style={{ cursor: 'pointer' }} onClick={() => navigate('/')}> | Cancellation & Refund Policy</span></Text>
 
               </Box>
             </Stack>

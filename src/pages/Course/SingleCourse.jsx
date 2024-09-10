@@ -164,7 +164,7 @@ setIsEnrolled(isEnrolled)
             <Stack w={['100%', '90%']} m={'40px auto'} spacing={4} direction={{ base: 'column', md: 'row', lg: 'row' }}>
                 <HStack justifyContent={'center'} spacing={4} alignItems={'center'} alignContent={'flex-start'} w={'100%'} flexWrap={'wrap'} >
                     <VStack w={'100%'}>
-                        <Tabs w={{ base: '100%', md: '98%' }} m={'5px auto'} size={'md'} >
+                        <Tabs w={{ base: '90%', md: '98%' }} m={'5px auto'} size={'md'} >
                             <TabList bg={'#1f3b64'} color={'white'} rounded={'lg'} p={2}>
                                 <Tab w={'30%'} _selected={{ borderBottom: '3px solid green' }}>Information</Tab>
                                 <Tab w={'30%'} _selected={{ borderBottom: '3px solid green' }}>{`Content(${course?.lectures.length})`}</Tab>
@@ -201,7 +201,7 @@ setIsEnrolled(isEnrolled)
                                     <Heading children={'Astrologer not allow to enrolled'} color={'#22c35e'} fontSize={['1.3rem','1.5rem']} />
                                 ):(
                                 
-                                    <Button isLoading={payloading} onClick={isAuthenticated?()=>payHandler(course?.price):()=>alert('login First')} w={'100%'} size={'lg'} colorScheme='blue' > Buy now!</Button>
+                                    <Button isLoading={payloading} onClick={isAuthenticated?()=>payHandler(course?.price):()=>alert('login First')} w={'100%'} size={['md','lg']} colorScheme='blue' > Buy now!</Button>
                                )
                             }
                         </VStack>

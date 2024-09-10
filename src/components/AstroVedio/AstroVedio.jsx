@@ -37,10 +37,10 @@ const AstroVedio = () => {
 
     return (
         <>
-            <Stack w={'90%'} m={'80px auto'}  spacing={4} alignItems={'center'} justifyContent={'center'} direction={{base:'column',md:'row'}} flexWrap={'wrap'}>
+            <Stack w m={'80px auto'}  spacing={4} alignItems={'center'} justifyContent={'center'} direction={{base:'column',md:'row'}} flexWrap={'wrap'}>
                 {astrovedioData.map((item, index) => (
                     <Link key={index} to={item.url} target='_blank' >
-                    <Box key={index} w={'260px'}  boxShadow='lg'  rounded='md' bg='white'  mt={'30px'}>
+                    <Box key={index} w={['350px','290px']}  boxShadow='lg'  rounded='md' bg='white'  mt={'30px'}>
                         <Image src={item.image} alt={`video-${index}`} w={'100%'} />
                     </Box>
                     </Link>

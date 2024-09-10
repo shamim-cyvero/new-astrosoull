@@ -7,7 +7,7 @@ import { Box, Button, Card, CardBody,CardFooter,Divider, Heading,HStack,Image, T
 const BlogData = ({ image, title, des }) => { 
   return (
     <>
-      <Card className="card" maxW={"260px"} w={"100%"}  h={{ base: "400px", md: "400px" }}   borderRadius="lg" flexWrap={"wrap"} m={'0 1vmax'}  boxShadow='lg' bg='white'>
+      <Card className="card" maxW={['300px','260px']}  w={"100%"}  h={{ base: "400px", md: "400px" }}   borderRadius="lg" flexWrap={"wrap"} m={'0 1vmax'}  boxShadow='lg' bg='white'>
         <Box w={"100%"} position={"relative"}>
           <Image src={image}alt="blog1"w={"100%"}h={'150px'}objectFit={"cover"}borderRadius="lg" />
           <Button className="btn" position={"absolute"} left={"45%"}  bottom={"-7%"} leftIcon={<MdDateRange />} colorScheme="whatsapp" variant="solid" rounded={"20"} size={"sm"} >

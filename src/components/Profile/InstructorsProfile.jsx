@@ -28,8 +28,8 @@ const InstructorsProfile = () => {
 
           {
             profileDetails && profileDetails.map((item) => (
-                <Box cursor={'pointer'} onClick={()=>navigate('/user/instructors/profile')}  key={item.astroName} w={'300px'} m={'20px auto'} p={'10px'} mt={'20px'} borderRadius={'10px'} >
-                    <VStack w={'98%'} h={'250px'} alignItems={'center'} justifyContent={'center'} spacing={2} p={'6px 0px'} boxShadow='lg' rounded='md' bg='white'>
+                <Box cursor={'pointer'} onClick={()=>navigate('/user/instructors/profile')}  key={item.astroName} w={'340px'} m={'20px auto'}  p={['0px','10px']} mt={'20px'} borderRadius={'10px'} >
+                    <VStack w={'100%'} h={'250px'} alignItems={'center'} justifyContent={'center'} spacing={2} p={'6px 0px'} boxShadow='lg' rounded='md' bg='white'>
                         <Avatar name='Dan Abrahmov' src={item.image} size={'lg'} />
                         <Heading children={item.astroName} color={'#1f3b64'} fontSize={'1.1rem'} mb={'10px'} textAlign={'center'} />
                         <Text children={item.exp} fontSize={'.9rem'} color={'grey'} fontWeight={'400'}textAlign={'center'}  />

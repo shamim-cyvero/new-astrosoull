@@ -2,18 +2,26 @@ import { Box, Button, FormControl, FormLabel, Heading, HStack, Input, InputGroup
 import React, { useState } from 'react'
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
-const UserAstrologersMeeting = ({chargePerMin}) => {
+import { GetMeetingPaymentKey } from '../../redux/action/UserActions';
+import { useDispatch, useSelector } from 'react-redux';
+import axios from 'axios';
+import { server } from '../../main';
+const UserAstrologersMeeting = ({chargePerMin,SingleAstrologer}) => {
 
     // for meeting form state
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [contact, setContact] = useState("");
     const [value, setValue] = useState(new Date());
-    const [selectdate, setSelectdate] = useState();
-    const [selectedtime, setSelectedTime] = useState();
-    const [selectedminutes, setSelectedMinutes] = useState();
+    const [date, setDate] = useState();
+    const [time, setTime] = useState();
+    const [duration, setDuration] = useState();
     const [showmeetingForm, setShowMeetingForm] = useState(false);
-    const [chargePerMinPrice, setChargePerMinPrice] = useState(0);
+    const [price, setPrice] = useState(0);
+
+const {  MeetingPaymentkey,user} = useSelector( (state) => state.userContainer);
+
+const dispatch=useDispatch()
 
     const formattedDate = `${value.toLocaleDateString("en-US", {
         weekday: "long",
@@ -23,29 +31,78 @@ const UserAstrologersMeeting = ({chargePerMin}) => {
     })} `;
     const handleDateChange = (date) => {
         setValue(date);
-        setSelectdate(date);
+        setDate(date);
         setShowMeetingForm(true)
-        console.log(selectdate)
     }
     const MeetingHandler = (e) => {
         e.preventDefault();
-        console.log({ name, email, contact });
+        payHandler()
         setName('')
         setEmail('')
         setContact('')
-        alert('Meeting details submitted successfully!');
+        // alert('Meeting details submitted successfully!');
     };
 
     const handleClickTime = (time) => {
-        setSelectedTime(time)
-        console.log(time)
+        setTime(time)
+        // console.log(time)
     }
     const handleClickMinutes = (min) => {
-        setSelectedMinutes(min)
-        setChargePerMinPrice(min*chargePerMin)
-        console.log(min)
+        setDuration(min)
+        setPrice(min*chargePerMin)
+        // console.log(min)
     }
-    console.log(chargePerMinPrice)
+
+    const payHandler = async () => {
+        await dispatch(GetMeetingPaymentKey())
+        const { data } = await axios.post(
+            `${server}/user/meeting/payment/process`,
+            { price },
+            {
+              headers: {
+                "Content-Type": "application/json",
+              },
+              withCredentials: true,
+            }
+          );
+        
+        if(data){
+            const option = {
+               key: MeetingPaymentkey,
+               amount: data.order.amount,
+               currency: 'INR',
+               name: SingleAstrologer?.name,
+               description: SingleAstrologer?.description,
+               image:  SingleAstrologer?.avatar?.url ,
+               order_id: data.order.id,
+               callback_url: `${server}/user/meeting/payment/verfication/${SingleAstrologer._id}?price=${price}&duration=${duration}&date=${date}&time=${time}`,
+               
+               prefill: {               //user details who is logined
+                   name: user.name,
+                   email: user.email,
+                   contact: user.phone
+
+               },
+               notes: {
+                   duration,  
+                   date,  
+                   time,  
+                   price
+               },
+               theme: {
+                   color: '#939182'
+               } 
+           };
+        
+           const razor = new window.Razorpay(option);
+           razor.open()      
+    
+        }else{
+            return alert('click again')
+        }     
+    
+    }
+
     return (
         <>
             <VStack justifyContent={"center"} alignItems={"center"}>
@@ -73,7 +130,7 @@ const UserAstrologersMeeting = ({chargePerMin}) => {
                     >
                         <Button
                             boxShadow={"md"}
-                            colorScheme={selectedminutes === 30  ? 'whatsapp' : 'gray'}
+                            colorScheme={duration === 30  ? 'whatsapp' : 'gray'}
                             borderRadius={"15px"}
                             size={["sm", "md"]}
                             onClick={() => handleClickMinutes(30)}
@@ -81,7 +138,7 @@ const UserAstrologersMeeting = ({chargePerMin}) => {
                             30 Min
                         </Button>
                         <Button
-                            colorScheme={selectedminutes === 15 ? 'whatsapp' : 'gray'}
+                            colorScheme={duration === 15 ? 'whatsapp' : 'gray'}
                             boxShadow={"md"}
                             borderRadius={"15px"}
                             size={["sm", "md"]}
@@ -152,7 +209,7 @@ const UserAstrologersMeeting = ({chargePerMin}) => {
                             <HStack mt={4}>
                                 <Button
                                     boxShadow={"md"}
-                                    colorScheme={selectedtime === '07:30PM' ? 'whatsapp' : 'gray'}
+                                    colorScheme={time === '07:30PM' ? 'whatsapp' : 'gray'}
                                     borderRadius={"30px"}
                                     size={["sm", "md"]}
                                     onClick={() => handleClickTime('07:30PM')}
@@ -161,7 +218,7 @@ const UserAstrologersMeeting = ({chargePerMin}) => {
                                 </Button>
                                 <Button
                                     boxShadow={"md"}
-                                    colorScheme={selectedtime === '08:00PM' ? 'whatsapp' : 'gray'}
+                                    colorScheme={time === '08:00PM' ? 'whatsapp' : 'gray'}
                                     borderRadius={"30px"}
                                     size={["sm", "md"]}
                                     onClick={() => handleClickTime('08:00PM')}
@@ -170,7 +227,7 @@ const UserAstrologersMeeting = ({chargePerMin}) => {
                                 </Button>
                                 <Button
                                     boxShadow={"md"}
-                                    colorScheme={selectedtime === '08:30PM' ? 'whatsapp' : 'gray'}
+                                    colorScheme={time === '08:30PM' ? 'whatsapp' : 'gray'}
                                     borderRadius={"30px"}
                                     size={["sm", "md"]}
                                     onClick={() => handleClickTime('08:30PM')}
@@ -187,7 +244,7 @@ const UserAstrologersMeeting = ({chargePerMin}) => {
                             <Text
                                 fontWeight={"500"}
                                 fontSize={"1rem"} color={'#1f3b64'}
-                            >Meeting Time: {formattedDate} {selectedtime}  Duration: {`${selectedminutes} Min`} </Text>
+                            >Meeting Time: {formattedDate} {time}  Duration: {`${duration} Min`} </Text>
 
                             <form
                                 style={{ marginTop: "15px" }}

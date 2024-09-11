@@ -175,6 +175,33 @@ const UserSlice = createSlice({
       state.loading = false;
       state.error = action.payload;
     },
+
+    MeetingPaymentProcessRequest: (state) => {
+      state.loading = true;
+    },
+    MeetingPaymentProcessSuccess: (state, action) => {
+      state.loading = false;
+      state.MeetingPaymentOrder = action.payload.order;
+      state.message = action.payload.message;
+    },
+    MeetingPaymentProcessFail: (state, action) => {
+      state.loading = false;
+      state.error = action.payload.message;
+    },
+
+    GetMeetingPaymentKeyRequest: (state) => {
+      state.loading = true;
+    },
+    GetMeetingPaymentKeySuccess: (state, action) => {
+      state.loading = false;
+      state.MeetingPaymentkey = action.payload.key;
+      // state.message = action.payload.message;
+    },
+    GetMeetingPaymentKeyFail: (state, action) => {
+      state.loading = false;
+      state.MeetingPaymentkey = null;
+      state.error = action.payload.message;
+    },
   },
 });
 
@@ -218,6 +245,12 @@ export const {
   UserEnrolledCheckFail,
   UserEnrolledCheckRequest,
   UserEnrolledCheckSuccess,
+  MeetingPaymentProcessFail,
+  MeetingPaymentProcessRequest,
+  MeetingPaymentProcessSuccess,
+  GetMeetingPaymentKeyFail,
+  GetMeetingPaymentKeyRequest,
+  GetMeetingPaymentKeySuccess,
 } = UserSlice.actions;
 
 export default UserSlice.reducer;

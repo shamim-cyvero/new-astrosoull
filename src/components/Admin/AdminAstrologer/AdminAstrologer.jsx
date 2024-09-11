@@ -110,6 +110,7 @@ const AdminAstrologer = () => {
                                     <Th bg='#162536' color='white'>Phone</Th>
                                     <Th bg='#162536' color='white'>Email</Th>
                                     <Th bg='#162536' color='white'>Rating</Th>
+                                    <Th bg='#162536' color='white'>Meeting</Th>
                                     <Th bg='#162536' color='white'>Action</Th>
                                 </Tr>
                             </Thead>
@@ -122,10 +123,11 @@ const AdminAstrologer = () => {
                                                 {/* <AvatarBadge boxSize='1em' bg='red.500' /> */}
                                             </Avatar>
                                         </Td>
-                                        <Td>{item.name}</Td>
-                                        <Td>{item.phone}</Td>
-                                        <Td>{item.email}</Td>
-                                        <Td>{item.rating}</Td>
+                                        <Td>{item?.name}</Td>
+                                        <Td>{item?.phone}</Td>
+                                        <Td>{item?.email}</Td>
+                                        <Td>{item?.rating}</Td>
+                                        <Td>{item?.meeting?.length}</Td>
                                         <Td>
                                             <HStack width={'100%'} alignItems={'center'} justifyContent={'center'}>
                                                 <IconButton size={'xs'}

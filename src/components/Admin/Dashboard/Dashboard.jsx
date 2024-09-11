@@ -231,6 +231,7 @@ useEffect(()=>{
                             <Th p={4} bg='#162536' color='white'>Lectures</Th>
                             <Th p={4} bg='#162536' color='white'>Rating</Th>
                             <Th p={4} bg='#162536' color='white'>Price</Th>
+                            <Th p={4} bg='#162536' color='white'>Enrolled Users</Th>
                         </Tr>
                     </Thead>
                     <Tbody>
@@ -241,6 +242,7 @@ useEffect(()=>{
                                 <Td>{item?.lectures.length}</Td>
                                 <Td>{item?.rating}</Td>
                                 <Td>{item?.price}</Td>
+                                <Td>{item?.enrolledUsers?.length}</Td>
                           
                             </Tr>
                         ))}

@@ -81,8 +81,7 @@ const payHandler = async (price) => {
 
     }else{
         return alert('click again')
-    }
-       
+    }     
 
 }
 

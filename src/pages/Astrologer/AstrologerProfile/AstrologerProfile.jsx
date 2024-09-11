@@ -245,7 +245,7 @@ const AstrologerProfile = () => {
     <TabPanels >
 
       <TabPanel p={'4'}>
-       <AstrologerMeeting  />
+       <AstrologerMeeting  meetings={astrologer?.meeting}/>
       </TabPanel>  
 
       <TabPanel p={'4'}>

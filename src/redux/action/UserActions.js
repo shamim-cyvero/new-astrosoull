@@ -13,6 +13,9 @@ import {
   changeUserAvatarFail,
   changeUserAvatarRequest,
   changeUserAvatarSuccess,
+  GetMeetingPaymentKeyFail,
+  GetMeetingPaymentKeyRequest,
+  GetMeetingPaymentKeySuccess,
   loadUserFail,
   loadUserRequest,
   loadUserSuccess,
@@ -22,6 +25,9 @@ import {
   logoutFail,
   logoutRequest,
   logoutSuccess,
+  MeetingPaymentProcessFail,
+  MeetingPaymentProcessRequest,
+  MeetingPaymentProcessSuccess,
   signupFail,
   signupRequest,
   signupSuccess,
@@ -321,3 +327,50 @@ export const UserEnrolled = ( courseId) => async (dispatch) => {
   }
 };
 
+
+export const GetMeetingPaymentKey = () => async (dispatch) => {
+  try {
+    dispatch(GetMeetingPaymentKeyRequest());
+
+    const { data } = await axios.get(`${server}/user/get/key/meeting/payment`,
+   
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        withCredentials: true,
+      }
+    );
+
+    dispatch(GetMeetingPaymentKeySuccess(data));
+    // console.log(data);
+    // toast.success(data.message);
+  } catch (error) {
+    dispatch(GetMeetingPaymentKeyFail(error.message));
+    toast.error(error.response.data.message);
+    // console.log(error);
+  }
+};
+
+export const PaymentProcess = (price) => async (dispatch) => {
+  try {
+    dispatch(MeetingPaymentProcessRequest());
+
+    const { data } = await axios.post(
+      `${server}/user/meeting/payment/process`,
+      { price },
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        withCredentials: true,
+      }
+    );
+
+    dispatch(MeetingPaymentProcessSuccess(data));
+    // toast.success(data.message);
+  } catch (error) {
+    dispatch(MeetingPaymentProcessFail(error.message));
+    // toast.error(error.response.data.message);
+  }
+};

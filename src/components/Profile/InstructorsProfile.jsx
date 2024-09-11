@@ -17,7 +17,7 @@ const InstructorsProfile = () => {
         exp: 'Vedic,Relationship,Numerology Hindi,English Exp: 6+ Year',
         rating: 'star',
         totalRating: '4.5',
-        appointment: 'Book a Consultation'
+        appointment: 'Book a Meeting'
     }
    
 

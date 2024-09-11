@@ -79,7 +79,7 @@ const AstroProfile = () => {
             exp: 'Vedic, Numerology Exp: 3+ Year',
             rating: 'star',
             totalRating: '4.1',
-            appointment: 'Book a Consultation'
+            appointment: 'Book a meeting'
         },
         {
             image: astro2,
@@ -87,7 +87,7 @@ const AstroProfile = () => {
             exp: 'Astrology Hindi,English Exp: 5+ Year',
             rating: 'star',
             totalRating: '4.5',
-            appointment: 'Book a Consultation'
+            appointment: 'Book a meeting'
         },
         {
             image: astro3,
@@ -95,7 +95,7 @@ const AstroProfile = () => {
             exp: 'Tarot Reading, Numerology, Hindi,English Exp: 3+ Year',
             rating: 'star',
             totalRating: '4',
-            appointment: 'Book a Consultation'
+            appointment: 'Book a meeting'
         },
         {
             image: astro4,
@@ -103,7 +103,7 @@ const AstroProfile = () => {
             exp: 'Career,Marriage,Relationship,Rarot Reading Hindi,English Exp: 5+ Year',
             rating: 'star',
             totalRating: '4.5',
-            appointment: 'Book a Consultation'
+            appointment: 'Book a meeting'
         },
         {
             image: astro5,
@@ -111,7 +111,7 @@ const AstroProfile = () => {
             exp: 'Astrology Hindi,English Exp: 5+ Year',
             rating: 'star',
             totalRating: '4.5',
-            appointment: 'Book a Consultation'
+            appointment: 'Book a meeting'
         },
         {
             image: astro6,
@@ -119,7 +119,7 @@ const AstroProfile = () => {
             exp: 'Relationship Hindi, Exp: 30+ Year',
             rating: 'star',
             totalRating: '4.5',
-            appointment: 'Book a Consultation'
+            appointment: 'Book a meeting'
         },
         {
             image: astro7,
@@ -127,7 +127,7 @@ const AstroProfile = () => {
             exp: 'Vedic Hindi, Exp: 3+ Year',
             rating: 'star',
             totalRating: '4.1',
-            appointment: 'Book a Consultation'
+            appointment: 'Book a meeting'
         },
         {
             image: astro8,
@@ -135,7 +135,7 @@ const AstroProfile = () => {
             exp: 'Psychologist,Vedic,Relationship Hindi,English Exp: 3+ Year',
             rating: 'star',
             totalRating: '4.3',
-            appointment: 'Book a Consultation'
+            appointment: 'Book a meeting'
         },
         {
             image: astro9,
@@ -143,7 +143,7 @@ const AstroProfile = () => {
             exp: 'Vedic Hindi, Exp: 3+ Year',
             rating: 'star',
             totalRating: '4.3',
-            appointment: 'Book a Consultation'
+            appointment: 'Book a meeting'
         },
         {
             image: astro11,
@@ -151,7 +151,7 @@ const AstroProfile = () => {
             exp: 'Marriage, Pshychologist,Vedic Hindi, Exp: 5+ Year',
             rating: 'star',
             totalRating: '4.3',
-            appointment: 'Book a Consultation'
+            appointment: 'Book a meeting'
         },
         {
             image: astro12,
@@ -159,7 +159,7 @@ const AstroProfile = () => {
             exp: 'Chandigarh Hindi Exp: 2+ Year',
             rating: 'star',
             totalRating: '4.3',
-            appointment: 'Book a Consultation'
+            appointment: 'Book a meeting'
         },
         {
             image: astro13,
@@ -167,7 +167,7 @@ const AstroProfile = () => {
             exp: 'Vedic,Numerology Hindi,Punjabi Exp: 3+ Year',
             rating: 'star',
             totalRating: '4.3',
-            appointment: 'Book a Consultation'
+            appointment: 'Book a meeting'
         },
     ]
 
@@ -186,7 +186,7 @@ const AstroProfile = () => {
                             <Heading children={'Astrologers'} color={'#1f3b64'} fontSize={['1.2rem','1.6rem','1.8rem']}  />
                             <Stack w={'100%'} direction={{ base: 'column', md: 'row' }}>
                                 <Text children={'#Discover your path with top astrologers -'} fontSize={['.9rem', '1.1rem','1rem' ]} fontWeight={'350'} />
-                                <Text style={{ fontSize: "1rem", fontWeight: "600" }}> Book an astrology consultation</Text>
+                                <Text style={{ fontSize: "1rem", fontWeight: "600" }}> Book a session with an astrologer</Text>
                             </Stack>
 
                         </VStack>
@@ -215,7 +215,7 @@ const AstroProfile = () => {
                                         </Button>
                                         {/* <Text children={'₹50 / Min'} /> */}
                                     </HStack>
-                                    <Button colorScheme='whatsapp' size={'sm'}>{'Book a Consultation'}</Button>
+                                    <Button colorScheme='whatsapp' size={'sm'}>{'Book a Meeting'}</Button>
                                 </VStack>
                             </Box>
                         ))

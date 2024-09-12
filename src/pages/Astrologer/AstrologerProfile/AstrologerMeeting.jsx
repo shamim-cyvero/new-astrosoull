@@ -19,7 +19,7 @@ const AstrologerMeeting = ({meetings}) => {
                         <Th bg='#162536' color='white'>Time</Th>
                         <Th bg='#162536' color='white'>Price</Th>
                         <Th bg='#162536' color='white'>Payment_id</Th>
-                        <Th bg='#162536' color='white'>Status</Th>
+                        {/* <Th bg='#162536' color='white'>Status</Th> */}
                     </Tr>
                 </Thead>
                 <Tbody>
@@ -37,7 +37,7 @@ const AstrologerMeeting = ({meetings}) => {
                             <Td>{item.time}</Td>
                             <Td>{item.price}</Td>
                             <Td>{item.razorpay_payment_id}</Td>
-                            <Td>Complete</Td>
+                            {/* <Td>Complete</Td> */}
                         </Tr>
                     ))}
     

@@ -1,20 +1,13 @@
-import React, { useState } from 'react'
+import React from 'react'
 import astro10 from "../../assets/astrologerImg/astro10.png";
 
-import { Avatar, AvatarBadge, Button, Heading, HStack, Stack, Text, VStack,Tab, TabList, TabPanel, TabPanels, Tabs, ListItem, List, ListIcon } from "@chakra-ui/react";
+import { Avatar,  Button, Heading, HStack, Stack, Text, VStack,Tab, TabList, TabPanel, TabPanels, Tabs, ListItem, List, ListIcon } from "@chakra-ui/react";
 import { MdCheckCircle } from 'react-icons/md';
 import Rating  from 'react-rating'
 import { FaStar } from "react-icons/fa";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
-import './UserInstructorsProfile.css'
+
 
 const UserInstructorsProfile = () => {
-  const [startDate, setStartDate] = useState(new Date());
-  const [endDate, setEndDate] = useState(null);
-  
-  
-
   const singleProfile = 
     {
       image: astro10,
@@ -30,17 +23,14 @@ const UserInstructorsProfile = () => {
     <>
         <Stack bgColor={'white'} borderRadius={'10px'} boxShadow='lg' spacing={'10'}  w={'80%'} p={'6'} m={'1.5vmax auto'} alignItems={'center'} justifyContent={'flex-start'} direction={{base:'column',md:'row',lg:'row'}}>
             <Avatar  w={'15vmax'} h={'15vmax'} src={singleProfile.image} name={singleProfile.astroName} >
-              {/* <AvatarBadge  bg='tomato' boxSize='.9em' /> */}
+           
             </Avatar>
 
             <VStack p={2} spacing={'1'} alignItems={'flex-start'} >
                 <Heading letterSpacing={'4px'}  fontSize={['1xl','3xl']} children={singleProfile.astroName} />
                 <Text children={singleProfile.Specialist} />
                 <HStack >
-                    {/* <Rating
-                      emptySymbol={<FaStar color='gray' />}
-                      fullSymbol={<FaStar color='red' />}
-                      /> */}
+                    
                     <Rating
                       emptySymbol={<FaStar color='gray' />}
                       fullSymbol={<FaStar color='tomato' />}
@@ -113,19 +103,7 @@ const UserInstructorsProfile = () => {
                   Instructor is not available for meetings...
                 `} 
               />
-              {/*            
-
-              <DatePicker
-                selected={startDate}
-                onChange={(date) => setStartDate(date)}
-                startDate={startDate}
-                endDate={endDate}
-                minDate={new Date()} // Disable past dates
-                inline
-                showDisabledMonthNavigation
-                withPortal
-                
-              /> */}
+            
 
             </VStack>
           </TabPanel>

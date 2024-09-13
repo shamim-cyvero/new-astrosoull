@@ -1,27 +1,18 @@
 import React from "react";
 import logo from "../../assets/logo-n.png";
-// import logo from "../../assets/logo.png";
-import { MdEmail } from "react-icons/md";
 import {
   Box,
-  Button,
   HStack,
   Heading,
-  IconButton,
   Image,
-  Input,
-  InputGroup,
-  InputLeftElement,
   ListItem,
   Stack,
   Text,
   UnorderedList,
   VStack,
-  background,
 } from "@chakra-ui/react";
 import fb from "../../assets/FooterImg/FB.png";
 import instagram from "../../assets/FooterImg/Instagram.png";
-import Pinterest from "../../assets/FooterImg/Pinterest.png";
 import Twitter from "../../assets/FooterImg/Twitter.png";
 import Whatsapp from "../../assets/FooterImg/Whatsapp.png";
 
@@ -33,7 +24,6 @@ import JoinBtn from "../JoinBtn/JoinBtn";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Footer = () => {
-  // #1f3b64 green #43d477
   const navigate = useNavigate()
   const location = useLocation()
 
@@ -57,17 +47,16 @@ const Footer = () => {
               alignItems={"center"}
               justifyContent={"space-between"}
               spacing={6}
-            // direction={{base:'column',md:'column',lg:'r'}}
+          
             >
               <Stack
                 w={"90%"}
                 p={"30px 0"}
                 alignItems={"center"}
                 justifyContent={{ base: "center", md: "center", lg: "space-between" }}
-                // alignItems={{ base: "center", md: "center", lg: "space-between" }}
                 direction={{ base: "column", md: "column", lg: "row" }}
                 spacing={6}
-              // overflow={"hidden"}
+             
               >
                 <VStack
                   w={{ base: "90%", md: "90%", lg: "33%" }}
@@ -77,7 +66,7 @@ const Footer = () => {
                   <Image src={logo} alt="logo" w={["70%", "210px"]} />
                   <Text
                     fontSize={["1rem", "1.1rem", "1rem"]}
-                    mt={"20px"}
+                    mt={"10px"}
                     children={`Welcome to AstroSoull, proudly recognized as one of the leading astrology institutes in India. We provide comprehensive courses in astrology, numerology, palmistry, Vastu, and Ayurveda. Our purpose is to illuminate your path and spread our knowledge across the globe.`}
                   />
                   <HStack mt={"10px"} spacing={4}>
@@ -136,9 +125,6 @@ const Footer = () => {
                     fontSize={["1.2rem", "1.4rem", "1.5rem"]}
                   />
                   <UnorderedList mt={"10px"}>
-                    {/* <ListItem cursor={'pointer'} fontSize={["1rem", "1.1rem", "1rem"]}>
-                      Career & Placement
-                    </ListItem> */}
                     <ListItem cursor={'pointer'} fontSize={["1rem", "1.1rem", "1rem"]}>
                       Kundli Reports
                     </ListItem>

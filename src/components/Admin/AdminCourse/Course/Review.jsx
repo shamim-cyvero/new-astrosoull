@@ -1,4 +1,4 @@
-import { Avatar, Box, Button, Heading, HStack, Text, Textarea, VStack } from '@chakra-ui/react'
+import { Avatar, Box, Button, Heading, HStack, Text, VStack } from '@chakra-ui/react'
 import React from 'react'
 import { FaStar } from 'react-icons/fa6'
 import Rating from 'react-rating'
@@ -7,8 +7,6 @@ import { useDispatch } from 'react-redux'
 
 const Review = ({ loading,reviews, rating ,courseId}) => {
 
-    // alert(reviews[0])
-    // console.log(reviews[0])
 	const dispatch=useDispatch()
 
 
@@ -16,7 +14,7 @@ const Review = ({ loading,reviews, rating ,courseId}) => {
         await dispatch(AdminDeleteCourseReview(reviewId,courseId))
          dispatch(GetSignleCourseDetails(courseId))  
 
-        // dispatch(GetAllCourseDetails())
+     
      
      
      }
@@ -36,9 +34,9 @@ const Review = ({ loading,reviews, rating ,courseId}) => {
             </Box>
             {
                 reviews && reviews.map((item) => (
-                    // <Heading mt={10} fontSize={'1.5rem'} children={'Comments'} />
+                   
                     <Box key={item._id} w={'100%'} p={5} mb={5} spacing={5} alignItems={'center'} justifyContent={'center'} boxShadow='lg' mt={'10px'} rounded='md' bg='white'>
-                        {/* <Heading   mb={5} fontSize={'1.3rem'} children={'Comments : '} /> */}
+                       
                         <Button isLoading={loading} m={'1vmax 0'} alignSelf={'flex-end'} onClick={()=>deleteReviewHandler(item._id)} top={'10%'} left={'2%'} size={'sm'}  colorScheme='red' >Delete Review</Button>
 
                         <HStack w={'100%'}>
@@ -52,7 +50,7 @@ const Review = ({ loading,reviews, rating ,courseId}) => {
                                     initialRating={item.rating}
                                     readonly
                                 />
-                                {/* <Text children={item.rating} fontSize={'md'} /> */}
+                           
                             </VStack>
 
                         </HStack>
@@ -62,11 +60,7 @@ const Review = ({ loading,reviews, rating ,courseId}) => {
 
 
 
-            {/* <form style={{ width: '100%', marginTop: '20px' }}>
-                <Heading mb='8px' fontSize={'1.5rem'} children={'Review'} />
-                <Textarea cols={'3'} rows={'8'} />
-                <Button colorScheme='whatsapp' mt='10px' size={'md'} w={['50%', '50%', '25%']}>Post review</Button>
-            </form> */}
+           
 
         </>
     )

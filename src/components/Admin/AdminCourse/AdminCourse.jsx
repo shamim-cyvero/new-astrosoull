@@ -2,21 +2,8 @@ import {
   Box,
   Grid,
   HStack,
-  IconButton,
-  Text,
-  Table,
-  Tbody,
-  Td,
-  Th,
-  Thead,
-  Tr,
-  VStack,
   Button,
-  Img,
-  TableContainer,
   Heading, 
-  Image,
-  Avatar,
 } from "@chakra-ui/react";
 import React from "react";
 import SideBar from "../AdminSideBar/AdminSideBar";
@@ -25,8 +12,6 @@ import Header from "../AdminHeader/AdminHeader";
 import { FaPlus, FaStar } from "react-icons/fa6";
 import pic from '../../../assets/astrologerImg/astro1.png'
 import medical from '../../../assets/astrologerImg/astro2.png'
-// import medical from '../../../assets/SingleCourseImg/medical.jpg'
-
 import Coursecard from "./CourseCard";
 import { MdDelete } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
@@ -39,58 +24,7 @@ const { loading, courses } = useSelector((state) => state.courseContainer);
 	const dispatch=useDispatch()
 
 
-  const courseDetails = [
-    {
-      image: medical,
-      name: 'Astromani 2024',
-      category: 'in Astrology',
-      rating: 'rting',
-      totalRating: '45',
-      price: 14999,
-      teacher: {
-        avatar: pic,
-        name: 'Mr.Alok Khandelwal'
-      }
-    },
-    {
-      image: pic,
-      name: 'Astromani 2024',
-      category: 'in Astrology',
-      rating: 'rting',
-      totalRating: '45',
-      price: 14999,
-      teacher: {
-        avatar: pic,
-        name: 'Mr.Alok Khandelwal'
-      }
-    },
-    {
-      image: pic,
-      name: 'Astromani 2024',
-      category: 'in Astrology',
-      rating: 'rting',
-      totalRating: '45',
-      price: 14999,
-      teacher: {
-        avatar: pic,
-        name: 'Mr.Alok Khandelwal'
-      }
-    },
-    {
-      image: pic,
-      name: 'Astromani 2024',
-      category: 'in Astrology',
-      rating: 'rting',
-      totalRating: '45',
-      price: 14999,
-      teacher: {
-        avatar: pic,
-        name: 'Mr.Alok Khandelwal'
-      }
-    },
-
-
-  ]
+  
 
 useEffect(()=>{
   dispatch(GetAllCourseDetails())

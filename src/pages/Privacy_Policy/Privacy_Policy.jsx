@@ -1,6 +1,5 @@
-import { Box, Heading, HStack, Image, Text, VStack } from '@chakra-ui/react'
+import { Box, Heading, Image, Text, VStack } from '@chakra-ui/react'
 import React from 'react'
-import { GoDotFill } from "react-icons/go";
 import privacy from '../Privacy_Policy/privacy.png'
 const Privacy_Policy = () => {
     return (
@@ -10,7 +9,7 @@ const Privacy_Policy = () => {
                 <Image src={privacy} alt={'privacy'} w={'100%'}  objectFit={'cover'} />
 
             </Box>
-            <VStack w={'90%'} m={'auto'} p={'30px 0px'} alignItems={'flex-start'}>
+            <VStack w={'90%'} m={'auto'} p={'30px 0px'} alignItems={'flex-start'} className='privacyBack'>
                 <Heading fontSize={'1.4rem'} color={'#1f3b64'} children={'Privacy Policy for Astrosoull'} />
                 <Text mt={4} fontSize={'1.2rem'} fontWeight={'600'} children={'Privacy Policy'} />
                 <Text fontSize={'1.1rem'} fontWeight={'400'} color={'grey'} children={'Last updated: May 29, 2024'} />

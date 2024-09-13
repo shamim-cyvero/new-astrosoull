@@ -1,34 +1,15 @@
-import { Box, HStack, Image, Stack, Text, VStack } from "@chakra-ui/react";
+import { Box, HStack, Image, Text, VStack } from "@chakra-ui/react";
 import React from "react";
-import course from "../../assets/courseCardImg/Online.jpg";
-import consult from "../../assets/courseCardImg/Consultation.jpg";
-import per from "../../assets/courseCardImg/per.jpg";
 import { useNavigate } from "react-router-dom";
 
 const SimpleCard = ({ cousreCardData }) => {
   const navigate=useNavigate()
 
-  // const cousreCardData = [
-  //   {
-  //     img: course,
-  //     title: "Online Courses",
-  //   },
-  //   {
-  //     img: consult,
-  //     title: "Online Consultation",
-  //   },
-  //   {
-  //     img: per,
-  //     title: "Personalized Reports",
-  //   },
-  // ];
- 
   return (
     <>
       <HStack
         w={"90%"}
         m={"40px auto"}
-        // border={"1px solid red"}
         alignItems={"center"}
         justifyContent={"center"}
         flexWrap={"wrap"}
@@ -42,12 +23,8 @@ const SimpleCard = ({ cousreCardData }) => {
               h={{ base: "200px", md: "200px" }}
               borderRadius={"15px"}
               p={"20px 0"}
-              // border={"1px solid blackAlpha.200"}
               boxShadow={"0 3px 10px rgb(0 0 0 / 0.4)"}
               cursor={"pointer"}
-              //  boxShadow='lg' rounded='md' bg='white'
-              // transition="transform all 0.5s"
-              //  transition="transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out"
               transition="all 0.3s "
               _hover={{
                 transform: "translateY(-15px)",

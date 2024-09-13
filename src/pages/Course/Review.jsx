@@ -40,7 +40,6 @@ const { loading } = useSelector((state) => state.courseContainer);
             </Box> 
             {
                 reviews && reviews.map((item) => (
-                    // <Heading mt={10} fontSize={'1.5rem'} children={'Comments'} />
                     <Box key={item._id} w={'100%'} p={5} mb={5} spacing={5} alignItems={'center'} justifyContent={'center'} boxShadow='lg' mt={'10px'} rounded='md' bg='white'>
                         <Heading   mb={5} fontSize={['1rem','1.2rem']} children={'Comments : '} />
                         <HStack w={'100%'}>
@@ -54,7 +53,7 @@ const { loading } = useSelector((state) => state.courseContainer);
                                     initialRating={item.rating}
                                     readonly
                                 />
-                                {/* <Text children={item.rating} fontSize={'md'} /> */}
+                               
                             </VStack>
 
                         </HStack>

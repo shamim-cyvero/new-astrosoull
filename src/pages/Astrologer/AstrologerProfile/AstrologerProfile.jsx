@@ -5,7 +5,7 @@ import { Avatar,Modal,
 	ModalHeader,
 	ModalFooter,
 	ModalBody,
-	ModalCloseButton, AvatarBadge, Button, Heading, HStack, Stack, Text, VStack,Tab, TabList, TabPanel, TabPanels, Tabs, ListItem, List, ListIcon, 
+	ModalCloseButton, Button, Heading, HStack, Stack, Text, VStack,Tab, TabList, TabPanel, TabPanels, Tabs, 
   useDisclosure,
   Input,
   Textarea} from "@chakra-ui/react";
@@ -237,7 +237,7 @@ const AstrologerProfile = () => {
       <Tab _selected={{borderBottom:'3px solid green' }}>About</Tab>
 	  {
 		astrologer?.role==='admin'?(
-			<Tab _selected={{borderBottom:'3px solid green' }}>Deshboard</Tab>
+			<Tab _selected={{borderBottom:'3px solid green' }}>Dashboard</Tab>
 		):null
 	  }
     </TabList>
@@ -260,7 +260,7 @@ const AstrologerProfile = () => {
 		astrologer?.role==='admin'?(
 			<>			
 	  			<TabPanel p={'4'}>
-					<Button onClick={()=>navigate('/admin/dashboard')} children={'Go To Deshboard'} colorScheme={'whatsapp'} />
+					<Button onClick={()=>navigate('/admin/dashboard')} children={'Go To Dashboard'} colorScheme={'whatsapp'} />
       			</TabPanel>
 			</>
 		):null

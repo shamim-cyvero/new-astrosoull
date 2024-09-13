@@ -1,11 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './SingleCourse.css'
-// import medical from '../../assets/SingleCourseImg/medical.jpg'
-import medical from "../../assets/contactUsImg/astrologybanner.png";
-import astro10 from '../../assets/astrologerImg/astro10.png'
-import logo from '../../assets/logo-n.png'
-
-import { Avatar, Box, Button, Heading, HStack, IconButton, Image, Stack, Tab, TabList, TabPanel, TabPanels, Tabs, Text, VStack } from '@chakra-ui/react'
+import {  Box, Button, Heading, HStack, IconButton, Image, Stack, Tab, TabList, TabPanel, TabPanels, Tabs, Text, VStack } from '@chakra-ui/react'
 import { RiVidiconLine } from "react-icons/ri";
 import { IoShieldCheckmark } from "react-icons/io5";
 import { HiMiniCurrencyRupee } from "react-icons/hi2";
@@ -95,37 +90,11 @@ useEffect(()=>{
              };
      localStorage.setItem('ViewCourse', JSON.stringify(ViewCourse)); 
     }
-    // dispatch(ClearPaymentMessage())   
-    // dispatch(ClearPaymentError())  
-
-//    dispatch(UserEnrolled(course._id))
-// let isEnrolled = false;
+ 
 let isEnrolled = course?.enrolledUsers.some(
   (rev) => rev?.user.toString() === user?._id.toString()
 );
 setIsEnrolled(isEnrolled)
-
-// document.addEventListener("contextmenu", (event) => event.preventDefault());
-
-
-// const blockKeys = (event) => {
-//     // Disable "Print Screen" (PrtScn key)
-//     if (event.key === "PrintScreen") {
-//       event.preventDefault();
-//     }
-
-//     // Disable Ctrl+S (Save page), Ctrl+P (Print page), and other key combinations
-//     if (event.ctrlKey && (event.key === "s" || event.key === "p")) {
-//       event.preventDefault();
-//     }
-//   };
-
-//   document.addEventListener("keydown", blockKeys);
-
-//   return () => {
-//     document.removeEventListener("contextmenu", (event) => event.preventDefault());
-//     document.removeEventListener("keydown", blockKeys);
-//   };
 },[ ])
 
     return (

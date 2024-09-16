@@ -1,4 +1,4 @@
-import { Box, Button, Checkbox, FormControl, FormLabel, Heading, HStack, Image, Input,Stack, Text, VStack } from '@chakra-ui/react'
+import { Box, Button,  FormControl, FormLabel, Heading, HStack, Image, Input,Stack, Text, VStack } from '@chakra-ui/react'
 import React, { useState } from 'react'
 import pic from '../../../assets/signup-img.png'
 import {Link, useNavigate} from 'react-router-dom'

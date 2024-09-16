@@ -1,7 +1,6 @@
-import { Button, Heading, HStack, Input, InputGroup, InputLeftElement, InputRightElement, Stack, Text, VStack, } from "@chakra-ui/react";
+import { Button, Heading, Input, InputGroup, Stack, Text, VStack, } from "@chakra-ui/react";
 import React, { useState } from "react";
 import './JoinBtn.css'
-import { FiPhoneIncoming } from "react-icons/fi";
 import { useDispatch } from "react-redux";
 import { UserContactByEmail } from "../../redux/action/UserActions";
 
@@ -55,7 +54,6 @@ const formSubmit = async () => {
             <Text children={
                 "#We will send the best deals and offers to your email."} />
           </VStack>
-        {/* <form style={{width:"60%"}} onSubmit={formSubmit} > */}
 
           <InputGroup w={['90%', '90%', '45%']} boxShadow='md' rounded='md' p={['5px', '10px']} borderRadius={'35px'} bg={'white'} color={'black'}>
             <Input required type="email" value={email} onChange={(e)=>setEmail(e.target.value)} placeholder="Enter your email" fontSize={'18x'} w={'100%'} border={'none'} outline={'none'} />
@@ -63,7 +61,6 @@ const formSubmit = async () => {
               Join
             </Button>
           </InputGroup>
-        {/* </form> */}
         </Stack>
       </Stack>
     </>

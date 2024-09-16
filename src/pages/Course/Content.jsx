@@ -1,21 +1,11 @@
 import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Box, Button, HStack, IconButton, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Stack, Text, useDisclosure, VStack } from '@chakra-ui/react'
-import { TbCloudDownload } from "react-icons/tb";
 import React, { useEffect } from 'react'
 import { RiFunctionLine } from "react-icons/ri";
 import { RiVidiconLine } from "react-icons/ri";
 const Content = ({ lectures,rating,courseId }) => {
 
     const { isOpen, onOpen, onClose } = useDisclosure()
-    // useEffect(() => {
-    //     const checkScreenRecording = () => {
-    //       if (navigator.mediaDevices && navigator.mediaDevices.getDisplayMedia) {
-    //         alert("Screen recording detected! This action is not allowed.");
-    //       }
-    //     };
-      
-    //     checkScreenRecording();
-    //   }, []);
-      
+   
     return (
         <>
 
@@ -32,7 +22,7 @@ const Content = ({ lectures,rating,courseId }) => {
                                             <IconButton colorScheme='whatsapp' icon={<RiFunctionLine />} isRound={true} fontSize='25px' />
                                             <Text children={item.name} fontSize={['1rem', '1.2rem']} fontWeight='600' />
                                         </HStack>
-                                        {/* <Text children={item.ClassCount} mr={'5px'} fontWeight={'600'} /> */}
+                                      
                                     </HStack>
                                     <AccordionIcon ml={'5px'} />
                                 </AccordionButton>
@@ -51,14 +41,12 @@ const Content = ({ lectures,rating,courseId }) => {
                                                     </HStack>
 
                                                     <HStack w={['100%', '100%', '25%']}>
-                                                        {/* <TbCloudDownload /> */}
-                                                        {/* <span >{item.vedioMb}</span> */}
+                                                      
                                                     </HStack>
                                                     <HStack>
                                                         <Button onClick={onOpen} size={'lg'}>Play</Button> 
                                                     </HStack>
-                                                    {/* <video src={item.url}></video> */}
-                                                    {/* open video model  */}
+                                                  
                                                     <Modal size={'xl'} isOpen={isOpen} onClose={onClose}>
                                                         <ModalOverlay />
                                                             <ModalContent>
@@ -69,12 +57,7 @@ const Content = ({ lectures,rating,courseId }) => {
                                                             <ModalBody>
                                                             <video onContextMenu={(e) => e.preventDefault()} controls autoPlay  src={item.url}></video>
                                                             </ModalBody>
-                                                            {/* <ModalFooter>
-                                                              <Button colorScheme='blue' mr={3} onClick={onClose}>
-                                                                Close
-                                                              </Button>
-                                                              <Button variant='ghost'>Secondary Action</Button>
-                                                            </ModalFooter> */}
+                                                           
                                                         </ModalContent>
                                                     </Modal>
                                                 </Stack>
@@ -84,11 +67,7 @@ const Content = ({ lectures,rating,courseId }) => {
                                         ))
                                     }
                                 </VStack>
-                                {/* <HStack w={'100%'} mt={5} alignItems={'center'} justifyContent={'center'}>
-                                    <Button  colorScheme='whatsapp' size={'md'} p={2} w={['100%', '50%', '20%']} fontSize={'md'}>
-                                        Add Video
-                                    </Button>
-                                </HStack> */}
+                               
 
                             </AccordionPanel>
 

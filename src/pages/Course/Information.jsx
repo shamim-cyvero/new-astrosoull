@@ -1,4 +1,4 @@
-import { Box, Button, Heading, HStack, Stack, Text, Textarea, VStack } from '@chakra-ui/react'
+import { Box, Heading, HStack,  Text, VStack } from '@chakra-ui/react'
 import React from 'react'
 
 const Information = ({info}) => {
@@ -35,13 +35,6 @@ const Information = ({info}) => {
                 </VStack >
             </Box>
            
-            {/* <form style={{ width: '100%', marginTop: '20px' }}>
-                <Heading mb='8px' fontSize={'1.5rem'} children={'Comment:'} />
-                <Textarea cols={'3'} rows={'5'} />
-                <Button colorScheme='whatsapp' mt='10px' size={'md'} w={['50%','50%','25%']}>Post</Button>
-            </form> */}
-
-
         </>
     )
 }

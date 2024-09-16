@@ -1,13 +1,5 @@
 import React, { useState } from "react";
-import astro1 from "../../assets/astrologerImg/astro1.png";
-import astro2 from "../../assets/astrologerImg/astro2.png";
-import astro3 from "../../assets/astrologerImg/astro3.png";
-import astro4 from "../../assets/astrologerImg/astro4.png";
-import astro5 from "../../assets/astrologerImg/astro5.png";
-import astro6 from "../../assets/astrologerImg/astro6.png";
-import astro7 from "../../assets/astrologerImg/astro7.png";
-import astro8 from "../../assets/astrologerImg/astro8.png";
-import { Avatar, Box, Button, FormControl, FormLabel, Heading, HStack, Input, InputGroup, List, ListIcon, ListItem, Stack, Tab, TabList, TabPanel, TabPanels, Tabs, Text, Textarea, VStack } from "@chakra-ui/react";
+import { Avatar, Box, Button, Heading, HStack, List, ListIcon, ListItem, Stack, Tab, TabList, TabPanel, TabPanels, Tabs, Text, Textarea, VStack } from "@chakra-ui/react";
 import Rating from "react-rating";
 import { FaStar } from "react-icons/fa6";
 import { MdCheckCircle } from "react-icons/md";
@@ -44,92 +36,6 @@ const UserAstrologersProfile = () => {
   }
 
 
-  const profileDetails = [
-    {
-      image: astro1,
-      astroName: "Abhay Sharma",
-      exp: "Astrology Hindi,English Exp: 5+ Year",
-      rating: "star",
-      totalRating: "4.5",
-      appointment: "Book a Consultation",
-    },
-    {
-      image: astro2,
-      astroName: "Akansha Khandelwal",
-      exp: "Astrology Hindi,English Exp: 5+ Year",
-      rating: "star",
-      totalRating: "4.5",
-      appointment: "Book a Consultation",
-    },
-    {
-      image: astro3,
-      astroName: "Vishnu Dhanuka",
-      exp: "Astrology Hindi,English Exp: 5+ Year",
-      rating: "star",
-      totalRating: "4.5",
-      appointment: "Book a Consultation",
-    },
-    {
-      image: astro4,
-      astroName: "Mani Aggarwal",
-      exp: "Astrology Hindi,English Exp: 5+ Year",
-      rating: "star",
-      totalRating: "4.5",
-      appointment: "Book a Consultation",
-    },
-    {
-      image: astro5,
-      astroName: "Rajendra Mahapatra",
-      exp: "Astrology Hindi,English Exp: 5+ Year",
-      rating: "star",
-      totalRating: "4.5",
-      appointment: "Book a Consultation",
-    },
-    {
-      image: astro6,
-      astroName: "Acharya Panduranga",
-      exp: "Astrology Hindi,English Exp: 5+ Year",
-      rating: "star",
-      totalRating: "4.5",
-      appointment: "Book a Consultation",
-    },
-    {
-      image: astro7,
-      astroName: "Revanthi Shridhar",
-      exp: "Astrology Hindi,English Exp: 5+ Year",
-      rating: "star",
-      totalRating: "4.5",
-      appointment: "Book a Consultation",
-    },
-    {
-      image: astro8,
-      astroName: "Anubhav Gairola",
-      exp: "Astrology Hindi,English Exp: 5+ Year",
-      rating: "star",
-      totalRating: "4.3",
-      appointment: "Book a Consultation",
-    },
-  ];
-
-  // const singleProfile = {
-  //   image: astro1,
-  //   astroName: "Abhay Sharma",
-  //   Specialist:'Astrology | Vastu Specialist',
-  //   exp: "Astrology Hindi,English Exp: 5+ Year",
-  //   rating: "star",
-  //   totalRating: "4.5",
-  //   appointment: "Book a Consultation",
-  // };
-  // const singleProfile = 
-  // {
-  //   image: astro1,
-  //   astroName: 'Mr.Rahull Verma',
-  //   exp: 'Vedic,Relationship,Numerology Hindi,English Exp: 6+ Year',
-  //   rating: 'star',
-  // totalRating: '4.5',
-  //   appointment: 'Book a Consultation'    
-  // }
-
   return (
     <>
       {
@@ -138,17 +44,14 @@ const UserAstrologersProfile = () => {
           <>
             <Stack bgColor={'white'} borderRadius={'10px'} boxShadow='lg' spacing={'10'} w={'80%'} p={'6'} m={'1.5vmax auto'} alignItems={'center'} justifyContent={'flex-start'} direction={{ base: 'column', md: 'row', lg: 'row' }}>
               <Avatar w={'15vmax'} h={'15vmax'} src={SingleAstrologer.avatar?.url} name={SingleAstrologer?.name} >
-                {/* <AvatarBadge  bg='tomato' boxSize='.9em' /> */}
+              
               </Avatar>
 
               <VStack p={["0", "2"]} spacing={'1'} alignItems={'flex-start'} >
                 <Heading letterSpacing={'4px'} fontSize={['1xl', '3xl']} textTransform={'capitalize'} children={SingleAstrologer?.name} />
                 <Text children={SingleAstrologer?.expert} fontSize={['.9rem', '1rem']} />
                 <HStack >
-                  {/* <Rating
-                      emptySymbol={<FaStar color='gray' />}
-                      fullSymbol={<FaStar color='red' />}
-                      /> */}
+                
                   <Rating
                     emptySymbol={<FaStar color='gray' />}
                     fullSymbol={<FaStar color='tomato' />}
@@ -212,7 +115,7 @@ const UserAstrologersProfile = () => {
 
                     {
                       SingleAstrologer.review && SingleAstrologer.review.map((item) => (
-                        // <Heading mt={10} fontSize={'1.5rem'} children={'Comments'} />
+                       
                         <Box w={'100%'} p={5} mb={5} spacing={5} alignItems={'center'} justifyContent={'center'} boxShadow='lg' mt={'10px'} rounded='md' bg='white'>
                           <Heading mb={5} fontSize={'1.3rem'} children={'Comments : '} />
                           <HStack w={'100%'}>
@@ -226,7 +129,7 @@ const UserAstrologersProfile = () => {
                                 initialRating={item.rating}
                                 readonly
                               />
-                              {/* <Text children={item.rating} fontSize={'md'} /> */}
+                             
                             </VStack>
 
                           </HStack>

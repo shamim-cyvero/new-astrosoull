@@ -1,5 +1,5 @@
-import { Box, HStack, Image, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, Stack, useDisclosure } from '@chakra-ui/react';
-import React, { useState } from 'react';
+import { Box, Image, Stack } from '@chakra-ui/react';
+import React from 'react';
 import vedio1 from '../../assets/astroVedioImg/vedio1.png';
 import vedio2 from '../../assets/astroVedioImg/vedio2.png';
 import vedio3 from '../../assets/astroVedioImg/vedio3.png';
@@ -7,10 +7,7 @@ import vedio4 from '../../assets/astroVedioImg/vedio4.png';
 import { Link } from 'react-router-dom';
 
 const AstroVedio = () => {
-    const { isOpen, onOpen, onClose } = useDisclosure();
-    const [currentVideoUrl, setCurrentVideoUrl] = useState('');
-
-    const astrovedioData = [
+   const astrovedioData = [
         {
             image: vedio1,
             url: 'https://www.youtube.com/watch?v=KUAOJviZO-0&feature=youtu.be'
@@ -29,11 +26,7 @@ const AstroVedio = () => {
         }
     ];
 
-    const youtubeHandler = (url) => {
-        // setCurrentVideoUrl(url);
-        // onOpen();
-
-    };
+  
 
     return (
         <>
@@ -46,16 +39,6 @@ const AstroVedio = () => {
                     </Link>
                 ))}
             </Stack>
-
-            {/* <Modal isOpen={isOpen} onClose={onClose}>
-                <ModalOverlay />
-                <ModalContent>
-                    <ModalCloseButton />
-                    <ModalBody>
-                        <iframe src={currentVideoUrl} height="315" width="100%" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-                    </ModalBody>
-                </ModalContent>
-            </Modal> */}
         </>
     );
 };

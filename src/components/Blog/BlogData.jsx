@@ -2,7 +2,6 @@ import React from "react";
 import { FiUser } from "react-icons/fi";
 import { FaRegCommentAlt } from "react-icons/fa";
 import { MdDateRange } from "react-icons/md";
-import Blog1 from "../../assets/blogImg/blog1.jpg";
 import { Box, Button, Card, CardBody,CardFooter,Divider, Heading,HStack,Image, Text,} from "@chakra-ui/react";
 const BlogData = ({ image, title, des }) => { 
   return (

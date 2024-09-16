@@ -1,18 +1,5 @@
 import React from 'react'
 import Slider from 'react-slick';
-import astro1 from '../../assets/astrologerImg/astro1.png'
-import astro2 from '../../assets/astrologerImg/astro2.png'
-import astro3 from '../../assets/astrologerImg/astro3.png'
-import astro4 from '../../assets/astrologerImg/astro4.png'
-import astro5 from '../../assets/astrologerImg/astro5.png'
-import astro6 from '../../assets/astrologerImg/astro6.png'
-import astro7 from '../../assets/astrologerImg/astro7.png'
-import astro8 from '../../assets/astrologerImg/astro8.png'
-import astro9 from '../../assets/astrologerImg/astro9.png'
-import astro11 from '../../assets/astrologerImg/astro11.png'
-import astro12 from '../../assets/astrologerImg/astro12.png'
-import astro13 from '../../assets/astrologerImg/astro13.png'
-
 import { Avatar, Box, Button, Heading, HStack, Stack, Text, VStack } from '@chakra-ui/react';
 import Rating from 'react-rating';
 import { FaStar } from 'react-icons/fa6';
@@ -72,104 +59,7 @@ const AstroProfile = () => {
         ]
     };
 
-    const profileDetails = [
-        {
-            image: astro1,
-            astroName: 'Astro Yash',
-            exp: 'Vedic, Numerology Exp: 3+ Year',
-            rating: 'star',
-            totalRating: '4.1',
-            appointment: 'Book a meeting'
-        },
-        {
-            image: astro2,
-            astroName: 'Akansha Khandelwal',
-            exp: 'Astrology Hindi,English Exp: 5+ Year',
-            rating: 'star',
-            totalRating: '4.5',
-            appointment: 'Book a meeting'
-        },
-        {
-            image: astro3,
-            astroName: 'Priya soull',
-            exp: 'Tarot Reading, Numerology, Hindi,English Exp: 3+ Year',
-            rating: 'star',
-            totalRating: '4',
-            appointment: 'Book a meeting'
-        },
-        {
-            image: astro4,
-            astroName: 'Agastya',
-            exp: 'Career,Marriage,Relationship,Rarot Reading Hindi,English Exp: 5+ Year',
-            rating: 'star',
-            totalRating: '4.5',
-            appointment: 'Book a meeting'
-        },
-        {
-            image: astro5,
-            astroName: 'Rajendra Mahapatra',
-            exp: 'Astrology Hindi,English Exp: 5+ Year',
-            rating: 'star',
-            totalRating: '4.5',
-            appointment: 'Book a meeting'
-        },
-        {
-            image: astro6,
-            astroName: 'Meenakshi',
-            exp: 'Relationship Hindi, Exp: 30+ Year',
-            rating: 'star',
-            totalRating: '4.5',
-            appointment: 'Book a meeting'
-        },
-        {
-            image: astro7,
-            astroName: 'Navneet sharma',
-            exp: 'Vedic Hindi, Exp: 3+ Year',
-            rating: 'star',
-            totalRating: '4.1',
-            appointment: 'Book a meeting'
-        },
-        {
-            image: astro8,
-            astroName: 'Gaurav Ji',
-            exp: 'Psychologist,Vedic,Relationship Hindi,English Exp: 3+ Year',
-            rating: 'star',
-            totalRating: '4.3',
-            appointment: 'Book a meeting'
-        },
-        {
-            image: astro9,
-            astroName: 'Govind Pathak',
-            exp: 'Vedic Hindi, Exp: 3+ Year',
-            rating: 'star',
-            totalRating: '4.3',
-            appointment: 'Book a meeting'
-        },
-        {
-            image: astro11,
-            astroName: 'Acharya angad',
-            exp: 'Marriage, Pshychologist,Vedic Hindi, Exp: 5+ Year',
-            rating: 'star',
-            totalRating: '4.3',
-            appointment: 'Book a meeting'
-        },
-        {
-            image: astro12,
-            astroName: 'Aditya Mehra',
-            exp: 'Chandigarh Hindi Exp: 2+ Year',
-            rating: 'star',
-            totalRating: '4.3',
-            appointment: 'Book a meeting'
-        },
-        {
-            image: astro13,
-            astroName: 'Ajay Pandit',
-            exp: 'Vedic,Numerology Hindi,Punjabi Exp: 3+ Year',
-            rating: 'star',
-            totalRating: '4.3',
-            appointment: 'Book a meeting'
-        },
-    ]
+ 
 
     const ShowSingleAstrologerDetails = async (astrologerId) => {
         await dispatch(LoadSingleAstrologerDetails(astrologerId))
@@ -203,7 +93,7 @@ const AstroProfile = () => {
                                     <Heading children={item.name} color={'#1f3b64'} fontSize={'1.4rem'} textTransform={'capitalize'}mb={'10px'} textAlign={'center'} />
                                     <Text children={`${item.expert?item.expert:'no update'}} | ${item.language?item.language:'no update'}`} fontSize={'1rem'} color={'grey'} fontWeight={'400'} textAlign={'center'} />
                                     <HStack spacing={2} textAlign={'center'}>
-                                        {/* <Text children={item.rating} /> */}
+                                        
                                         <Rating
                                             emptySymbol={<FaStar color='gray' />}
                                             fullSymbol={<FaStar color='tomato' />}
@@ -213,7 +103,6 @@ const AstroProfile = () => {
                                         <Button colorScheme='whatsapp' cursor={'default'} variant='solid' size={'xs'} fontSize={'.8rem'}>
                                             {item.rating}
                                         </Button>
-                                        {/* <Text children={'₹50 / Min'} /> */}
                                     </HStack>
                                     <Button colorScheme='whatsapp' size={'sm'}>{'Book a Meeting'}</Button>
                                 </VStack>

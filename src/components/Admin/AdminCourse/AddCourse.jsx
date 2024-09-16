@@ -48,14 +48,7 @@ function AddCourse() {
     await dispatch(AdminCreateCourse(name, description, price, banner ,category))
 
     navigate(`/admin/course/addcourse/newcourse`);
-    // navigate(
-    //   '/admin/course/addcourse/newcourse',
-    //   {
-    //     state : {
-    //       courseId
-    //     }
-    //   }
-    // )
+    
 
   };
   return (

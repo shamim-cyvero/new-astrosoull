@@ -40,17 +40,14 @@ const dispatch=useDispatch()
         setName('')
         setEmail('')
         setContact('')
-        // alert('Meeting details submitted successfully!');
     };
 
     const handleClickTime = (time) => {
         setTime(time)
-        // console.log(time)
     }
     const handleClickMinutes = (min) => {
         setDuration(min)
         setPrice(min*chargePerMin)
-        // console.log(min)
     }
 
     const payHandler = async () => {
@@ -166,7 +163,7 @@ const dispatch=useDispatch()
                             onChange={handleDateChange}
                             value={value}
                         />
-                        {/* <p>Selected Date: {formattedDate}</p> */}
+                       
                     </HStack>
                 </Box>
 
@@ -193,7 +190,6 @@ const dispatch=useDispatch()
                         </InputGroup>
                         <Button
                             colorScheme="whatsapp"
-                            // size={['sm','md']}
                             borderRadius={"10px"}
                         >
                             Apply

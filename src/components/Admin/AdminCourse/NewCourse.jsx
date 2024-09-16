@@ -7,12 +7,10 @@ import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { GetSignleCourseDetails } from "../../../redux/action/CourseActions";
 const NewCourse = () => {
-//   const { id} = useParams();
-//   const { state } = useLocation();
-// console.log(id)
+
 
 const { loading, course } = useSelector((state) => state.courseContainer);
-//   const Id = course?._id;
+
 
   const navigate=useNavigate()
   const dispatch=useDispatch()

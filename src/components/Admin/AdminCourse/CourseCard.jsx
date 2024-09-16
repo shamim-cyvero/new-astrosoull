@@ -1,23 +1,14 @@
 import {
     Box,
-    Grid,
     HStack,
-    IconButton,
     Text,
     VStack,
     Button,
-    Img,
-    TableContainer,
     Heading,
     Image,
-    Avatar,
 } from "@chakra-ui/react";
-import { Link, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 import { FaStar } from "react-icons/fa6";
-import pic from '../../../assets/astrologerImg/astro1.png'
-
-// import pic from '../../../assets/pic.jpg'
-import { MdDelete } from "react-icons/md";
 import { AdminDeleteCourse, GetAllCourseDetails, GetSignleCourseDetails } from "../../../redux/action/CourseActions";
 import { useDispatch } from "react-redux";
 import Rating from "react-rating";
@@ -50,13 +41,9 @@ const Coursecard = ({ image, name, category, rating, totalRating, price, teacher
                           <Button onClick={()=>deleteCourseHandler(id)} pos={'absolute'} top={'10%'} left={'2%'} size={'sm'}  colorScheme='red' >Delete</Button>
                     </Box>
                     <VStack onClick={()=>ShowSingleCourseDetails(id)} w={'100%'} alignItems={'flex-start'} borderRadius={'0 0 10px 10px'} boxShadow='lg' bg='white' pl={'10px'} pb={'15px'}>
-                        {/* <HStack pt={'5px'}>
-                            <Avatar name='Dan Abrahmov' src={teacherImg} size={'sm'} />
-                            <Text children={teacherName} fontSize={'.9rem'} fontWeight={'500'} color={'grey'} />
-                        </HStack> */}
-                        {/* <Link to={'/course'}> */}
+                       
                         <Heading children={name} fontSize={'1.3rem'} w={'100%'} textOverflow={'ellipsis'} whiteSpace={'nowrap'} overflow={'hidden'} mb={'8px'} />
-                        {/* </Link> */}
+                        
                         <Text children={category} fontSize={'.9rem'} textDecoration={'underline'} />
                         <HStack>
                             <Rating

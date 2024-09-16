@@ -10,9 +10,6 @@ import { Avatar,Modal,
 	ModalCloseButton, AvatarBadge, Button, Heading, HStack, Stack, Text, VStack,Tab, TabList, TabPanel, TabPanels, Tabs, ListItem, List, ListIcon, 
   useDisclosure,
   Input} from "@chakra-ui/react";
-import { MdCheckCircle } from 'react-icons/md';
-import Rating  from 'react-rating'
-import { FaStar } from "react-icons/fa";
 import UserCourse from './UserCourse';
 import UserMeeting from './UserMeeting';
 import { useDispatch, useSelector } from 'react-redux';
@@ -40,15 +37,6 @@ const UserProfile = () => {
 		state => state.userContainer
 	);
 
-    const singleProfile = 
-    {
-      image: astro10,
-      astroName: 'Mr.Rahull Verma',
-      exp: 'Vedic,Relationship,Numerology Hindi,English Exp: 6+ Year',
-      rating: 'star',
-    totalRating: '4.5',
-      appointment: 'Book a Consultation'    
-    }
     const showModelHandler = i => {
       setShowModel(i);
       onOpen();

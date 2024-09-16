@@ -4,16 +4,11 @@ import {
   MenuButton,
   MenuList,
   MenuItem,
-  MenuItemOption,
-  MenuGroup,
-  MenuOptionGroup,
-  MenuDivider,
   Box,
   Button,
   InputGroup,
   Input,
   InputRightElement,
-  transform,
   Image,
   IconButton,
   Text,
@@ -34,12 +29,11 @@ import {
   AccordionPanel,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
-import { FaSearch, FaRegBell, FaArrowDown } from "react-icons/fa";
+import { FaRegBell } from "react-icons/fa";
 import { BsCart2 } from "react-icons/bs";
 import { BiSearch } from "react-icons/bi";
 import { IoIosArrowDown } from "react-icons/io";
 import { IoCallOutline, IoMenu } from "react-icons/io5";
-// import logo from '../../assets/logo.png'
 import logo from '../../assets/logo-n.png'
 import c1 from '../../assets/courseItemImg/c1.png'
 import c2 from '../../assets/courseItemImg/c2.png'
@@ -253,7 +247,6 @@ const Header = ({ isAuthenticated }) => {
                   </Menu>
                   <Text cursor={'pointer'} onClick={() => navigate('/blog')} fontSize={'1.3vmax'} fontWeight={'600'} children={'Blog'} />
                   <Text cursor={'pointer'} onClick={() => navigate('/contactus')} fontSize={'1.3vmax'} fontWeight={'600'} children={'Contact Us'} />
-                  {/* <Text cursor={'pointer'} onClick={()=>navigate('/login')} fontSize={'1.3vmax'} fontWeight={'600'}  children={'Login'} /> */}
                 </HStack>
                 <Link to={'https://api.whatsapp.com/send?phone=919910464896'} target="_blank">
                   <IconButton isRound={true} variant='solid' colorScheme='whatsapp' fontSize='20px' icon={<IoCallOutline />} />
@@ -337,8 +330,7 @@ const Header = ({ isAuthenticated }) => {
 
           <DrawerFooter m={'10vmax 0'} >
             <HStack w={'100%'} justifyContent={'space-evenly'} alignItems={'center'} >
-              {/* <Button onClick={()=>closeMenuOnClick('/login')}  size={'lg'} children={'Login'} colorScheme={'whatsapp'} />
-                <Button onClick={()=>closeMenuOnClick('/signup')}  size={'lg'} children={'SignUp'} colorScheme={'whatsapp'} /> */}
+             
               {
                 isAuthenticated ? (
                   <>
@@ -366,18 +358,5 @@ const Header = ({ isAuthenticated }) => {
 };
 
 
-// const renderButtons = (isAuthenticated) => {
-//   return isAuthenticated ? (
-//     <>
-//       <Button onClick={() => navigate('/userprofile')} display={{ base: 'none', md: 'none', lg: 'block' }} textDecorationStyle={'none'} color={'black'} textDecorationLine={'none'} variant={"link"} children={"Profile"} />
-//       <Button onClick={() => LogoutHandler()} display={{ base: 'none', md: 'none', lg: 'block' }} textDecorationStyle={'none'} color={'black'} textDecorationLine={'none'} variant={"link"} children={"Logout"} />
-//     </>
-//   ) : (
-//     <>
-//       <Button onClick={() => navigate('/login')} display={{ base: 'none', md: 'none', lg: 'block' }} textDecorationStyle={'none'} color={'black'} textDecorationLine={'none'} variant={"link"} children={"Login"} />
-//       <Button onClick={() => navigate('/signup')} display={{ base: 'none', md: 'none', lg: 'block' }} textDecorationStyle={'none'} color={'black'} textDecorationLine={'none'} variant={"link"} children={"Register"} />
-//     </>
-//   );
-// }
 
 export default Header;

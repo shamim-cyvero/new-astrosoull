@@ -1,33 +1,11 @@
 import React from 'react'
-import { Avatar, Box, Button, Grid, Heading, HStack, IconButton, Tab, Table, TableContainer, TabList, TabPanel, TabPanels, Tabs, Tbody, Td, Text, Tfoot, Th, Thead, Tr } from '@chakra-ui/react'
-import user1 from '../../../assets/astrologerImg/astro1.png'
-import user2 from '../../../assets/astrologerImg/astro2.png'
-import user3 from '../../../assets/astrologerImg/astro3.png'
-import { MdDelete } from "react-icons/md";
-import { Link, useNavigate } from 'react-router-dom'
+import { Button, Table, TableContainer, Tbody, Td, Text, Th, Thead, Tr } from '@chakra-ui/react'
+import {  useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { GetSignleCourseDetails } from '../../../redux/action/CourseActions'
 
 const UserCourse = ({course}) => {
-    const userDetails = [ 
-        {
-            name: 'Robin zudu',
-            Date: 'date',
-            Price: 3434
-        },
-        {
-            name: 'Robin zudu',
-            Date: 'date',
-            Price: 3434
-        },
-        {
-            name: 'Robin zudu',
-            Date: 'date',
-            Price: 3434
-        },
-
-
-    ]
+   
     const navigate=useNavigate()
     const dispatch=useDispatch()
     const ShowSingleCourseDetails=async (courseId)=>{

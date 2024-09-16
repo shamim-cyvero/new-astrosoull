@@ -1,8 +1,8 @@
 import React from 'react'
 import './Testimonial.css'
-import { Avatar, Box, Button, Heading, HStack, Image, Stack, Text, VStack } from '@chakra-ui/react'
+import { Avatar, Box, Heading, HStack, 
+     Text, VStack } from '@chakra-ui/react'
 import Slider from 'react-slick';
-import { FaStar } from "react-icons/fa6";
 import user1 from '../../assets/testimonialImg/user1.png'
 import user2 from '../../assets/testimonialImg/user2.png'
 import user3 from '../../assets/testimonialImg/user3.png'

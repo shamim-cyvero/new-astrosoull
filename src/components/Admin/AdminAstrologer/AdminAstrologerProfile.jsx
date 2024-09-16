@@ -127,7 +127,7 @@ const AdminAstrologerProfile = () => {
 
           <TabPanels>
             <TabPanel p={"4"}>
-              <AdminAstrologerMeeting  meetings={astrologer?.meeting}/>
+              <AdminAstrologerMeeting  meetings={SingleAstrologer?.meeting}/>
             </TabPanel>
 
             <TabPanel p={"4"}>

@@ -202,6 +202,26 @@ const UserSlice = createSlice({
       state.MeetingPaymentkey = null;
       state.error = action.payload.message;
     },
+
+    GetUserAndEnrolledUserRequest: (state) => {
+      state.loading = true;
+    },
+    GetUserAndEnrolledUserSuccess: (state, action) => {
+      state.loading = false;
+      state.statsData = action.payload.statsData;
+      state.usersCount = action.payload.usersCount;
+      state.enrolledUsersCount = action.payload.enrolledUsersCount;
+
+      state.usersPercentage = action.payload.usersPercentage;
+      state.enrolledUsersPercentage = action.payload.enrolledUsersPercentage;
+
+      state.usersProfit = action.payload.usersProfit;
+      state.enrolledUsersProfit = action.payload.enrolledUsersProfit;
+    },
+    GetUserAndEnrolledUserFail: (state, action) => {
+      state.loading = false;
+      state.error = action.payload.message;
+    },
   },
 });
 
@@ -251,6 +271,9 @@ export const {
   GetMeetingPaymentKeyFail,
   GetMeetingPaymentKeyRequest,
   GetMeetingPaymentKeySuccess,
+  GetUserAndEnrolledUserFail,
+  GetUserAndEnrolledUserRequest,
+  GetUserAndEnrolledUserSuccess,
 } = UserSlice.actions;
 
 export default UserSlice.reducer;

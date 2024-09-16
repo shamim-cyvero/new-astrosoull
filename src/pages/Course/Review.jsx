@@ -4,12 +4,15 @@ import { FaStar } from 'react-icons/fa6'
 import Rating from 'react-rating'
 import { useDispatch, useSelector } from 'react-redux'
 import { GetSignleCourseDetails, UserCreateCourseReview } from '../../redux/action/CourseActions'
+import { useNavigate } from 'react-router-dom'
 
 const Review = ({reviews,CourseRating,courseId}) => {
     const [rating, setNewRating] = useState(0)
     const [comment, setComment] = useState("") 
 
 	const dispatch=useDispatch()
+    const navigate=useNavigate() 
+
 const { loading } = useSelector((state) => state.courseContainer);
 
 
@@ -20,7 +23,8 @@ const { loading } = useSelector((state) => state.courseContainer);
         }
      
        await dispatch(UserCreateCourseReview(rating,comment,courseId))
-       await dispatch(GetSignleCourseDetails(courseId))     
+       await dispatch(GetSignleCourseDetails(courseId))  
+       navigate('/course') 
 
     }
 

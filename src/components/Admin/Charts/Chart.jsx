@@ -28,7 +28,15 @@ ChartJS.register(
   Filler
 );
 
-const months = ["January", "February", "March", "April", "May", "June",];
+const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+// Function to rotate the months array so that the current month is last
+const rotateMonths = (monthsArray) => {
+  const currentMonthIndex = new Date().getMonth(); // Get current month (0-based index, 0 for Jan, 8 for Sep)
+  
+  // Rotate months so that the current month is last
+  return [...monthsArray.slice(currentMonthIndex + 1), ...monthsArray.slice(0, currentMonthIndex + 1)];
+};
 
 export const BarChart = ({
   data_1 = [],
@@ -38,7 +46,8 @@ export const BarChart = ({
   bgColor_1,
   bgColor_2,
   horizontal = false,
-  labels = months,
+  labels = rotateMonths(months),  // Use the rotated months array
+  // labels = months,
 }) => {
   const options = {
     responsive: true,

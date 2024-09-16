@@ -15,37 +15,28 @@ const AdminUserMeeting = ({meeting}) => {
                         <Th bg='#162536' color='white' p={3}>S.No</Th>
                         <Th bg='#162536' color='white'>Profile</Th>
                         <Th bg='#162536' color='white'>Name</Th>
-                        <Th bg='#162536' color='white'>Phone</Th>
-                        <Th bg='#162536' color='white'>Email</Th>
+                        <Th bg='#162536' color='white'>Duration</Th>
                         <Th bg='#162536' color='white'>Date</Th>
+                        <Th bg='#162536' color='white'>Time</Th>
                         <Th bg='#162536' color='white'>Price</Th>
-                        {/* <Th bg='#162536' color='white'>Action</Th> */}
+                        <Th bg='#162536' color='white'>Status</Th>
                     </Tr>
                 </Thead>
                 <Tbody>
-                    {meeting && meeting?.map((item) => (
-                        <Tr>
-                            <Td>{item.s_Num}</Td>
+                    {meeting && meeting?.map((item,i) => (
+                        <Tr key={item._id} >
+                            <Td>{i+1}</Td>
                             <Link to={'/admin/user/profile'}>
                                 <Td>
-                                    <Avatar name='Dan Abrahmov' src={item.avatar} />
+                                    <Avatar name={item?.astrologerName} src={item?.astrologerAvatar} />
                                 </Td>
                             </Link>
-                            <Td>{item.name}</Td>
-                            <Td>{item.phone}</Td>
-                            <Td>{item.email}</Td>
-                            <Td>{item.course}</Td>
-                            <Td>{item.meeting}</Td>
-                            {/* <Td>
-                                <HStack width={'100%'} alignItems={'center'} justifyContent={'center'}>
-                                    <IconButton size={'xs'}
-                                        variant='transparent'
-                                        colorScheme='red'
-                                        _hover={{ background: 'white', color: 'red' }}
-                                        icon={<MdDelete size={'xs'} />}
-                                    />
-                                </HStack>
-                            </Td> */}
+                            <Td>{item.astrologerName}</Td>
+                            <Td>{item.duration}</Td>
+                            <Td>{new Date(item.date).toDateString()}</Td>
+                            <Td>{item.time}</Td>
+                            <Td>{item.price}</Td>
+                            <Td>Complete</Td>
                         </Tr>
                     ))}
     

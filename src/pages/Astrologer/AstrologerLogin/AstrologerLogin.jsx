@@ -12,8 +12,10 @@ const AstrologerLogin = () => {
     const [password, setPassword] = useState("")  
     const navigate=useNavigate()
     const dispatch=useDispatch()
-    const {  loading } = useSelector(state => state.astrologerContainer	);
-
+    const {  loading ,isAstrologerAuthenticated} = useSelector(state => state.astrologerContainer	);
+    // const {  isAstrologerAuthenticated ,allastrologer } = useSelector(
+    //     state => state.astrologerContainer
+    //   );
 
     const formSubmit = async (e) => {
         e.preventDefault()
@@ -21,6 +23,9 @@ const AstrologerLogin = () => {
         navigate('/astrologerprofile')
     }
     return (
+        <>
+        {
+            isAstrologerAuthenticated===false?(
         <>
             <Stack w={'90%'} m={'40px auto'} alignItems={'center'} justifyContent={'center'} direction={{ base: 'column', md: 'column', lg: 'row' }}>
                 <Stack w={'100%'} alignItems={'center'} justifyContent={'center'} direction={{ base: 'column', md: 'column', lg: 'row' }}>
@@ -57,6 +62,12 @@ const AstrologerLogin = () => {
                 </Stack>
 
             </Stack>
+        </>
+
+            ):(
+                navigate('/astrologerprofile')
+            )
+        }
         </>
     )
 }

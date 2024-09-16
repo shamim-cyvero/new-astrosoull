@@ -15,21 +15,6 @@ import { useDispatch } from 'react-redux';
 import { GetSignleCourseDetails } from '../../redux/action/CourseActions';
 const CourseCard = ({ courseId, image, name, category, rating, totalRating, price,  url, }) => {
 
-    // const courseDetails=
-    //     {
-    //         offer: 25,
-    //         image: slide1,
-    //         name: 'Astromani 2024',
-    //         category: 'in Astrology',
-    //         rating: 'rting',
-    //         totalRating: '45',
-    //         price: 14999,
-    //         teacher: {
-    //             avatar: teacher,
-    //             name: 'Mr.Alok Khandelwal'
-    //         }
-    //     }
-
  const navigate=useNavigate()
  const dispatch=useDispatch()
 

@@ -21,6 +21,7 @@ import { BiMaleFemale } from "react-icons/bi";
 import { useDispatch, useSelector } from "react-redux";
 import { GrTransaction } from "react-icons/gr";
 import { AdminLoadAllPayment } from "../../../redux/action/PaymentActions";
+import { AdminLoadUserAndEnrolledUser } from "../../../redux/action/UserActions";
 // import DashboardTableTransaction from "../DashboardTable/DashboardTableTransaction";
 // import data from '../../../assets/data.json'
 
@@ -29,7 +30,7 @@ import { AdminLoadAllPayment } from "../../../redux/action/PaymentActions";
 
 const Dashboard = () => {
 
-  const {   isAuthenticated ,user,allUser} = useSelector(
+  const { allUser,statsData, usersCount,enrolledUsersCount,usersPercentage,enrolledUsersPercentage,usersProfit, enrolledUsersProfit} = useSelector(
 		state => state.userContainer
 	);
   const {  totalEarnings } = useSelector( state => state.paymentContainer);
@@ -40,6 +41,9 @@ const Dashboard = () => {
 const {  courses } = useSelector((state) => state.courseContainer);
 const dispatch=useDispatch()
 
+console.log(statsData)
+const data_2 = statsData?.map((item) => item.users);
+const data_1 = statsData?.map((item) => item.enrolledUsers);
 
 //   const recentUser = [
 //     {
@@ -116,6 +120,7 @@ const dispatch=useDispatch()
 // },[])
 useEffect(()=>{
   dispatch(AdminLoadAllPayment())
+  dispatch(AdminLoadUserAndEnrolledUser())
 },[])
   return (
     <>
@@ -172,8 +177,8 @@ useEffect(()=>{
             <Box w={{ base: '100%', md: '50%' }} boxShadow='lg' p='6' rounded='md' bg='white'>
               <Heading children={'User chart'} mb={10} fontSize={'2rem'} textTransform={'uppercase'} letterSpacing={'2px'} />
               <BarChart
-                data_1={[50, 100, 150, 200, 250, 300]}
-                data_2={[350, 400, 450, 500, 550, 600]}
+                data_1={data_1}
+                data_2={data_2}
                 title_1={'Users enrolled'}
                 title_2={'Users'}
                 bgColor_1={'#3ac475'}

@@ -182,9 +182,9 @@ function App() {
           {/* <Route path={"userprofile"} element={<UserProfile />} /> */}
           <Route path={"userprofile"} element={isAuthenticated?<UserProfile />:<Login />} />
 
-          <Route path={"astrologerlogin"} element={<AstrologerLogin />} />
-          <Route path={"astrologersignup"} element={<AstrologerSignup />} />
-          <Route path={"astrologerprofile"} element={<AstrologerProfile />} />
+          <Route path={"astrologerlogin"} element={isAstrologerAuthenticated===false ?<AstrologerLogin />:<Navigate to={'/astrologerprofile'} />} />
+          <Route path={"astrologersignup"} element={isAstrologerAuthenticated===false ?<AstrologerSignup />:<Navigate to={'/astrologerprofile'} />} />
+          <Route path={"astrologerprofile"} element={isAstrologerAuthenticated===true ?<AstrologerProfile />:<Navigate to={'/astrologerlogin'} />} />
           {/* <Route path={"astrologerprofile"} element={isAstrologerAuthenticated?<AstrologerProfile />:<Navigate to={'/astrologerlogin'} /> } /> */}
 
           <Route path='/paymentsuccess' element={<PaymentSuccess />} />
@@ -214,29 +214,29 @@ function App() {
 
           {/* ------------------------ADMIN ROUTES---------------------------------- */}
 
-          <Route path="/admin/dashboard" element={isAstrologerAuthenticated===true ?<Dashboard />:<AstrologerLogin /> } />
+          <Route path="/admin/dashboard" element={isAstrologerAuthenticated===true ?<Dashboard />:<Navigate to={'/astrologerlogin'} />} />
 
-          <Route path="/admin/course" element={isAstrologerAuthenticated===true ?<AdminCourse />:<AstrologerLogin />} />
-          <Route path="/admin/course/addcourse" element={isAstrologerAuthenticated===true ?<AddCourse />:<AstrologerLogin />} />
+          <Route path="/admin/course" element={isAstrologerAuthenticated===true ?<AdminCourse />:<Navigate to={'/astrologerlogin'}/>} />
+          <Route path="/admin/course/addcourse" element={isAstrologerAuthenticated===true ?<AddCourse />:<Navigate to={'/astrologerlogin'}/>} />
           {/* <Route path={"/admin/course/single/course"} element={<SingleCourse />} /> */}
           <Route
             path="/admin/course/addcourse/newcourse"
-            element={isAstrologerAuthenticated===true ?<NewCourse />:<AstrologerLogin />} 
+            element={isAstrologerAuthenticated===true ?<NewCourse />:<Navigate to={'/astrologerlogin'}/>} 
           />
 
-          <Route path="/admin/astrologer" element={isAstrologerAuthenticated===true ?<AdminAstrologer />:<AstrologerLogin />} />
-          <Route path="/admin/astrologer/profile" element={isAstrologerAuthenticated===true ?<AdminAstrologerProfile />:<AstrologerLogin />} />
-          <Route path="/admin/user" element={isAstrologerAuthenticated===true ?<AdminUser />:<AstrologerLogin />} />
-          <Route path="/admin/user/profile" element={isAstrologerAuthenticated===true ?<Admin_userProfile />:<AstrologerLogin />} />
-          <Route path="/admin/adminprofile" element={isAstrologerAuthenticated===true ?<AdminProfile />:<AstrologerLogin />} />
+          <Route path="/admin/astrologer" element={isAstrologerAuthenticated===true ?<AdminAstrologer />:<Navigate to={'/astrologerlogin'}/>} />
+          <Route path="/admin/astrologer/profile" element={isAstrologerAuthenticated===true ?<AdminAstrologerProfile />:<Navigate to={'/astrologerlogin'}/>} />
+          <Route path="/admin/user" element={isAstrologerAuthenticated===true ?<AdminUser />:<Navigate to={'/astrologerlogin'}/>} />
+          <Route path="/admin/user/profile" element={isAstrologerAuthenticated===true ?<Admin_userProfile />:<Navigate to={'/astrologerlogin'}/>} />
+          <Route path="/admin/adminprofile" element={isAstrologerAuthenticated===true ?<AdminProfile />:<Navigate to={'/astrologerlogin'}/>} />
 
-          <Route path="/admin/blog" element={isAstrologerAuthenticated===true ?<AdminBlog />:<AstrologerLogin />} />
-          <Route path="/admin/blog/addblog" element={isAstrologerAuthenticated===true ?<AddBlog />:<AstrologerLogin />} />
-          <Route path="/admin/blog/addblog/newblog" element={isAstrologerAuthenticated?<NewBlog />:<AstrologerLogin />} />
+          <Route path="/admin/blog" element={isAstrologerAuthenticated===true ?<AdminBlog />:<Navigate to={'/astrologerlogin'}/>} />
+          <Route path="/admin/blog/addblog" element={isAstrologerAuthenticated===true ?<AddBlog />:<Navigate to={'/astrologerlogin'}/>} />
+          <Route path="/admin/blog/addblog/newblog" element={isAstrologerAuthenticated?<NewBlog />:<Navigate to={'/astrologerlogin'}/>} />
 
-          <Route path="/admin/transaction" element={isAstrologerAuthenticated===true ?<AdminTransaction />:<AstrologerLogin />} />
-          <Route path="/admin/notification" element={isAstrologerAuthenticated===true ?<AdminNotification />:<AstrologerLogin />} />
-          <Route path="/admin/setting" element={isAstrologerAuthenticated===true ?<AdminSetting />:<AstrologerLogin />} />
+          <Route path="/admin/transaction" element={isAstrologerAuthenticated===true ?<AdminTransaction />:<Navigate to={'/astrologerlogin'}/>} />
+          <Route path="/admin/notification" element={isAstrologerAuthenticated===true ?<AdminNotification />:<Navigate to={'/astrologerlogin'}/>} />
+          <Route path="/admin/setting" element={isAstrologerAuthenticated===true ?<AdminSetting />:<Navigate to={'/astrologerlogin'}/>} />
         </Routes>      
         
      </Suspense>

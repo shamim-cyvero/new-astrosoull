@@ -16,6 +16,9 @@ import {
   GetMeetingPaymentKeyFail,
   GetMeetingPaymentKeyRequest,
   GetMeetingPaymentKeySuccess,
+  GetUserAndEnrolledUserFail,
+  GetUserAndEnrolledUserRequest,
+  GetUserAndEnrolledUserSuccess,
   loadUserFail,
   loadUserRequest,
   loadUserSuccess,
@@ -246,6 +249,27 @@ export const AdminDeleteUser = (userId) => async (dispatch) => {
   }
 };
 
+export const AdminLoadUserAndEnrolledUser = () => async (dispatch) => {
+  try {
+    dispatch(GetUserAndEnrolledUserRequest());
+
+    const { data } = await axios.get(`${server}/user/admin/get/stats`, {
+      headers: {
+        "Content-Type": "application/json", 
+      },
+      withCredentials: true,
+    });
+
+    dispatch(GetUserAndEnrolledUserSuccess(data));
+    // toast.success(data.message);
+
+  } catch (error) {
+    dispatch(GetUserAndEnrolledUserFail(error.message));
+    // toast.error(error.response.data.message);
+
+  }
+};
+
 
 
 export const UserContact = (name, email, phone,message,subject) => async (dispatch) => {
@@ -327,7 +351,7 @@ export const UserEnrolled = ( courseId) => async (dispatch) => {
   }
 };
 
-
+// ------------------Meeting payment api----------------------------
 export const GetMeetingPaymentKey = () => async (dispatch) => {
   try {
     dispatch(GetMeetingPaymentKeyRequest());

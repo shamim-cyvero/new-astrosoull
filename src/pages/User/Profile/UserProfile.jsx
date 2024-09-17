@@ -181,7 +181,7 @@ const UserProfile = () => {
 									/>
 								</ModalFooter>
 							</ModalContent>
-						</Modal>
+			</Modal>
           
         </VStack>
     </Stack>

@@ -60,14 +60,26 @@ const UserAstrologersProfile = () => {
                   />
                   <Button size={'sm'} colorScheme={'whatsapp'} children={SingleAstrologer.rating} cursor={'default'} />
                 </HStack>
-                <Text children={`₹ ${SingleAstrologer.chargePerMin ? SingleAstrologer.chargePerMin : '00'}/Min`} />
+                {
+                  SingleAstrologer && SingleAstrologer.license===true?(
+
+                    <Text children={`₹ ${SingleAstrologer.chargePerMin ? SingleAstrologer.chargePerMin : '00'}/Min`} />
+                  ):(
+                    <Text children={`License Pending `} />
+
+                  )
+                }
 
                 <Text children={astrologer?.email} />
 
               </VStack>
             </Stack>
 
+          {/* {
+            SingleAstrologer && SingleAstrologer.license===true?( */}
+
             {/* tabs start */}
+            
             <Tabs w={'80%'} m={'1vmax auto'} size='md' >
               <TabList p={["0", "4"]}>
                 <Tab _selected={{ borderBottom: '3px solid green' }} mr={'2vmax'}>About</Tab>
@@ -151,13 +163,25 @@ const UserAstrologersProfile = () => {
                     </form>
                   </VStack>
                 </TabPanel>
+                
+                {
+                  SingleAstrologer && SingleAstrologer?.license===true?(
 
                 <TabPanel p={["0", "4"]}>
                   <UserAstrologersMeeting chargePerMin={SingleAstrologer.chargePerMin} SingleAstrologer={SingleAstrologer} />
                 </TabPanel>
+                  ):(
+                    <Text color={'red'} children={'Astrologer License Pending wait for Admin Approval'} />
+                  )
+                }
 
               </TabPanels>
             </Tabs>
+            
+            {/* ):(
+              <Text children={'wait for admin'} />
+            )
+          } */}
           </>
         ) : (
           navigate('/consult')

@@ -130,7 +130,7 @@ useEffect(()=>{
            
 
             <Box w={{base:'100%',md:'100%',lg:'100%'}}>
-              <Heading children={'Resent Course'} fontSize={'1.5rem'} mb={5}/>
+              <Heading children={'Recent Course'} fontSize={'1.5rem'} mb={5}/>
 
               <TableContainer rounded='md' boxShadow='lg' bg={'white'} p={5} w={'100%'}>
                 <Table size='sm' w={'100%'} fontSize={['lg', 'md', 'sm']}>

@@ -30,7 +30,7 @@ const UserMeeting = ({meeting}) => {
                     {meeting && meeting?.map((item,i) => (
                         <Tr key={item._id} >
                             <Td>{i+1}</Td>
-                            <Link to={'/admin/user/profile'}>
+                            <Link >
                                 <Td>
                                     <Avatar name={item?.astrologerName} src={item?.astrologerAvatar} />
                                 </Td>

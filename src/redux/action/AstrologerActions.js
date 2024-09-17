@@ -4,6 +4,12 @@ import {
   addNewExpAndEduAstrologerFail,
   addNewExpAndEduAstrologerRequest,
   addNewExpAndEduAstrologerSuccess,
+  AdminActiveLicenseAstrologerFail,
+  AdminActiveLicenseAstrologerRequest,
+  AdminActiveLicenseAstrologerSuccess,
+  AdminChangeMettingPriceAstrologerFail,
+  AdminChangeMettingPriceAstrologerRequest,
+  AdminChangeMettingPriceAstrologerSuccess,
   AdminDeleteAstrologerFail,
   AdminDeleteAstrologerRequest,
   AdminDeleteAstrologerReviewFail,
@@ -365,4 +371,44 @@ export const AdminDeleteAstrologer = (astrologerId) => async (dispatch) => {
   }
 };
 
+export const AdminActiveLicenseOfAstrologer = (astrologerId) => async (dispatch) => {
+  try {
+    dispatch(AdminActiveLicenseAstrologerRequest());
 
+    const { data } = await axios.get(`${server}/astrologer/admin/active/${astrologerId}`, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+      withCredentials: true,
+    });
+
+    dispatch(AdminActiveLicenseAstrologerSuccess(data));
+    toast.success(data.message);
+
+  } catch (error) {
+    dispatch(AdminActiveLicenseAstrologerFail(error.message));
+    toast.error(error.response.data.message);
+  }
+}; 
+
+export const AdminChangeMettingPriceOfAstrologer = (astrologerId,chargePerMin) => async (dispatch) => {
+  try {
+    dispatch(AdminChangeMettingPriceAstrologerRequest());
+
+    const { data } = await axios.put(`${server}/astrologer/admin/change/meeting/price/${astrologerId}`,
+      {chargePerMin},
+      {
+      headers: {
+        "Content-Type": "application/json",
+      },
+      withCredentials: true,
+    });
+
+    dispatch(AdminChangeMettingPriceAstrologerSuccess(data));
+    toast.success(data.message);
+
+  } catch (error) {
+    dispatch(AdminChangeMettingPriceAstrologerFail(error.message));
+    toast.error(error.response.data.message);
+  }
+}; 

@@ -201,6 +201,32 @@ const AstrologerSlice = createSlice({
       state.loading = false;
       state.error = action.payload;
     },
+
+    AdminActiveLicenseAstrologerRequest: (state) => {
+      state.loading = true;
+    },
+    AdminActiveLicenseAstrologerSuccess: (state, action) => {
+      state.loading = false;
+      state.SingleAstrologer = action.payload.astrologer;
+      state.message = action.payload.message;
+    },
+    AdminActiveLicenseAstrologerFail: (state, action) => {
+      state.loading = false;
+      state.error = action.payload;
+    },
+
+    AdminChangeMettingPriceAstrologerRequest: (state) => {
+      state.loading = true;
+    },
+    AdminChangeMettingPriceAstrologerSuccess: (state, action) => {
+      state.loading = false;
+      state.SingleAstrologer = action.payload.astrologer;
+      state.message = action.payload.message;
+    },
+    AdminChangeMettingPriceAstrologerFail: (state, action) => {
+      state.loading = false;
+      state.error = action.payload;
+    },
   },
 });
 
@@ -250,6 +276,12 @@ export const {
   AdminDeleteAstrologerReviewRequest,
   AdminDeleteAstrologerReviewSuccess,
   AdminDeleteAstrologerReviewFail,
+  AdminActiveLicenseAstrologerFail,
+  AdminActiveLicenseAstrologerRequest,
+  AdminActiveLicenseAstrologerSuccess,
+  AdminChangeMettingPriceAstrologerFail,
+  AdminChangeMettingPriceAstrologerRequest,
+  AdminChangeMettingPriceAstrologerSuccess,
 } = AstrologerSlice.actions;
 
 export default AstrologerSlice.reducer;

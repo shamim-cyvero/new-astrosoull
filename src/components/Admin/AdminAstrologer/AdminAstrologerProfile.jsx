@@ -39,6 +39,7 @@ import Rating from "react-rating";
 import { FaStar } from "react-icons/fa6";
 import AdminHeader from "../AdminHeader/AdminHeader";
 import AdminSideBar from "../AdminSideBar/AdminSideBar";
+import AdminAstrologerChargePerMin from "./AdminAstrologerChargePerMin";
  
 const AdminAstrologerProfile = () => {
     const {  loading, isAuthenticated,SingleAstrologer } = useSelector(
@@ -77,18 +78,25 @@ const AdminAstrologerProfile = () => {
               h={"15vmax"}
               src={SingleAstrologer?.avatar?.url}
               name={SingleAstrologer?.name}
-            />
+            >
+              {/* <AvatarBadge boxSize='1.25em' bg={SingleAstrologer?.license===true?'green.500':'tomato' } /> */}
+            </Avatar>
+            <Button cursor={'default'} size={'sm'} children={SingleAstrologer?.license===true?'Astrologer Active ':'Need Admin Permission'} colorScheme={SingleAstrologer?.license===true?'whatsapp':'red'} />
 
-      
+
           </VStack>
 
           {/* astrologer Details and change Model */}
           <VStack p={2} spacing={"1"} alignItems={"flex-start"}>
-            <Heading
-              letterSpacing={"4px"}
-              fontSize={"3xl"}
-              children={SingleAstrologer?.name}
-            />
+            {/* <HStack > */}
+              <Heading
+                letterSpacing={"4px"}
+                fontSize={"3xl"}
+                children={SingleAstrologer?.name}
+              />
+              {/* <Button children={SingleAstrologer?.license===true?'Permission Grant ':'Need Admin Permission'} colorScheme={SingleAstrologer?.license===true?'whatsapp':'red'} /> */}
+
+            {/* </HStack> */}
             <HStack>
               <Rating
                 emptySymbol={<FaStar color="gray" />} 
@@ -105,7 +113,7 @@ const AdminAstrologerProfile = () => {
 			        <Text children={`₹ ${SingleAstrologer.chargePerMin?SingleAstrologer.chargePerMin:'00'}/Min`} />
 
             </HStack>
-            <Text children={`${SingleAstrologer.expert?SingleAstrologer.expert:'no update'}} | ${SingleAstrologer.language?SingleAstrologer.language:'no update'}`} />
+            <Text children={`${SingleAstrologer.expert?SingleAstrologer.expert:'no update'} | ${SingleAstrologer.language?SingleAstrologer.language:'no update'}`} />
             <Text children={SingleAstrologer?.email} />
             <Text children={SingleAstrologer?.phone} />
             <Text children={SingleAstrologer?.address} />
@@ -123,6 +131,7 @@ const AdminAstrologerProfile = () => {
             </Tab>
             <Tab _selected={{ borderBottom: "3px solid green" }}>Reviews</Tab>
             <Tab _selected={{ borderBottom: "3px solid green" }}>About</Tab>
+            <Tab _selected={{ borderBottom: "3px solid green" }}>ChargePerMin</Tab>
           </TabList>
 
           <TabPanels>
@@ -137,6 +146,10 @@ const AdminAstrologerProfile = () => {
 
             <TabPanel p={"4"}>
               <AdminAstrologerAbout />
+            </TabPanel>
+
+            <TabPanel p={"4"}>
+              <AdminAstrologerChargePerMin license={SingleAstrologer?.license} chargePerMin={SingleAstrologer?.chargePerMin} astrologerId={SingleAstrologer?._id}/>
             </TabPanel>
           </TabPanels>
             </Tabs>

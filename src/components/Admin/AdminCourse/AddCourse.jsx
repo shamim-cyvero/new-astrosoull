@@ -8,6 +8,7 @@ import {
   Grid,
   Heading,
   Input,
+  Select,
   Textarea,
 } from "@chakra-ui/react";
 import AdminSideBar from "../AdminSideBar/AdminSideBar";
@@ -102,12 +103,13 @@ function AddCourse() {
             </FormControl>
             <FormControl mb={5}>
               <FormLabel fontSize={"lg"}>Category</FormLabel>
-              <Input
-                type="text"
-                required
-                value={category}
-                onChange={(e) => setCategory(e.target.value)}
-              />
+              <Select value={category} onChange={(e) => setCategory(e.target.value)} placeholder='Select Category'>
+                <option value='Astrology'>Astrology</option>
+                <option value='Ayurveda'>Ayurveda</option>
+                <option value='Numerology'>Numerology</option>
+                <option value='Palmistry'>Palmistry</option>
+                <option value='Vastu'>Vastu</option>
+            </Select>
             </FormControl>
             <FormControl mb={5}>
               <FormLabel fontSize={"lg"}>Banner</FormLabel>

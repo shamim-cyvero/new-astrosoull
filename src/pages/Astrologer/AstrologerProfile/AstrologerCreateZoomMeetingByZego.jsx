@@ -41,7 +41,8 @@ const AstrologerCreateZoomMeetingByZego = () => {
         sharedLinks:[
             {
                 name:'copy Link',
-                url:`http://localhost:5173/astrologermeeting/${meetingId}`
+                url:`https://new-astrosoull.vercel.app/astrologermeeting/${meetingId}`
+                // url:`http://localhost:5173/astrologermeeting/${meetingId}`
             }
         ],
         showRoomTimer:true,

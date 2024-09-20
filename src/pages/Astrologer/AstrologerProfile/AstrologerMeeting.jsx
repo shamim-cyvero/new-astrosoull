@@ -1,8 +1,11 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { Avatar, Box, Button, Grid, Heading, HStack, IconButton, Tab, Table, TableContainer, TabList, TabPanel, TabPanels, Tabs, Tbody, Td, Text, Tfoot, Th, Thead, Tr } from '@chakra-ui/react'
 
-const AstrologerMeeting = ({meetings}) => {
+const AstrologerMeeting = ({name,meetings}) => {
+  const navigate=useNavigate()
+  const meetingId=name
+
   return (
     <>
     {
@@ -19,6 +22,7 @@ const AstrologerMeeting = ({meetings}) => {
                         <Th bg='#162536' color='white'>Time</Th>
                         <Th bg='#162536' color='white'>Price</Th>
                         <Th bg='#162536' color='white'>Payment_id</Th>
+                        <Th bg='#162536' color='white'>Action</Th>
                         {/* <Th bg='#162536' color='white'>Status</Th> */}
                     </Tr>
                 </Thead>
@@ -37,6 +41,9 @@ const AstrologerMeeting = ({meetings}) => {
                             <Td>{item.time}</Td>
                             <Td>{item.price}</Td>
                             <Td>{item.razorpay_payment_id}</Td>
+                            <Td>
+                                <Button onClick={()=>navigate(`/room/${item?._id}`)} children={'Meeting'} />
+                            </Td>
                             {/* <Td>Complete</Td> */}
                         </Tr>
                     ))}

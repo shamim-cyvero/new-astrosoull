@@ -36,7 +36,7 @@ const AdminAstrologerChargePerMin = ({license,chargePerMin,astrologerId}) => {
   return (
   <>
     <HStack>
-        <Button size={'sm'} onClick={()=>ActiveLicenseOfAstrologerHandler()} colorScheme={'whatsapp'} children={license===true?'Permission Granted':'Allow Astrologer'} />
+        <Button size={'sm'} onClick={()=>ActiveLicenseOfAstrologerHandler()} colorScheme={license===true?'whatsapp':'red'} children={license===true?'Permission Granted':'Allow Astrologer'} />
         <Button size={'sm'} onClick={onOpen} colorScheme={'blue'} children={'Change chargePerMin Amount'} />
         <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />

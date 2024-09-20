@@ -69,6 +69,14 @@ const AstrologerProfile = () => {
         dispatch(LoadAstrologer())
     
         onClose();
+		SetName('')
+		SetPhone('')
+		SetEmail('')
+		SetAddress('')
+		SetAbout('')
+		SetChargePerMin('')
+		SetExpert('')
+		SetLanguage('')
         navigate('/astrologerprofile');
       };
 
@@ -245,7 +253,7 @@ const AstrologerProfile = () => {
     <TabPanels >
 
       <TabPanel p={'4'}>
-       <AstrologerMeeting  meetings={astrologer?.meeting}/>
+       <AstrologerMeeting name={astrologer?.name}  meetings={astrologer?.meeting} />
       </TabPanel>  
 
       <TabPanel p={'4'}>

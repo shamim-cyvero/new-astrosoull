@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Avatar, Box, Button, Heading, HStack, Text, VStack } from '@chakra-ui/react'
+import { Avatar, Badge, Box, Button, Heading, HStack, Text, VStack } from '@chakra-ui/react'
 import Rating from 'react-rating'
 import { FaStar } from 'react-icons/fa6'
 import { useNavigate } from 'react-router-dom'
@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { AdminLoadAllAstrologer, LoadSingleAstrologerDetails } from '../../redux/action/AstrologerActions'
 
 const AstrologersProfile = () => {
-    const {  isAstrologerAuthenticated ,allastrologer } = useSelector(
+    const {  isAstrologerAuthenticated ,allastrologer,SingleAstrologer } = useSelector(
         state => state.astrologerContainer
       );
     const navigate=useNavigate()
@@ -37,7 +37,12 @@ const AstrologersProfile = () => {
       <Box cursor={'pointer'} onClick={()=>ShowSingleAstrologerDetails(item._id)}  key={item._id} w={'340px'} m={'20px auto'} p={['0px','10px']} mt={'20px'} borderRadius={'10px'} >
           <VStack w={'100%'}  h={'250px'} alignItems={'center'} justifyContent={'center'} spacing={2} p={'6px 0px'} boxShadow='lg' rounded='md' bg='white'>
               <Avatar name={item.name} src={item.avatar?.url} size={'lg'} />
-              <Heading children={item.name} color={'#1f3b64'} fontSize={'1.1rem'} mb={'10px'} textAlign={'center'} />
+              <Heading  color={'#1f3b64'} fontSize={'1.1rem'} mb={'10px'} textAlign={'center'} >
+                {item.name}
+                <Badge ml='1' fontSize='.9vmax' variant='subtle' colorScheme={item?.license===true?'green':'red'}>
+                  {item?.license===true?'Verified':'Not Verified'} 
+                </Badge>
+              </Heading>
             
             <Text children={`${item.expert?item.expert:'no'} | ${item?.language?item.language:'no'}`} />
               

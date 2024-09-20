@@ -44,7 +44,7 @@ import AdminAstrologerChargePerMin from "./AdminAstrologerChargePerMin";
 const AdminAstrologerProfile = () => {
     const {  loading, isAuthenticated,SingleAstrologer } = useSelector(
 		state => state.astrologerContainer
-	);
+	  );
     const dispatch=useDispatch()
     const navigate=useNavigate() 
 

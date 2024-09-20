@@ -127,6 +127,8 @@ import { Toaster } from 'react-hot-toast';
 import { AdminLoadAllAstrologer, LoadAstrologer } from "./redux/action/AstrologerActions";
 import { GetAllCourseDetails } from "./redux/action/CourseActions";
 import { AdminLoadAllPayment } from "./redux/action/PaymentActions";
+import AstrologerCreateZoomMeetingByZego from "./pages/Astrologer/AstrologerProfile/AstrologerCreateZoomMeetingByZego";
+import MeetingRoom from "./pages/Astrologer/AstrologerProfile/MeetingRoom";
 
 
 
@@ -185,6 +187,8 @@ function App() {
           <Route path={"astrologerlogin"} element={isAstrologerAuthenticated===false ?<AstrologerLogin />:<Navigate to={'/astrologerprofile'} />} />
           <Route path={"astrologersignup"} element={isAstrologerAuthenticated===false ?<AstrologerSignup />:<Navigate to={'/astrologerprofile'} />} />
           <Route path={"astrologerprofile"} element={isAstrologerAuthenticated===true ?<AstrologerProfile />:<Navigate to={'/astrologerlogin'} />} />
+          <Route path={"astrologermeeting/:meetingId"} element={<AstrologerCreateZoomMeetingByZego />} />
+          <Route path={"room/:meetingId"} element={<MeetingRoom />} />
           {/* <Route path={"astrologerprofile"} element={isAstrologerAuthenticated?<AstrologerProfile />:<Navigate to={'/astrologerlogin'} /> } /> */}
 
           <Route path='/paymentsuccess' element={<PaymentSuccess />} />

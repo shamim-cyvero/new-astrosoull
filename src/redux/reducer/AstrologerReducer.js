@@ -227,6 +227,19 @@ const AstrologerSlice = createSlice({
       state.loading = false;
       state.error = action.payload;
     },
+
+    // AstrologerGetRoomIdRequest: (state) => {
+    //   state.loading = true;
+    // },
+    // AstrologerGetRoomIdSuccess: (state, action) => {
+    //   state.loading = false;
+    //   state.SingleAstrologer = action.payload.astrologer;
+    //   state.message = action.payload.message;
+    // },
+    // AstrologerGetRoomIdFail: (state, action) => {
+    //   state.loading = false;
+    //   state.error = action.payload;
+    // },
   },
 });
 

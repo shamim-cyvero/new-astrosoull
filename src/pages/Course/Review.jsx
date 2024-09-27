@@ -34,8 +34,8 @@ const { loading } = useSelector((state) => state.courseContainer);
                 <VStack>
                     <Heading children={CourseRating} color={'#22c35e'} />
                     <Rating
-                      emptySymbol={<FaStar color='gray' />}
-                      fullSymbol={<FaStar color='tomato' />}
+                      emptySymbol={<FaStar color='gray' fontSize={'1.5vmax'}/>}
+                      fullSymbol={<FaStar color='tomato' fontSize={'1.5vmax'}/>}
                       initialRating={CourseRating}
                         readonly
                     />
@@ -70,8 +70,8 @@ const { loading } = useSelector((state) => state.courseContainer);
             <form style={{ width: '100%', marginTop: '20px' }} onSubmit={ReviewHandler} >
                 <Heading mb='8px' fontSize={['1rem','1.2rem']} children={`Give Your Review`} />
                 <Rating
-                      emptySymbol={<FaStar color='gray' fontSize={['1rem','1.2rem']} />}
-                      fullSymbol={<FaStar color='tomato' fontSize={['1rem','1.2rem']} />}
+                      emptySymbol={<FaStar color='gray' fontSize={'2vmax'} />}
+                      fullSymbol={<FaStar color='tomato' fontSize={'2vmax'}/>}
                     //   initialRating={0}
                       onChange={(rate) => setNewRating(rate)}
                 />

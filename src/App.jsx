@@ -129,6 +129,7 @@ import { GetAllCourseDetails } from "./redux/action/CourseActions";
 import { AdminLoadAllPayment } from "./redux/action/PaymentActions";
 import AstrologerCreateZoomMeetingByZego from "./pages/Astrologer/AstrologerProfile/AstrologerCreateZoomMeetingByZego";
 import MeetingRoom from "./pages/Astrologer/AstrologerProfile/MeetingRoom";
+import UserMeetingJoin from "./pages/Astrologer/AstrologerProfile/UserMeetingJoin";
 
 
 
@@ -189,6 +190,7 @@ function App() {
           <Route path={"astrologerprofile"} element={isAstrologerAuthenticated===true ?<AstrologerProfile />:<Navigate to={'/astrologerlogin'} />} />
           <Route path={"astrologermeeting/:meetingId"} element={<AstrologerCreateZoomMeetingByZego />} />
           <Route path={"room/:meetingId"} element={<MeetingRoom />} />
+          <Route path={"usermeetingjoin/:roomId"} element={<UserMeetingJoin />} />
           {/* <Route path={"astrologerprofile"} element={isAstrologerAuthenticated?<AstrologerProfile />:<Navigate to={'/astrologerlogin'} /> } /> */}
 
           <Route path='/paymentsuccess' element={<PaymentSuccess />} />

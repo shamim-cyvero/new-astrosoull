@@ -13,11 +13,12 @@ const UserAstrologersMeeting = ({chargePerMin,SingleAstrologer}) => {
     const [email, setEmail] = useState("");
     const [contact, setContact] = useState("");
     const [value, setValue] = useState(new Date());
-    const [date, setDate] = useState();
+    const [date, setDate] = useState(new Date());
     const [time, setTime] = useState();
     const [duration, setDuration] = useState();
     const [showmeetingForm, setShowMeetingForm] = useState(false);
     const [price, setPrice] = useState(0);
+
 
 const {  MeetingPaymentkey,user} = useSelector( (state) => state.userContainer);
 
@@ -29,9 +30,28 @@ const dispatch=useDispatch()
         month: "long",
         day: "numeric",
     })} `;
-    const handleDateChange = (date) => {
-        setValue(date);
-        setDate(date);
+    const handleDateChange = (selectedDate) => {
+        const today = new Date();
+        today.setHours(0, 0, 0, 0); // Set time to 00:00 to only compare dates
+      
+        // Compare the selected date with today's date
+        if (selectedDate <= today) {
+
+          alert("Please select a future date.");
+          return; 
+        }
+        setValue(selectedDate);
+
+        // Format the date to 'YYYY-MM-DD'
+        // const formattedDate = selectedDate.toISOString().split('T')[0]; // This will give you 'YYYY-MM-DD'
+        const year = selectedDate.getFullYear();
+        const month = String(selectedDate.getMonth() + 1).padStart(2, '0'); // Months are 0-based
+        const day = String(selectedDate.getDate()).padStart(2, '0');
+      
+        const formattedDate = `${year}-${month}-${day}`; // Local 'YYYY-MM-DD'
+        setDate(formattedDate);
+
+
         setShowMeetingForm(true)
     }
     const MeetingHandler = (e) => {
@@ -230,6 +250,15 @@ const dispatch=useDispatch()
                                 >
                                     08:30PM
                                 </Button>
+                                {/* <Input
+                                        fontSize={[".9rem", "1rem"]}
+                                        fontWeight={"500"}
+                                        required
+                                        type="time"
+                                        name="time"
+                                        // value={contact}
+                                        onChange={(e) => alert(e.target.value)}
+                                    /> */}
                             </HStack>
 
                             <Heading

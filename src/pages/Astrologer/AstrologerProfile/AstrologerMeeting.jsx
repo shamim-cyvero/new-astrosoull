@@ -35,14 +35,43 @@ const AstrologerMeeting = ({name,meetings}) => {
                                     <Avatar name={item?.userName} src={item?.userAvatar} />
                                 </Td>
                             </Link>
-                            <Td>{item.userName}</Td>
-                            <Td>{item.duration}</Td>
+                            <Td>{item?.userName}</Td>
+                            <Td>{item?.duration}</Td>
                             <Td>{new Date(item.date).toDateString()}</Td>
-                            <Td>{item.time}</Td>
-                            <Td>{item.price}</Td>
-                            <Td>{item.razorpay_payment_id}</Td>
+                            <Td>{item?.time}</Td>
+                            <Td>{item?.price}</Td>
+                            <Td>{item?.razorpay_payment_id}</Td>
                             <Td>
-                                <Button onClick={()=>navigate(`/room/${item?._id}`)} children={'Meeting'} />
+                                
+                            {/* {
+                                new Date(item.date) == new Date(Date.now()) ?<Button onClick={()=>navigate(`/room/${item?._id}`)} children={'Meeting'} />
+                                : item.live === 'Completed' ? 'Completed' 
+                                : item.live === 'Upcoming' ? 'Upcoming' 
+                               :'no'
+                            } */}
+                            {
+                                new Date(item.date) > new Date(Date.now()) ? 'Upcoming'
+                                : new Date(item.date).toDateString() === new Date().toDateString() && item?.attempt===false ? 
+                                  <Button onClick={() => navigate(`/room/${item?._id}`)} children={'Join Meeting'} />
+                                // : new Date(item.date) < new Date() ? 'Expired'
+                                : 'Completed'
+                            }
+                              {/* {
+                                new Date(item.date) > new Date(Date.now())? 'Upcoming'
+                                : new Date(item.date) == new Date(Date.now()) ? 
+                                  <Button onClick={() => navigate(`/room/${item?._id}`)} children={'Join Meeting'} />
+                                : 'Completed'
+                                
+                            } */}
+                            {/* {
+                                
+                             new Date(item.date) > new Date() ? 'Upcoming' 
+                             : (new Date(item.date).toDateString() === new Date().toDateString() )? 
+                               <Button onClick={() => navigate(`/room/${item?._id}`)} children={'Create Meeting'} />
+                             : 'Completed'
+                            } */}
+
+
                             </Td>
                             {/* <Td>Complete</Td> */}
                         </Tr>

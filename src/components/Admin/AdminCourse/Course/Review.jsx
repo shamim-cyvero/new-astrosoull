@@ -45,8 +45,8 @@ const Review = ({ loading,reviews, rating ,courseId}) => {
                                 <Heading children={item.name} fontSize={'lg'} color={'#1f3b64'} textTransform={'capitalize'}/>
                                 <Text children={item.comment} fontSize={'md'} color={'grey'}/>
                                 <Rating
-                                    emptySymbol={<FaStar color='gray' />}
-                                    fullSymbol={<FaStar color='tomato' />}
+                                    emptySymbol={<FaStar color='gray' fontSize={'1.5vmax'}/>}
+                                    fullSymbol={<FaStar color='tomato' fontSize={'1.5vmax'}/>}
                                     initialRating={item.rating}
                                     readonly
                                 />

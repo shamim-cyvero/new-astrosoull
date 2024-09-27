@@ -5,6 +5,7 @@ import Slider from "react-slick";
 import slide1 from '../../assets/HomeSliderImg/slide1.png';
 import slide2 from '../../assets/HomeSliderImg/slide2.png';
 import slide3 from '../../assets/HomeSliderImg/slide3.png';
+import slide4 from '../../assets/HomeSliderImg/slide4.png';
 
 const HomeSlider = () => {
     const settings = {
@@ -22,7 +23,7 @@ const HomeSlider = () => {
             text: ' Step into the world of vedic wisdom!',
             smallText: 'Let our guidance shape your journey to a purposeful life',
             button: '  Know more',
-            image: slide1,
+            image: slide4,
             bg: '#edf8f4',
             btnClr: 'whatsapp'
         },

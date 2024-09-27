@@ -128,7 +128,7 @@ const UserAstrologersProfile = () => {
                     {
                       SingleAstrologer.review && SingleAstrologer.review.map((item) => (
                        
-                        <Box w={'100%'} p={5} mb={5} spacing={5} alignItems={'center'} justifyContent={'center'} boxShadow='lg' mt={'10px'} rounded='md' bg='white'>
+                        <Box key={item._id} w={'100%'} p={5} mb={5} spacing={5} alignItems={'center'} justifyContent={'center'} boxShadow='lg' mt={'10px'} rounded='md' bg='white'>
                           <Heading mb={5} fontSize={'1.3rem'} children={'Comments : '} />
                           <HStack w={'100%'}>
                             <Avatar name={item.avatar} src={item.avatar} size={'lg'} />
@@ -153,8 +153,8 @@ const UserAstrologersProfile = () => {
                     <form style={{ width: '100%', marginTop: '20px' }} onSubmit={ReviewHandler} >
                       <Heading mb='8px' fontSize={['1rem', '1.5rem']} children={`Give Your Review`} />
                       <Rating
-                        emptySymbol={<FaStar color='gray' fontSize={['1rem', '1.5rem']} />}
-                        fullSymbol={<FaStar color='tomato' fontSize={['1rem', '1.5rem']} />}
+                        emptySymbol={<FaStar color='gray' fontSize={'2vmax'} />}
+                        fullSymbol={<FaStar color='tomato' fontSize={'2vmax'} />}
                         initialRating={0}
                         onChange={(rate) => setNewRating(rate)}
                       />

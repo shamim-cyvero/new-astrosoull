@@ -30,7 +30,7 @@ const UserCourse = ({course}) => {
                 </Thead>
                 <Tbody>
                     {course && course.map((item,i) => (
-                        <Tr key={i}>
+                        <Tr key={item._id}>
                             <Td>{i+1}</Td>  
                             <Td>{item?.name}</Td>
                             <Td>{item?.date.split("T")[0]}</Td>

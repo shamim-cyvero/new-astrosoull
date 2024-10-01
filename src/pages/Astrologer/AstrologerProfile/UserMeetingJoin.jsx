@@ -28,6 +28,8 @@ const UserMeetingJoin = () => {
         withCredentials: true,
       });
       alert('end')
+      navigate('/userprofile')
+
 
     } catch (error) {
       console.error("Error notifying backend about meeting end", error);

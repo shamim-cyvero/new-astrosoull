@@ -9,7 +9,7 @@ const AstrologerReviews = ({ review }) => {
      {
                 review && review.map((item) => (
                     // <Heading mt={10} fontSize={'1.5rem'} children={'Comments'} />
-                    <Box w={'100%'} p={5} mb={5} spacing={5} alignItems={'center'} justifyContent={'center'} boxShadow='lg' mt={'10px'} rounded='md' bg='white'>
+                    <Box key={item._id} w={'100%'} p={5} mb={5} spacing={5} alignItems={'center'} justifyContent={'center'} boxShadow='lg' mt={'10px'} rounded='md' bg='white'>
                         <Heading   mb={5} fontSize={'1.3rem'} children={'Comments : '} />
                         <HStack w={'100%'}>
                             <Avatar name={item.avatar} src={item.avatar} size={'lg'} />

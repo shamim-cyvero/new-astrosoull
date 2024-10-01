@@ -4,9 +4,12 @@ import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import { server } from "../../../main";
 import { useSelector } from "react-redux";
+import { Button } from "@chakra-ui/react";
 
 const AstrologerCreateZoomMeetingByZego = () => {
   const { meetingId } = useParams();
+  const [meetingTimeLeft, setMeetingTimeLeft] = useState("");
+
 
   const navigate=useNavigate()
 
@@ -22,13 +25,14 @@ const AstrologerCreateZoomMeetingByZego = () => {
   const notifyMeetingEnd = async () => {
     try {
       alert('notifyMeetingEnd')
-      await axios.get(`${server}/astrologer/meeting/end/${meetingId}`, {
+     const {data}= await axios.get(`${server}/astrologer/meeting/end/${meetingId}`, {
         headers: {
           "Content-Type": "application/json",
         },
         withCredentials: true,
       });
       navigate('/astrologerprofile')
+      alert(data?.message)
 
     } catch (error) {
       console.error("Error notifying backend about meeting end", error);
@@ -79,13 +83,14 @@ const AstrologerCreateZoomMeetingByZego = () => {
       showLeavingView: false,
       showLeaveRoomConfirmDialog: false,
 
-      // onJoinRoom: () => {
-      //   setTimeout(() => {
-      //     zc.leaveRoom(); 
-      //     console.log("Meeting has ended automatically");
-      //     notifyMeetingEnd(); 
-      //   }, data.duration);
-      // }, 
+      branding: {
+        logoURL: astrologer?.avatar?.url, // The branding LOGO URL.
+      },
+
+  // Automatically end the meeting after the specified duration
+  onJoinRoom: () => {
+    console.log("Meeting started");
+  },
 
       onLeaveRoom: () => {
         notifyMeetingEnd();
@@ -105,7 +110,9 @@ const AstrologerCreateZoomMeetingByZego = () => {
 
   return (
     <>
-      <div ref={myMeeting}></div>
+      <div ref={myMeeting}>
+      </div>
+      <Button children={meetingTimeLeft} colorScheme={"red"} pos={'absolute'} left={'50%'} top={'50%'} />
     </>
   );
 };

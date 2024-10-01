@@ -93,8 +93,8 @@ const UserAstrologersProfile = () => {
                   <VStack mb={"2vmax"} alignItems={"flex-start"} spacing={"0"}>
                     <Heading m={"1vmax 0"} fontSize={"xl"} children={"Education"} />
                     <List spacing={1}>
-                      {SingleAstrologer?.education?.map((item, i) => (
-                        <ListItem key={i}>
+                      {SingleAstrologer?.education?.map((item) => (
+                        <ListItem key={item._id}>
                           <ListIcon as={MdCheckCircle} color="green.500" />
                           {item.edu}
                         </ListItem>
@@ -105,8 +105,8 @@ const UserAstrologersProfile = () => {
                   <VStack mb={"2vmax"} alignItems={"flex-start"} spacing={"0"}>
                     <Heading m={"1vmax 0"} fontSize={"xl"} children={"Experiences"} />
                     <List spacing={1}>
-                      {SingleAstrologer?.experience?.map((item, i) => (
-                        <ListItem key={i}>
+                      {SingleAstrologer?.experience?.map((item) => (
+                        <ListItem key={item._id}>
                           <ListIcon as={MdCheckCircle} color="green.500" />
                           {item.exp}
                         </ListItem>

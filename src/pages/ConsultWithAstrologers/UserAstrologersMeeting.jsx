@@ -31,6 +31,10 @@ const dispatch=useDispatch()
         day: "numeric",
     })} `;
     const handleDateChange = (selectedDate) => {
+        if(!duration){
+            alert("Please select Meeting Duration 30-Min or 15-Min");
+            return; 
+        }
         const today = new Date();
         today.setHours(0, 0, 0, 0); // Set time to 00:00 to only compare dates
       

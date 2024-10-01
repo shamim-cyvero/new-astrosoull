@@ -154,8 +154,8 @@ const AstrologerAbout = () => {
           <VStack mb={"2vmax"} alignItems={"flex-start"} spacing={"0"}>
             <Heading m={"1vmax 0"} fontSize={['1xl','xl']} children={"Education"} />
             <List spacing={1}>
-              {astrologer?.education?.map((item, i) => (
-                <ListItem key={i} fontSize= {['.9rem','1rem']}>
+              {astrologer?.education?.map((item) => (
+                <ListItem key={item._id} fontSize= {['.9rem','1rem']}>
                   <ListIcon as={MdCheckCircle} color="green.500" />
                   {item.edu}
                   <IconButton onClick={()=>deleteEduHandler(item._id)} ml={'1vmax'} size='sm' icon={<FiDelete />} colorScheme={'whatsapp'}  />
@@ -167,8 +167,8 @@ const AstrologerAbout = () => {
           <VStack mb={"2vmax"} alignItems={"flex-start"} spacing={"0"}>
             <Heading m={"1vmax 0"} fontSize={"xl"} children={"Experiences"} />
             <List spacing={1}>
-              {astrologer?.experience?.map((item, i) => (
-                <ListItem key={i}>
+              {astrologer?.experience?.map((item) => (
+                <ListItem key={item._id}>
                   <ListIcon as={MdCheckCircle} color="green.500" />
                   {item.exp}
                   <IconButton onClick={()=>deleteExpHandler(item._id)} ml={'1vmax'} size='sm' icon={<FiDelete />} colorScheme={'whatsapp'}  />
@@ -196,8 +196,8 @@ const AstrologerAbout = () => {
           <VStack mb={"2vmax"} alignItems={"flex-start"} spacing={"0"}>
             <Heading m={"1vmax 0"} fontSize={"xl"} children={"Education"} />
             <List spacing={1}>
-              {astrologer?.education?.map((item, i) => (
-                <ListItem key={i}>
+              {astrologer?.education?.map((item) => (
+                <ListItem key={item._id}>
                   <ListIcon as={MdCheckCircle} color="green.500" />
                   {item.edu}
                 </ListItem>
@@ -208,8 +208,8 @@ const AstrologerAbout = () => {
           <VStack mb={"2vmax"} alignItems={"flex-start"} spacing={"0"}>
             <Heading m={"1vmax 0"} fontSize={"xl"} children={"Experiences"} />
             <List spacing={1}>
-              {astrologer?.experience?.map((item, i) => (
-                <ListItem key={i}>
+              {astrologer?.experience?.map((item) => (
+                <ListItem key={item._id}>
                   <ListIcon as={MdCheckCircle} color="green.500" />
                   {item.exp}
                 </ListItem>

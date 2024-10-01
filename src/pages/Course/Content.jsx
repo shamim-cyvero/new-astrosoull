@@ -14,7 +14,7 @@ const Content = ({ lectures,rating,courseId }) => {
                     <Accordion allowToggle w={'100%'}>
                 {
                     lectures && lectures.map((item) => (
-                        <AccordionItem w={'100%'}>
+                        <AccordionItem key={item._id} w={'100%'}>
                             <HStack w={'100%'}>
                                 <AccordionButton w={'100%'}>
                                     <HStack as='span' w='100%' alignItems='center' justifyContent='space-between'>
@@ -34,7 +34,7 @@ const Content = ({ lectures,rating,courseId }) => {
                                      item.video?.length>=1 && item.video?.map((item) => (
                                             <>
 
-                                                <Stack w={'100%'} alignItems={'flex-start'} justifyContent={'space-between'} direction={{ base: 'column', md: 'column', lg: 'row' }}>
+                                                <Stack key={item._id} w={'100%'} alignItems={'flex-start'} justifyContent={'space-between'} direction={{ base: 'column', md: 'column', lg: 'row' }}>
                                                     <HStack w={{ base: '100%', md: '100%', lg: '75%' }}>
                                                         <RiVidiconLine size={25} />
                                                         <Text fontSize={['.9rem', '1.1rem']} fontWeight='600' mr={['0px', '30px']} >{item.title} </Text>
